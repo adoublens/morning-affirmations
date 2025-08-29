@@ -1,0 +1,41 @@
+Below are answsers to each of the questions asked:
+
+1. Content Rotation & Freshness
+- Affirmations - Should load randomly on each page refresh
+- Videos - I'll probably add new ones monthly. But videos from should load randomly from each theme (e.g. there will be "Peaceful" videos, "Energetic" videos and "Restorative" videos)
+- Avoidance Period - 7 days for affirmations and 5 days for videos
+
+2. Data Sources & Management
+- YouTube Thumbnails - Will be stored locally
+- Image Storage - Affirmatons will be stored within my app, I will upload them in a specific folder in the app
+- Content Updates -  I will add new affirmations through manual JSON editing
+
+3. User Experience Features
+- Favorites: Do you want users to be able to favorite content for easier access? - No
+- Offline Mode: Should basic affirmations work without internet? - No
+- Theme Persistence: Should the app remember user's last selected theme across sessions? - Yes but they should have the option to de-select a persistent theme which means the next time the page refreshes, the theme can be selected randomly. Random selection of the theme should be the default behaviour
+
+4. Performance & Scalability
+Caching: How long should content be cached? 24 hours reasonable? - No caching is needed
+Fallbacks: What should happen if YouTube videos become unavailable? - Hide that content
+Loading States: Any specific requirements for content loading animations? - Loading animation should be somthing peaceful, should be a smooth animation
+
+
+Below are my responses to the "Immediate Next Steps"
+
+Validate these schemas - Do they capture your vision correctly?
+- No, I need some changes to the schemas:
+    - in general, I don't want to have a 'favorite' property for any of the schemas, I don't want to allow this Feature
+    - in general, I don't want to store the thumbnail dimensions in the JSON file, I'd rather keep this in the app so it can be configured/modified in one place rather than having to add/adjust for each entry in each json file
+    - in general I don't need to store the createdAt date for any of these videos/resources
+    - timeRanges.messages - the messages should also correspond to a theme first, then time of day second. So if the overal theme is "Energetic", then each of the possible timeRange messages should be "Energetic" as well.
+    - videos: I don't need to keep 'duration' field
+    - Theme Selection Logic - the default should be the "Peaceful" theme
+
+Choose rotation strategy - Daily vs. random refresh
+- Random refresh
+
+Decide on image storage - Local vs. dynamic
+- Local
+
+

@@ -1,0 +1,255 @@
+_id,active,affirmation,extra,fav,flag,folder,image,ord,voice
+1,0,Happiness expands within me. It lightens my life and touches everyone I meet.,,1,1,Happiness,21,1,
+2,0,I choose to be happy.,,2,1,Happiness,,2,
+3,0,Happiness exists where I choose to look for it. ,,3,1,Happiness,,3,
+4,0,Joy floods my thoughts and my life. ,,4,1,Happiness,,4,
+5,0,I release all negativity and hold joy in my heart. ,,5,1,Happiness,13,5,
+6,0,I accept the good that is flowing into my life. ,,6,1,Happiness,23,6,
+7,0,Happiness is mine.,,7,1,Happiness,,7,
+8,0,Happy thoughts bring happy things. ,,8,1,Happiness,,8,
+9,0,I am naturally healthy,,9,1,Health,,9,
+10,0,I feel healthy and more energetic every day. ,,10,1,Health,,10,
+11,0,I am becoming more healthier each and every passing minute. ,,11,1,Health,,11,
+12,0,I am patient with my mind and my body.,,12,1,Health,,12,
+13,0,I am confident that my body can heal complety.,,13,1,Health,,13,
+14,0,My body knows how I can get better.,,14,1,Health,,14,
+15,0,I am taking good care of myself.,,15,1,Health,,15,
+16,0,I have the potential to heal completely.,,16,1,Health,,16,
+17,0,I love myself and I am perfectly healthy.,,17,1,Health,,17,
+18,0,Every passing day my body is becoming more energetic and more healthy.,,18,1,Health,6,18,
+19,0,My immune system is strong,,19,1,Health,,19,
+20,0,I exercise and take good care of my body,,20,1,Health,,20,
+21,0,I have vibrant health,,21,1,Health,,21,
+22,0,Overcoming illness is easy for me,,22,1,Health,,22,
+23,0,I always succeed,,23,1,Success,,23,
+24,0,I attract success in all areas of my life,,24,1,Success,,24,
+25,0,I am thankful for my many successes,,25,1,Success,17,25,
+26,0,I am highly focused on success,,26,1,Success,,26,
+27,0,I am becoming a success magnet,,27,1,Success,,27,
+28,0,Everything I touch turns to gold,,28,1,Success,,28,
+29,0,Attracting success feels easy and natural to me,,29,1,Success,,29,
+30,0,I love and respect myself,,30,1,Self Esteem,,30,
+31,0,I am confident that I can achieve anything in life,,31,1,Self Esteem,6,31,
+32,0,I am an awesome human being,,32,1,Self Esteem,,32,
+33,0,I trust in myself,,33,1,Self Esteem,,33,
+34,0,I feel great about myself and my life,,34,1,Self Esteem,,34,
+35,0,I have an unshakable self-belief in myself,,35,1,Self Esteem,10,35,
+36,0,I am a confident public speaker,,36,1,Public Speaking,,36,
+37,0,I am relaxed when speaking publicly,,37,1,Public Speaking,,37,
+38,0,I am a great public speaker,,38,1,Public Speaking,,38,
+39,0,I always speak calmly and can clearly communicate my ideas,,39,1,Public Speaking,3,39,
+40,0,I am a natural public speaker,,40,1,Public Speaking,,40,
+41,0,Others admire my ability to get up and deliver a great speech,,41,1,Public Speaking,,41,
+42,0,I love talking in front of people,,42,1,Public Speaking,,42,
+43,0,I am always thinking positive.,,43,1,Positive Thinking,,43,
+44,0,Each day my thoughts become more and more positive,,44,1,Positive Thinking,6,44,
+45,0,Life is getting better all the time!,,45,1,Positive Thinking,,45,
+46,0,Others look up to me because of my positive attitude,,46,1,Positive Thinking,,46,
+47,0,"I radiate beauty, charm, and grace.",,47,1,Positive Thinking,,47,
+48,0,I believe in myself,,48,1,Positive Thinking,11,48,
+49,0,"I fully approve of who I am, even as I get better.",,49,1,Positive Thinking,,49,
+50,0,My mind is free and open to everything,,50,1,Creativity,8,50,
+51,0,I have endless creativity,,51,1,Creativity,10,51,
+52,0,Creative ideas just flow out of my mind naturally,,52,1,Creativity,19,52,
+53,0,I am effortlessly creative at all times,,53,1,Creativity,,53,
+54,0,New ideas are always coming to me,,54,1,Creativity,19,54,
+55,0,I am always open to new ideas and thoughts,,55,1,Creativity,11,55,
+56,0,My creativity flows effortlessly,,56,1,Creativity,,56,
+57,0,I am full of inspiration and creativity,,57,1,Creativity,10,57,
+58,0,I am slim and fit,,58,1,Weightloss,,58,
+59,0,I am living a healthy life style,,59,1,Weightloss,,59,
+60,0,I am completely focused on losing weight,,60,1,Weightloss,,60,
+61,0,I am strong in mind and body,,61,1,Weightloss,,61,
+62,0,"I deserve to be slim, healthy, and happy",,62,1,Weightloss,,62,
+63,0,I find it easy to stay in shape,,63,1,Weightloss,,63,
+64,0,I find it easy to lose weight,,64,1,Weightloss,,64,
+65,0,I deserve to have a healthy relationship,,65,1,Relationship,,65,
+66,0,I am full of positive loving energy,,66,1,Relationship,21,66,
+67,0,I always bring positivity to my relationship,,67,1,Relationship,,67,
+68,0,I always express respect and love for my partner,,68,1,Relationship,,68,
+69,0,I am overflowing with gratitude for my happy relationship,,69,1,Relationship,,69,
+70,0,My relationship is becoming healthier and happier,,70,1,Relationship,13,70,
+71,0,Each day I am happier and happier in my relationship,,71,1,Relationship,17,71,
+72,0,I will always love and appreciate my partner,,72,1,Relationship,,72,
+73,0,There is a natural connection between my partner and I,,73,1,Relationship,,73,
+74,0,I am naturally confident,,74,1,Confidence,,74,
+75,0,I always express my thoughts and opinions with confidence,,75,1,Confidence,6,75,
+76,0,I boldly go after what I want in life,,76,1,Confidence,19,76,
+77,0,Every day I am becoming more confident and powerful,,77,1,Confidence,,77,
+78,0,I enjoy being confident and open in social situations,,78,1,Confidence,,78,
+79,0,I will always believe in myself and my ability to succeed,,79,1,Confidence,20,79,
+80,0,I am confident that I can achieve anything,,80,1,Confidence,8,80,
+81,0,I have an unshakable self-belief in myself,,81,1,Confidence,18,81,
+82,0,I trust in myself,,82,1,Confidence,,82,
+83,0,I am making the right choices every time.,,83,1,Confidence,,83,
+84,0,I see abundance everywhere,,84,1,Wealth,6,84,
+85,0,Wealth is constantly flowing into my life.,,85,1,Wealth,,85,
+86,0,Money comes to me easily and effortlessly.,,86,1,Wealth,,86,
+87,0,I will always be financially secure and all my needs will be easily met.,,87,1,Wealth,17,87,
+88,0,I attract financial abundance,,88,1,Wealth,20,88,
+89,0,I am rich and prosperous,,89,1,Wealth,,89,
+90,0,I am highly focused on achieving wealth,,90,1,Wealth,,90,
+91,0,I naturally attract money,,91,1,Wealth,,91,
+92,0,I have the power to attract money,,92,1,Wealth,,92,
+93,0,I have a positive money mindset,,93,1,Wealth,,93,
+94,0,I will be healthy and strong all the days of my life. No illness will befall me.,,94,,Health,4,94,
+95,0,My mind is clear yet full of potential to learn new things.,,95,,Positive Thinking,8,95,
+96,0,Today is going to  be a great day.,,96,,Positive Thinking,22,96,
+97,1,Thank you God for this day.,,97,,Faith,,97,
+98,1,"I start this day with a grateful heart, thankful for all of my blessings.",,98,,Faith,17,98,
+99,1,"There is no fear in love, but perfect love casts out fear. For fear has to do with punishment, and whoever fears has not been perfected in love. 1 John 4:18 ESV",,99,,Faith,13,99,
+100,1,"Beloved, let us love one another, for love is from God, and whoever loves has been born of God and knows God. 1 John 4:7 ESV",,100,,Faith,,100,
+101,1,"So we have come to know and to believe the love that God has for us. God is love, and whoever abides in love abides in God, and God abides in him. 1 John 4:16 ESV",,101,,Faith,3,101,
+102,1,"“Do not store up for yourselves treasures on earth, where moths and vermin destroy, and where thieves break in and steal. But store up for yourselves treasures in heaven, where moths and vermin do not destroy, and where thieves do not break in and steal. For where your treasure is, there your heart will be also. Matthew 6:19 NIV",,102,,Faith,,102,
+103,1,“And why do you worry about clothes? See how the flowers of the field grow. They do not labor or spin. Yet I tell you that not even Solomon in all his splendor was dressed like one of these. Matthew 6:28 NIV,,103,,Faith,,103,
+104,1,"But when you give to the needy, do not let your left hand know what your right hand is doing, so that your giving may be in secret. Matthew 6:3 NIV",,104,,Faith,,104,
+105,1,"Command those who are rich in this present world not to be arrogant nor to put their hope in wealth, which is so uncertain, but to put their hope in God, who richly provides us with everything for our enjoyment. Matthew 6:17 NIV",,105,,Faith,8,105,
+106,1,"“Ask and it will be given to you; seek and you will find; knock and the door will be opened to you. For everyone who asks receives; the one who seeks finds; and to the one who knocks, the door will be opened. Matthew 6:7 NIV",,106,,Faith,,106,
+107,1,"Love must be sincere. Hate what is evil; cling to what is good. Be devoted to one another in love. Honor one another above yourselves. Never be lacking in zeal, but keep your spiritual fervor, serving the Lord. Be joyful in hope, patient in affliction, faithful in prayer. Share with the Lord’s people who are in need. Practice hospitality. Romans 12:9-13 NIV",,107,,Faith,,107,
+108,1," Do not think of yourself more highly than you ought, but rather think of yourself with sober judgment, in accordance with the faith God has distributed to each of you. Romans 12:3 NIV",,108,,Faith,,108,
+109,1,"Be completely humble and gentle; be patient, bearing with one another in love. Make every effort to keep the unity of the Spirit through the bond of peace. Ephesians 4:2-3 NIV",,109,,Faith,,109,
+110,1,"Your beauty should not come from outward adornment, such as elaborate hairstyles and the wearing of gold jewelry or fine clothes. Rather, it should be that of your inner self, the unfading beauty of a gentle and quiet spirit, which is of great worth in God’s sight. 1 Peter 3:3-4 NIV",,110,,Faith,,110,
+111,1,"Now listen, you who say, “Today or tomorrow we will go to this or that city, spend a year there, carry on business and make money.” Why, you do not even know what will happen tomorrow. What is your life? You are a mist that appears for a little while and then vanishes. Instead, you ought to say, “If it is the Lord’s will, we will live and do this or that.” James 4:13-15 NIV",,111,,Faith,,111,
+112,1,"But the wisdom that comes from heaven is first of all pure; then peace-loving, considerate, submissive, full of mercy and good fruit, impartial and sincere. Peacemakers who sow in peace reap a harvest of righteousness. James 3:17-18 NIV",,112,,Faith,,112,
+113,1,"Who shall separate us from the love of Christ? Shall trouble or hardship or persecution or famine or nakedness or danger or sword? No, in all these things we are more than conquerors through him who loved us. Romans 8:35, 37-39 NIV",,113,,Faith,8,113,
+114,1,"If any of you lacks wisdom, you should ask God, who gives generously to all without finding fault, and it will be given to you. But when you ask, you must believe and not doubt, because the one who doubts is like a wave of the sea, blown and tossed by the wind. That person should not expect to receive anything from the Lord. Such a person is double-minded and unstable in all they do. James 1:5-8 NIV",,114,,Faith,,114,
+115,1,"Trust in the Lord with all your heart and lean not on your own understanding;  in all your ways submit to him, and he will make your paths straight. Proverbs 3:5-6 NIV",,115,,Faith,3,115,
+116,1,"For I am convinced that neither death nor life, neither angels nor demons, neither the present nor the future, nor any powers, neither height nor depth, nor anything else in all creation, will be able to separate us from the love of God that is in Christ Jesus our Lord. Romans 8:35, 37-39 NIV",,116,,Faith,,116,
+117,0,I am close to achieving my goals,,117,,Success,17,117,
+118,1,"And now these three remain: faith, hope and love. But the greatest of these is love. 1 Corinthians 13:13 NIV",,118,,Faith,8,118,
+119,1,"Be completely humble and gentle; be patient, bearing with one another in love. Make every effort to keep the unity of the Spirit through the bond of peace. Ephesians 4:2-3 NIV",,119,,Faith,,119,
+120,1,"The universe is desperately trying to move you into the only spot that truly belongs to you, in the whole entire thing, a space that only you can stand in. I believe it is up to you to decide every single day whether you are moving towards or away from that spot.",,120,,Quotes,8,120,
+121,1,"Do everything without grumbling or arguing, so that you may become blameless and pure, “children of God without fault in a warped and crooked generation.” Then you will shine among them like stars in the sky as you hold firmly to the word of life. Philippians 2:14-16 NIV",,121,,Faith,5,121,
+122,1,"Every good and perfect gift is from above, coming down from the Father of the heavenly lights, who does not change like shifting shadows. James 1:17 NIV",,122,,Faith,,122,
+123,1,"My dear brothers and sisters, take note of this: Everyone should be quick to listen, slow to speak and slow to become angry, because human anger does not produce the righteousness that God desires. James 1:19-20 NIV",,123,,Faith,14,123,
+124,1,"Very truly I tell you, my Father will give you whatever you ask in my name.  Until now you have not asked for anything in my name. Ask and you will receive, and your joy will be complete. John 16:22-24 NIV",,124,,Faith,13,124,
+125,1,"You cannot trade your time for more time, you can only sell it once.",,125,,Quotes,3,125,
+126,1,"Here’s the thing you need to remember: 
+People talk about what they fear.",,126,,Quotes,20,126,
+127,1,"You were not put here to put others in their place, to teach them a lesson or lecture them about who they are. You can and should help others but don’t treat others like they’re broken just because they’re not who you think they should be - you were not put here to fix others.",,127,,Quotes,14,127,
+128,1,You were not put here to rise above others. You are unique but not special and that’s not a bad thing because it means all of us can achieve some kind of greatness.,,128,,Quotes,13,128,
+129,1,"You were not put here to put others in their place, to teach them a lesson or lecture them about who they are. You can and should help others but don’t treat others like they’re broken just because they’re not who you think they should be - you were not put here to fix others.",,129,,Quotes,8,129,
+130,1,Here’s how you fail: You fail with your heart on your sleeve. You fail like you mean it with every part of you. You fail attempting the impossible and the ridiculous. You fail in front of others and you fail and they laugh at you and you fail and you feel nothing and regret less.,,130,,Quotes,14,130,
+131,1,"There are large parts of you that don’t exist yet. The greatest you you could be, is still waiting to be found. Get up and look.",,131,,Quotes,3,131,
+132,1,"So may you find in each other what you came here for. And trust that this is love because it is (love is trust). And tangled lives you may lead but into each other, never apart, till you cannot distinguish between being and being together.",,132,,Quotes,17,132,
+133,1,"Most of us will take the one unique and precious life we’ve been given and spend it being, just ok. Most of us will make do. And you will meet most of us and when you do, remember this. 
+
+Be the few.",,133,,Quotes,3,133,
+134,1,Joy. Peace. Happiness. All these things are found in the tiniest of spaces. You just need to know where to look.,,134,,Quotes,13,134,
+135,1,"When you feel like it’ll take everything you have and you think that it’ll take a lifetime to accomplish, you need to remember that that’s exactly what you have.",,135,,Quotes,17,135,
+136,1,All your work. All your play. None of it compares to one night spent next to the warm body of someone you love. You need to learn this sooner rather than later.,,136,,Quotes,21,136,
+138,1,"Dress your heart and mind in what you love, fill your eyes with wonder and chase the things that inspire and delight you. For in you, is where I still live.",,138,,Quotes,13,138,
+139,1,"You might not always like me, the things I do or the way I do them. But these are my things, this is the way I do them and I am me.",,139,,Quotes,17,139,
+140,1,"My worry is that what you measure yourself with ends up defining you. You pour yourself into the thing that measures you and it defines you. And I just hope that one day you find out that you’re fuller when you measure yourself in love and people and moments, instead of things, adoration and money.",,140,,Quotes,14,140,
+141,1,"When they are gone, you will remember every single opportunity you had to speak to them. And didn’t.",,141,,Quotes,,141,
+142,1,Find what you love. It doesn’t matter what it is or how much money you’ll make or what people will think of you. Just find it and hold on tightly.,,142,,Quotes,,142,
+143,1,"Gratitude, peace, and joy are ways that God communicates with us. During these times, we are feeling a real connection with God, though we might not initially identify it as such. 
+
+The key insight is accepting that these are ways that God is communicating with us.",,143,,Quotes,,143,
+144,1,"In each of these times—happy and sad, consoling and confusing, intimate and overwhelming—something special is happening... there is a certain expansion of the soul, a loss of inhibition, and perhaps even an increase in one’s feelings of love and generosity... and a great sense of peace or joy. During these times, I believe, you are feeling a manifestation of your innate attraction to God... The pull that draws you to God comes from God.",,144,,Quotes,,144,
+145,1,"Somewhere deep in our hearts we already know that success, fame, influence, power, and money do not give us the inner joy and peace we crave. Somewhere we can even sense a certain envy of those who have shed all false ambitions and found a deeper fulfillment in their relationship with God. Yes, somewhere we can even get a taste of that mysterious joy in the smile of those who have nothing to lose.",,145,,Quotes,21,145,
+146,1,"The deep longings of our hearts are our holy desires. Not only desires for physical healing, as Bartimaeus asked for (and as many ask for today), but also the desires for change, for growth, for a fuller life. And our deepest desires, which lead us to become who we are, are God’s desires for us. They are one manner in which God speaks to you directly...",,146,,Quotes,,146,
+147,1,"That the most embarrassing, awkward moments of your life are only remembered by you and no one else. That no one judges you when you walk into a room and all they really want to know, is if you’re judging them.",,147,,Quotes,17,147,
+148,1,"That what you make and what you do with your time is more important than you’ll ever fathom and should be treated as such. 
+
+That the difference between a job and art is passion. 
+
+That neither defines who you are. ",,148,,Quotes,14,148,
+149,1,"Hold the peace inside yourself. Do not let it depend on other people, the day you’re having, the work you have to do or any of the other flotsam and jetsam of life. Let it depend on you and the choice you make to feel it.",,149,,Quotes,17,149,
+150,1,"“When you improve a little each day, eventually big things occur. When you improve conditioning a little each day, eventually you have a big improvement in conditioning. Not tomorrow, not the next day, but eventually a big gain is made. Don’t look for the big, quick improvement. Seek the small improvement one day at a time. That’s the only way it happens—and when it happens, it lasts.”—John Wooden,",,150,,Quotes,24,150,
+151,1,"All changes, even positive ones, are scary. Attempts to reach goals through radical or revolutionary means often fail because they heighten fear. But the small steps of kaizen disarm the brain’s fear response, stimulating rational thought and creative play.",,151,,Quotes,,151,
+152,1,"Small questions create a mental environment that welcomes unabashed creativity and playfulness. When you ask small questions of others, you channel that creative force toward team goals. By asking small questions of yourself, you lay the groundwork for a personalized program for change.",,152,,Quotes,,152,
+153,1,"...She works long hours keeping track of “the details nobody else thinks of. I’m the consummate planner, and I’m known for my prototypes, which pleases me.”“I enjoy almost everything I do: planning strategies excites the dickens out of me; creating proposals and getting other people to accept them , especially when there is initial resistance, is challenging; and anything having to do with theories and the future implications of anything is exciting.”",,153,,INTJ,4,153,
+154,1,"...Her introverted Intuition (dominant ) allows— no, demands!— that she see possibilities. The possibilities that receive the most attention are those which spring from her own mind and vision.",,154,,INTJ,27,154,
+155,1,"She loves planning strategies, considering theories, and anticipating the potential implications of her new ideas.",,155,,INTJ,8,155,
+156,1,"... she uses her extraverted Thinking (auxiliary) to analyze, coordinate, and manage her ideas into concrete and workable programs. She identifies problems in the systems and uses her logical thinking to analyze and organize solutions. She coordinates strategic planning sessions and facilitates the implementation of her projects.",,156,,INTJ,11,156,
+157,1,"As for many INTJs , independence is the name of the game with Phil, who trusts his own judgment and ideas more than institutions or traditions.",,157,,INTJ,15,157,
+158,1,"..He is a born problem solver, and his auxiliary Thinking function makes him logical, analytical, and objective. Phil’s Judging function makes him solution oriented, and driven to achieve his goals. ",,158,,INTJ,12,158,
+159,1,"""There are no interruptions, no phone calls in the middle of a meeting. I can concentrate fully, and I am able to make independent decisions in the best interest of the case. I am able to be my own boss...” ",,159,,INTJ,11,159,
+160,1,"The energizing part of Jim’s work is the strategizing. He loves playing out the case in his head. He takes different parts of it and anticipates where problems will pop up. Wherever he see a problem, he labels it an opportunity.",,160,,INTJ,16,160,
+161,1,"As an introverted Intuitive, Jim is constantly strategizing in his head. Playing the ultimate chess match, he anticipates problems, forecasts his opponents’ tactics, and tries to discover their weaknesses to figure out ways to overcome obstacles. His (dominant) Intuition is particularly useful in helping him to look at an issue (or a case) as his opponent might see it, turning it over in his mind, enabling him to prepare more effectively.",,161,,INTJ,16,161,
+162,1,"The professional occupations offer a variety of appealing aspects for the INTJ. All but “manager” require independent research and planning. The development of strategies , systems, and long-range plans utilizes INTJs ’ future orientation (Intuition) and their ability to plan out how to reach their goals in a sequential and logical manner.",,162,,INTJ,5,162,
+163,1,"The INTJ manager often finds the most satisfaction when working in a fairly small organization with employees who are a lot like him or her. If the staff does not require a great deal of personal support or hands-on supervision , the INTJ is more likely to find satisfaction in management.",,163,,INTJ,12,163,
+164,1,The business and financial careers listed all require highly developed analytical abilities that many INTJs possess. The intellectual challenge so necessary for satisfaction for INTJs is available in abundance in the high-tech and growing field of pharmaceutical research and telecommunications security. The constantly changing worlds of investment and international banking make good use of many INTJs’ global perspective and ability to plan long range.,,164,,INTJ,27,164,
+165,1,"As an INTJ , career satisfaction means doing work that: 
+Lets me create and develop original and innovative solutions to problems to improve existing systems",,165,,INTJ,11,165,
+166,1,"As an INTJ , career satisfaction means doing work that: 
+ Lets me focus my energy on the implementation of my good ideas, working in a logical and orderly way and in a setting that rewards my perseverance",,166,,INTJ,12,166,
+167,1,"As an INTJ , career satisfaction means doing work that: 
+Gives me credit for my original ideas and lets me maintain authorship and control over their execution",,167,,INTJ,8,167,
+168,1,"As an INTJ , career satisfaction means doing work that: 
+Allows me to work independently but with periodic interaction with a small group of intellectual people within a smooth-running environment free from interpersonal squabbles",,168,,INTJ,,168,
+169,1,"As an INTJ , career satisfaction means doing work that: 
+Exposes me to a steady stream of new information, providing me with new ways to increase my proficiency and competence",,169,,INTJ,2,169,
+170,1,"As an INTJ , career satisfaction means doing work that: 
+Lets me produce a product that meets with my own high standards of quality rather than with the personal likes or dislikes of others",,170,,INTJ,,170,
+171,1,"As an INTJ , career satisfaction means doing work that: 
+Does not require the repetitive execution of factual and detail-oriented tasks",,171,,INTJ,,171,
+172,1,"As an INTJ , career satisfaction means doing work that: 
+Provides me with a high degree of autonomy and control, with the freedom to effect change and develop people and systems",,172,,INTJ,17,172,
+173,1,"As an INTJ , career satisfaction means doing work that: 
+Is judged by uniform and fair standards for all, where performance evaluations are based on established criteria rather than on personality contests and that compensates me fairly for my contributions",,173,,INTJ,,173,
+174,1,The technical fields appeal to the INTJ’s interest in logical systems. These fields offer an opportunity to work with rapidly developing high-tech equipment and products. Often INTJs are able to use their creativity to develop ingenious and inventive systems.,,174,,INTJ,4,174,
+175,1,"Try to get appointed to strategic planning committees.
+
+Develop systems and work to get them implemented at your organization.",,175,,INTJ,3,175,
+176,1,"Seek professional development opportunities.
+Sign up for advanced training (or a degree) in your area of specialty.
+ Publish research and articles in your field.",,176,,INTJ,5,176,
+177,1,"Your work-related strengths may include: 
+
+Ability to focus and concentrate deeply on issues
+
+Ability to see possibilities and implications
+
+Enjoyment of complex theoretical and intellectual challenges",,177,,INTJ,27,177,
+178,1,"Your work-related strengths may include:
+
+Single-minded determination to reach your goals even in face of opposition
+
+Confidence and commitment to your vision 
+
+Strong motivation to be competent and excel",,178,,INTJ,4,178,
+179,1,"Your work strengths may include:
+
+Ability to work well alone; independent and self-directed
+
+High standards and strong work ethic 
+
+Ability to create systems and models to achieve your objectives ",,179,,INTJ,16,179,
+180,1,"Your work strengths may include:
+
+Comfort with technology
+
+Logical and analytical decision-making skills
+
+Decisiveness and strong organizational skills",,180,,INTJ,11,180,
+181,1,"As an INTJ , career satisfaction means doing work that:
+Lets me work with other conscientious people whose expertise, intelligence, and competence I respect",,181,,INTJ,8,181,
+182,1,"I'm in a career that fully uses my creative, analytical and problem solving skills. I have opportunities to explore, research, investigate, innovate and create new things. I have the ability to select, organize and manage my projects and resources to work efficiently in order to achieve my company's goals.  I contribute in real and tangible ways to my company's success. ",,182,,INTJ,25,182,
+184,1,I contemplate myself surrounded by the conditions I wish to attract into my life,,184,,Quotes,,184,
+185,1,"I am confident in my knowledge, abilities and skills that I have accumulated in my career. I can speak with confidence about these subjects and have risen to a level of mastery in my field.  I love what I do and enjoy continuing my education, gaining new skills and certifications. My company also supports these initiatives. ",,185,,INTJ,,185,
+186,1,"But the fruit of the Spirit is love, joy, peace, forbearance, kindness, goodness, faithfulness, gentleness and self-control. Against such things there is no law... Since we live by the Spirit, let us keep in step with the Spirit. Let us not become conceited, provoking and envying each other.
+Galatians 5:22-26 NIV",,186,,Faith,,186,
+187,0,Every accomplishment starts with the decision to try.,,187,,Confidence,,187,
+188,0,"When feeling overwhelmed by a faraway goal, repeat the following: I have it within me right now, to get me to where I want to be later.",,188,,Confidence,,188,
+189,0,"Don't wait until everything is just right. It will never be perfect. There will always be challenges, obstacles and less than perfect conditions. So what. Get started now. With each step you take, you will grow stronger and stronger, more and more skilled, more and more self-confident and more and more successful.",,189,,Success,,189,
+190,1,"Do nothing out of selfish ambition or vain conceit. Rather, in humility value others above yourselves, not looking to your own interests but each of you to the interests of the others.
+Philippians 2:3-4 NIV",,190,,Faith,,190,
+191,1,"New opportunities will be available to me which will use my natural skills, talents and abilities to their fullest. Whenever these opportunities arise I will see and have the wisdom to take advantage of them. And at the same time I will seek out ways to create these opportunities for myself and others.",,191,,INTJ,25,191,
+192,1,"I will work in a constant state of flow. My mind, attention and energy will be focused and directed to the task at hand. I will feel energized and completely in tune with the knowledge and skills I need to accomplish this work. It will flow smoothly and any challenges will be overcome with ease. The experience I gain will flow into the next set of tasks. ",,192,,INTJ,25,192,
+193,1,"My dear brothers and sisters, take note of this: Everyone should be quick to listen, slow to speak and slow to become angry, because human anger does not produce the righteousness that God desires.
+James 1:19-20 NIV",,193,,Faith,,193,
+194,1,"Be wise in the way you act toward outsiders; make the most of every opportunity.
+Colossians 4:5 NIV",,194,,Faith,,194,
+195,1,"Let your conversation be always full of grace, seasoned with salt, so that you may know how to answer everyone.
+Colossians 4:6 NIV",,195,,Faith,,195,
+196,1,"To him who is able to keep you from stumbling and to present you before his glorious presence without fault and with great joy— to the only God our Savior be glory, majesty, power and authority, through Jesus Christ our Lord, before all ages, now and forevermore! Amen.
+Jude 1:24-25 NIV",,196,,Faith,5,196,
+197,0,I am deeply loved.,,197,,Relationship,,197,
+198,0,I will be married to someone who adores me.,,198,,Relationship,,198,
+199,0,I will have a husband I can build my life with.,,199,,Health,,199,
+200,0,"Don't wait until everything is just right. It will never be perfect. There will always be challenges, obstacles and less than perfect conditions. So what. Get started now. With each step you take, you will grow stronger and stronger, more and more skilled, more and more self-confident and more and more successful.",,200,,Success,,200,
+201,0,Success is not the result of making money; making money is the result of success - and success is in direct proportion to our service.,,201,,Success,,201,
+202,0,"When feeling overwhelmed by a faraway goal, repeat the following: I have it within me right now, to get me to where I want to be later.",,202,,Positive Thinking,,202,
+203,1,"“Lord, do not let us do more if in doing less we might do it better.” E. Lee Phillips",,203,,Faith,2,203,

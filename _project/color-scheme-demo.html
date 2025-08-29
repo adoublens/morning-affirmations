@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morning Affirmations - Color Scheme Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            border-radius: 15px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+        }
+
+        .header p {
+            color: #34495e;
+            font-size: 1.1rem;
+        }
+
+        .theme-selector {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .theme-btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .theme-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        .theme-btn.active {
+            transform: scale(1.05);
+        }
+
+        .theme-peaceful .theme-btn[data-theme="peaceful"] {
+            background: #87CEEB;
+            color: white;
+        }
+
+        .theme-energetic .theme-btn[data-theme="energetic"] {
+            background: #FFD700;
+            color: #4A4A4A;
+        }
+
+        .theme-restorative .theme-btn[data-theme="restorative"] {
+            background: #9370DB;
+            color: white;
+        }
+
+        .theme-section {
+            margin-bottom: 50px;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.5s ease;
+        }
+
+        .theme-peaceful .theme-section {
+            background: #F0F8FF;
+            border: 2px solid #E8F4F8;
+        }
+
+        .theme-energetic .theme-section {
+            background: #FFF8DC;
+            border: 2px solid #FFE4B5;
+        }
+
+        .theme-restorative .theme-section {
+            background: #F8F8FF;
+            border: 2px solid #E6E6FA;
+        }
+
+        .theme-title {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .theme-peaceful .theme-title {
+            color: #2F4F4F;
+        }
+
+        .theme-energetic .theme-title {
+            color: #4A4A4A;
+        }
+
+        .theme-restorative .theme-title {
+            color: #696969;
+        }
+
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .color-block {
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .color-block:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .color-swatch {
+            width: 100%;
+            height: 80px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .color-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+
+        .color-hex {
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .color-description {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        .usage-examples {
+            background: rgba(255,255,255,0.5);
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+
+        .usage-examples h3 {
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 1.3rem;
+        }
+
+        .example-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.3);
+        }
+
+        .example-color {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 15px;
+            border: 2px solid rgba(255,255,255,0.5);
+        }
+
+        .example-text {
+            flex: 1;
+        }
+
+        .example-label {
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .example-description {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Theme-specific styles */
+        .theme-peaceful {
+            background: #F0F8FF;
+            color: #2F4F4F;
+        }
+
+        .theme-energetic {
+            background: #FFF8DC;
+            color: #4A4A4A;
+        }
+
+        .theme-restorative {
+            background: #F8F8FF;
+            color: #696969;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .theme-selector {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .color-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body class="theme-peaceful">
+    <div class="container">
+        <div class="header">
+            <h1>🎨 Color Scheme Demo</h1>
+            <p>Explore the three themes for your Morning Affirmations app</p>
+        </div>
+
+        <div class="theme-selector">
+            <button class="theme-btn active" data-theme="peaceful">Peaceful Theme</button>
+            <button class="theme-btn" data-theme="energetic">Energetic Theme</button>
+            <button class="theme-btn" data-theme="restorative">Restorative Theme</button>
+        </div>
+
+        <!-- Peaceful Theme Section -->
+        <div class="theme-section" id="peaceful-section">
+            <h2 class="theme-title">Peaceful Theme</h2>
+            <p style="text-align: center; margin-bottom: 30px; font-size: 1.1rem; opacity: 0.8;">
+                Relaxed, gentle, calm, serene, tranquil
+            </p>
+            
+            <div class="color-grid">
+                <div class="color-block">
+                    <div class="color-swatch" style="background: #E8F4F8;"></div>
+                    <div class="color-name">Primary</div>
+                    <div class="color-hex">#E8F4F8</div>
+                    <div class="color-description">Soft sky blue - main content areas</div>
+                </div>
+                
+                <div class="color-block">
+                    <div class="color-swatch" style="background: #B8E6B8;"></div>
+                    <div class="color-name">Secondary</div>
+                    <div class="color-hex">#B8E6B8</div>
+                    <div class="color-description">Gentle mint green - accent elements</div>
+                </div>
+                
+                <div class="color-block">
+                    <div class="color-swatch" style="background: #87CEEB;"></div>
+                    <div class="color-name">Accent</div>
+                    <div class="color-hex">#87CEEB</div>
+                    <div class="color-description">Light steel blue - highlights, buttons</div>
+                </div>
+                
+                <div class="color-block">
+                    <div class="color-swatch" style="background: #F0F8FF;"></div>
+                    <div class="color-name">Background</div>
+                    <div class="color-hex">#F0F8FF</div>
+                    <div class="color-description">Alice blue - main background</div>
+                </div>
+                
+                <div class="color-block">
+                    <div class="color-swatch" style="background: #E6F3FF;"></div>
+                    <div class="color-name">Background Transition</div>
+                    <div class="color-hex">#E6F3FF</div>
+                    <div class="color-description">Lighter sky blue - transition effect</div>
+                </div>
+                
+                <div class="color-block">
+                    <div class="color-swatch" style="background: #2F4F4F;"></div>
+                    <div class="color-name">Primary Text</div>
+                    <div class="color-hex">#2F4F4F</div>
+                    <div class="color-description">Dark slate gray - main text</div>
+                </div>
+            </div>
+
+            <div class="usage-examples">
+                <h3>Usage Examples</h3>
+                <div class="example-item">
+                    <div class="example-color" style="background: #E8F4F8;"></div>
+                    <div class="example-text">
+                        <div class="example-label">Content Cards</div>
+                        <div class="example-description">Main content areas, affirmation boxes</div>
+                    </div>
+                </div>
+                <div class="example-item">
+                    <div class="example-color" style="background: #B8E6B8;"></div>
+                    <div class="example-text">
+                        <div class="example-label">Accent Elements</div>
+                        <div class="example-description">Category labels, subtle highlights</div>
+                    </div>
+                </div>
+                <div class="example-item">
+                    <div class="example-color" style="background: #87CEEB;"></div>
+                    <div class="example-text">
+                        <div class="example-label">Interactive Elements</div>
+                        <div class="example-description">Buttons, links, theme switcher</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Energetic Theme Section -->
+        <div class="theme-section" id="energetic-section" style="display: none;">
+            <h2 class="theme-title">Energetic Theme</h2>
+            <p style="text-align: center; margin-bottom: 30px; font-size: 1.1rem; opacity: 0.8;">
+                Vibrant, enthusiastic, creative, dynamic, uplifting
+            </p>
+            
+            <div class="color-grid">
+                <div class="color-block">
+                    <div class="color-swatch" style="background: #FFE4B5;"></div>
+                    <div class="color-name">Primary</div>
+                    <div class="color-hex">#FFE4B5</div>
+                    <div class="color-description">Moccasin - main content areas</div>
+                </div>
+                
+                <div class="color-block">
+                    <div class="color-swatch" style="background: #FFB6C1;"></div>
+                    <div class="color-name">Secondary</div>
+                    <div class="color-hex">#FFB6C1</div>
+                    <div class="color-description">Light pink - accent elements</div>
+                </div>
+                
+                <div class="color-block">
+                    <div class="color-swatch" style="background: #FFD700;"></div>
+                    <div class="color-name">Accent</div>
+                    <div class="color-hex">#FFD700</div>
+                    <div class="color-description">Gold - highlights, buttons</div>
+                </div>
+                
+                <div class="color-block">
+                    <div class="color-swatch" style="background: #FFF8DC;"></div>
+                    <div class="color-name">Background</div>
+                    <div class="color-hex">#FFF8DC</div>
+                    <div class="color-description">Cornsilk - main background</div>
+                </div>
+                
+                <div class="color-block">
+                    <div class="color-swatch" style="background: #FFEFD5;"></div>
+                    <div class="color-name">Background Transition</div>
+                    <div class="color-hex">#FFEFD5</div>
+                    <div class="color-description">Peach puff - transition effect</div>
+                </div>
+                
+                <div class="color-block">
+                    <div class="color-swatch" style="background: #4A4A4A;"></div>
+                    <div class="color-name">Primary Text</div>
+                    <div class="color-hex">#4A4A4A</div>
+                    <div class="color-description">Dark gray - main text</div>
+                </div>
+            </div>
+
+            <div class="usage-examples">
+                <h3>Usage Examples</h3>
+                <div class="example-item">
+                    <div class="example-color" style="background: #FFE4B5;"></div>
+                    <div class="example-text">
+                        <div class="example-label">Content Cards</div>
+                        <div class="example-description">Main content areas, affirmation boxes</div>
+                    </div>
+                </div>
+                <div class="example-item">
+                    <div class="example-color" style="background: #FFB6C1;"></div>
+                    <div class="example-text">
+                        <div class="example-label">Accent Elements</div>
+                        <div class="example-description">Category labels, subtle highlights</div>
+                    </div>
+                </div>
+                <div class="example-item">
+                    <div class="example-color" style="background: #FFD700;"></div>
+                    <div class="example-text">
+                        <div class="example-label">Interactive Elements</div>
+                        <div class="example-description">Buttons, links, theme switcher</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Restorative Theme Section -->
+        <div class="theme-section" id="restorative-section" style="display: none;">
+            <h2 class="theme-title">Restorative Theme</h2>
+            <p style="text-align: center; margin-bottom: 30px; font-size: 1.1rem; opacity: 0.8;">
+                Contemplative, thoughtful, introspective, calming, mindful
+            </p>
+            
+            <div class="color-grid">
+                <div class="color-block">
+                    <div class="color-swatch" style="background: #E6E6FA;"></div>
+                    <div class="color-name">Primary</div>
+                    <div class="color-hex">#E6E6FA</div>
+                    <div class="color-description">Lavender - main content areas</div>
+                </div>
+                
+                <div class="color-block">
+                    <div class="color-swatch" style="background: #DDA0DD;"></div>
+                    <div class="color-name">Secondary</div>
+                    <div class="color-hex">#DDA0DD</div>
+                    <div class="color-description">Plum - accent elements</div>
+                </div>
+                
+                <div class="color-block">
+                    <div class="color-swatch" style="background: #9370DB;"></div>
+                    <div class="color-name">Accent</div>
+                    <div class="color-hex">#9370DB</div>
+                    <div class="color-description">Medium slate blue - highlights, buttons</div>
+                </div>
+                
+                <div class="color-block">
+                    <div class="color-swatch" style="background: #F8F8FF;"></div>
+                    <div class="color-name">Background</div>
+                    <div class="color-hex">#F8F8FF</div>
+                    <div class="color-description">Ghost white - main background</div>
+                </div>
+                
+                <div class="color-block">
+                    <div class="color-swatch" style="background: #F0F0FF;"></div>
+                    <div class="color-name">Background Transition</div>
+                    <div class="color-hex">#F0F0FF</div>
+                    <div class="color-description">Very light lavender - transition effect</div>
+                </div>
+                
+                <div class="color-block">
+                    <div class="color-swatch" style="background: #696969;"></div>
+                    <div class="color-name">Primary Text</div>
+                    <div class="color-hex">#696969</div>
+                    <div class="color-description">Dim gray - main text</div>
+                </div>
+            </div>
+
+            <div class="usage-examples">
+                <h3>Usage Examples</h3>
+                <div class="example-item">
+                    <div class="example-color" style="background: #E6E6FA;"></div>
+                    <div class="example-text">
+                        <div class="example-label">Content Cards</div>
+                        <div class="example-description">Main content areas, affirmation boxes</div>
+                    </div>
+                </div>
+                <div class="example-item">
+                    <div class="example-color" style="background: #DDA0DD;"></div>
+                    <div class="example-text">
+                        <div class="example-label">Accent Elements</div>
+                        <div class="example-description">Category labels, subtle highlights</div>
+                    </div>
+                </div>
+                <div class="example-item">
+                    <div class="example-color" style="background: #9370DB;"></div>
+                    <div class="example-text">
+                        <div class="example-label">Interactive Elements</div>
+                        <div class="example-description">Buttons, links, theme switcher</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Theme switching functionality
+        const themeButtons = document.querySelectorAll('.theme-btn');
+        const body = document.body;
+        const sections = document.querySelectorAll('.theme-section');
+
+        function switchTheme(theme) {
+            // Remove all theme classes
+            body.classList.remove('theme-peaceful', 'theme-energetic', 'theme-restorative');
+            // Add new theme class
+            body.classList.add(`theme-${theme}`);
+            
+            // Update active button
+            themeButtons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Show/hide sections
+            sections.forEach(section => {
+                section.style.display = 'none';
+            });
+            
+            const activeSection = document.getElementById(`${theme}-section`);
+            if (activeSection) {
+                activeSection.style.display = 'block';
+            }
+        }
+
+        // Add click event listeners
+        themeButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const theme = e.target.dataset.theme;
+                switchTheme(theme);
+            });
+        });
+
+        // Initialize with peaceful theme
+        switchTheme('peaceful');
+    </script>
+</body>
+</html>
