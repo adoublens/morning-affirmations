@@ -1,0 +1,335 @@
+@import "tailwindcss";
+
+/* CSS Custom Properties for Theme System */
+:root {
+  /* Default Theme Colors (Peaceful) */
+  --theme-primary: #667eea;
+  --theme-secondary: #764ba2;
+  --theme-accent: #f093fb;
+  --theme-background: #f8fafc;
+  --theme-surface: #ffffff;
+  --theme-text-primary: #1e293b;
+  --theme-text-secondary: #64748b;
+  --theme-text-accent: #667eea;
+  --theme-border: #e2e8f0;
+  --theme-shadow: rgba(0, 0, 0, 0.1);
+  
+  /* Font Families */
+  --font-heading: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Lora', Georgia, 'Times New Roman', serif;
+  --font-accent: 'Dancing Script', 'Brush Script MT', cursive;
+  --font-display: 'Pacifico', 'Brush Script MT', cursive;
+  
+  /* Spacing and Layout */
+  --container-max-width: 1200px;
+  --section-padding: 2rem;
+  --border-radius: 12px;
+  --transition-duration: 0.3s;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Theme: Peaceful */
+[data-theme="peaceful"] {
+  --theme-primary: #667eea;
+  --theme-secondary: #764ba2;
+  --theme-accent: #f093fb;
+  --theme-background: #f8fafc;
+  --theme-surface: #ffffff;
+  --theme-text-primary: #1e293b;
+  --theme-text-secondary: #64748b;
+  --theme-text-accent: #667eea;
+  --theme-border: #e2e8f0;
+  --theme-shadow: rgba(0, 0, 0, 0.1);
+  
+  --font-heading: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Lora', Georgia, 'Times New Roman', serif;
+  --font-accent: 'Dancing Script', 'Brush Script MT', cursive;
+  --font-display: 'Pacifico', 'Brush Script MT', cursive;
+}
+
+/* Theme: Energetic */
+[data-theme="energetic"] {
+  --theme-primary: #f59e0b;
+  --theme-secondary: #dc2626;
+  --theme-accent: #10b981;
+  --theme-background: #fef3c7;
+  --theme-surface: #ffffff;
+  --theme-text-primary: #92400e;
+  --theme-text-secondary: #b45309;
+  --theme-text-accent: #dc2626;
+  --theme-border: #fbbf24;
+  --theme-shadow: rgba(245, 158, 11, 0.2);
+  
+  --font-heading: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-accent: 'Pacifico', 'Brush Script MT', cursive;
+  --font-display: 'Pacifico', 'Brush Script MT', cursive;
+}
+
+/* Theme: Restorative */
+[data-theme="restorative"] {
+  --theme-primary: #059669;
+  --theme-secondary: #0891b2;
+  --theme-accent: #7c3aed;
+  --theme-background: #ecfdf5;
+  --theme-surface: #ffffff;
+  --theme-text-primary: #064e3b;
+  --theme-text-secondary: #065f46;
+  --theme-text-accent: #059669;
+  --theme-border: #a7f3d0;
+  --theme-shadow: rgba(5, 150, 105, 0.2);
+  
+  --font-heading: 'Merriweather', Georgia, 'Times New Roman', serif;
+  --font-body: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-accent: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-display: 'Pacifico', 'Brush Script MT', cursive;
+}
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--theme-text-primary);
+  background-color: var(--theme-background);
+  transition: background-color var(--transition-duration) ease,
+              color var(--transition-duration) ease;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: var(--theme-text-primary);
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
+
+p {
+  margin-bottom: 1rem;
+  color: var(--theme-text-secondary);
+}
+
+a {
+  color: var(--theme-text-accent);
+  text-decoration: none;
+  transition: color var(--transition-duration) ease;
+}
+
+a:hover {
+  color: var(--theme-primary);
+}
+
+/* Container and Layout */
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--section-padding);
+}
+
+.section {
+  padding: var(--section-padding) 0;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  text-align: center;
+  transition: all var(--transition-duration) ease;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.btn-primary {
+  background-color: var(--theme-primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--theme-secondary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-secondary {
+  background-color: var(--theme-surface);
+  color: var(--theme-text-primary);
+  border: 2px solid var(--theme-border);
+}
+
+.btn-secondary:hover {
+  background-color: var(--theme-accent);
+  color: white;
+  border-color: var(--theme-accent);
+}
+
+/* Cards */
+.card {
+  background-color: var(--theme-surface);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--theme-border);
+  transition: all var(--transition-duration) ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 53%, 80%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  40%, 43% {
+    transform: translate3d(0, -30px, 0);
+  }
+  70% {
+    transform: translate3d(0, -15px, 0);
+  }
+  90% {
+    transform: translate3d(0, -4px, 0);
+  }
+}
+
+/* Animation Classes */
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.4s ease-out;
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-bounce {
+  animation: bounce 1s infinite;
+}
+
+/* Utility Classes */
+.text-accent {
+  font-family: var(--font-accent);
+}
+
+.text-display {
+  font-family: var(--font-display);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--theme-primary), var(--theme-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 1rem;
+  }
+  
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.75rem; }
+  h3 { font-size: 1.5rem; }
+  
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.25rem; }
+  
+  .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* Focus States for Accessibility */
+.btn:focus,
+.card:focus,
+a:focus {
+  outline: 2px solid var(--theme-accent);
+  outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+  .btn,
+  .card {
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+  
+  body {
+    background: white;
+    color: black;
+  }
+}
