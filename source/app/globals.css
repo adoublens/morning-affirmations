@@ -1,6 +1,11 @@
 @import "tailwindcss";
 
 /* CSS Custom Properties for Theme System */
+/* 
+ * SINGLE SOURCE OF TRUTH FOR THEME COLORS
+ * All theme colors are defined here. The ThemeProvider references these CSS variables.
+ * To change theme colors, update the values below, not in ThemeProvider.tsx
+ */
 :root {
   /* Default Theme Colors (Peaceful) */
   --theme-primary: #E8F4F8;
@@ -35,7 +40,7 @@
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
-/* Theme: Peaceful */
+/* Theme: Peaceful - Colors defined here are the authoritative source */
 [data-theme="peaceful"] {
   --theme-primary: #E8F4F8;
   --theme-secondary: #B8E6B8;
@@ -56,7 +61,7 @@
   --font-display: var(--font-pacifico), 'Brush Script MT', cursive;
 }
 
-/* Theme: Energetic */
+/* Theme: Energetic - Colors defined here are the authoritative source */
 [data-theme="energetic"] {
   --theme-primary: #FFE4B5;
   --theme-secondary: #FFB6C1;
@@ -77,7 +82,7 @@
   --font-display: var(--font-pacifico), 'Brush Script MT', cursive;
 }
 
-/* Theme: Restorative */
+/* Theme: Restorative - Colors defined here are the authoritative source */
 [data-theme="restorative"] {
   --theme-primary: #E6E6FA;
   --theme-secondary: #DDA0DD;
