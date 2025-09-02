@@ -17,10 +17,10 @@
   --theme-hover: #B3D9FF;
   
   /* Font Families */
-  --font-heading: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-body: 'Lora', Georgia, 'Times New Roman', serif;
-  --font-accent: 'Dancing Script', 'Brush Script MT', cursive;
-  --font-display: 'Pacifico', 'Brush Script MT', cursive;
+  --font-heading: var(--font-quicksand), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: var(--font-lora), Georgia, 'Times New Roman', serif;
+  --font-accent: var(--font-dancing-script), 'Brush Script MT', cursive;
+  --font-display: var(--font-pacifico), 'Brush Script MT', cursive;
   
   /* Spacing and Layout */
   --container-max-width: 1200px;
@@ -50,10 +50,10 @@
   --theme-shadow: #E3F2FD;
   --theme-hover: #B3D9FF;
   
-  --font-heading: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-body: 'Lora', Georgia, 'Times New Roman', serif;
-  --font-accent: 'Dancing Script', 'Brush Script MT', cursive;
-  --font-display: 'Pacifico', 'Brush Script MT', cursive;
+  --font-heading: var(--font-quicksand), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: var(--font-lora), Georgia, 'Times New Roman', serif;
+  --font-accent: var(--font-dancing-script), 'Brush Script MT', cursive;
+  --font-display: var(--font-pacifico), 'Brush Script MT', cursive;
 }
 
 /* Theme: Energetic */
@@ -71,10 +71,10 @@
   --theme-shadow: #FFFACD;
   --theme-hover: #FFE4C4;
   
-  --font-heading: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-body: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-accent: 'Pacifico', 'Brush Script MT', cursive;
-  --font-display: 'Pacifico', 'Brush Script MT', cursive;
+  --font-heading: var(--font-poppins), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: var(--font-open-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-accent: var(--font-pacifico), 'Brush Script MT', cursive;
+  --font-display: var(--font-pacifico), 'Brush Script MT', cursive;
 }
 
 /* Theme: Restorative */
@@ -92,10 +92,10 @@
   --theme-shadow: #F0F0FF;
   --theme-hover: #D8D8FF;
   
-  --font-heading: 'Merriweather', Georgia, 'Times New Roman', serif;
-  --font-body: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-accent: 'Playfair Display', Georgia, 'Times New Roman', serif;
-  --font-display: 'Pacifico', 'Brush Script MT', cursive;
+  --font-heading: var(--font-merriweather), Georgia, 'Times New Roman', serif;
+  --font-body: var(--font-source-sans-3), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-accent: var(--font-playfair-display), Georgia, 'Times New Roman', serif;
+  --font-display: var(--font-pacifico), 'Brush Script MT', cursive;
 }
 
 /* Base Styles */

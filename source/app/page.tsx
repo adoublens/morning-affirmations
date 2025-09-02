@@ -19,7 +19,7 @@ export default function Home() {
   useEffect(() => {
     // Set initial theme
     document.documentElement.setAttribute('data-theme', currentTheme);
-  }, []);
+  }, [currentTheme]);
 
   return (
     <div className="min-h-screen">
@@ -71,7 +71,7 @@ export default function Home() {
             <div className="card">
               <h3 className="text-xl font-semibold mb-4">Typography</h3>
               <h4 className="mb-2 font-heading">Heading Font (var(--font-heading))</h4>
-              <p className="text-sm mb-4 font-body">This demonstrates the theme's body font family.</p>
+              <p className="text-sm mb-4 font-body">This demonstrates the theme&apos;s body font family.</p>
               <span className="font-accent text-lg">Accent Font (var(--font-accent))</span>
               <br />
               <span className="font-display text-lg">Display Font (var(--font-display))</span>
