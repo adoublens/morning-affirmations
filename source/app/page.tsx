@@ -1,9 +1,9 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useTheme } from '@/components/theme/useTheme';
 
 export default function Home() {
-  const [currentTheme, setCurrentTheme] = useState('peaceful');
+  const { theme, setTheme, togglePersistence, toggleRandom, getRandomTheme } = useTheme();
 
   const themes = [
     { id: 'peaceful', name: 'Peaceful', description: 'Calm and serene' },
@@ -12,14 +12,13 @@ export default function Home() {
   ];
 
   const changeTheme = (themeId: string) => {
-    setCurrentTheme(themeId);
-    document.documentElement.setAttribute('data-theme', themeId);
+    setTheme(themeId);
   };
 
-  useEffect(() => {
-    // Set initial theme
-    document.documentElement.setAttribute('data-theme', currentTheme);
-  }, [currentTheme]);
+  const handleRandomTheme = () => {
+    const randomTheme = getRandomTheme();
+    setTheme(randomTheme.id);
+  };
 
   return (
     <div className="min-h-screen">
@@ -42,19 +41,47 @@ export default function Home() {
             Choose Your Theme
           </h2>
           <div className="flex flex-wrap justify-center gap-4">
-            {themes.map((theme) => (
+            {themes.map((themeItem) => (
               <button
-                key={theme.id}
-                onClick={() => changeTheme(theme.id)}
+                key={themeItem.id}
+                onClick={() => changeTheme(themeItem.id)}
                 className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
-                  currentTheme === theme.id
+                  theme.currentTheme === themeItem.id
                     ? 'bg-blue-600 text-white shadow-lg scale-105'
                     : 'bg-white text-gray-700 hover:bg-blue-50 border border-gray-200'
                 }`}
               >
-                {theme.name}
+                {themeItem.name}
               </button>
             ))}
+            <button
+              onClick={handleRandomTheme}
+              className="px-6 py-3 rounded-lg font-medium transition-all duration-300 bg-purple-600 text-white hover:bg-purple-700 border border-purple-600"
+            >
+              Random Theme
+            </button>
+          </div>
+          
+          {/* Theme Controls */}
+          <div className="flex flex-wrap justify-center gap-4 mt-4">
+            <label className="flex items-center gap-2 text-sm">
+              <input
+                type="checkbox"
+                checked={theme.isPersistent}
+                onChange={togglePersistence}
+                className="rounded"
+              />
+              Persist Theme
+            </label>
+            <label className="flex items-center gap-2 text-sm">
+              <input
+                type="checkbox"
+                checked={theme.isRandom}
+                onChange={toggleRandom}
+                className="rounded"
+              />
+              Random Mode
+            </label>
           </div>
         </div>
       </section>
@@ -129,7 +156,7 @@ export default function Home() {
           <div className="card max-w-4xl mx-auto">
             <div className="space-y-6">
               <div>
-                <h4 className="font-semibold mb-3">Current Theme: {currentTheme}</h4>
+                <h4 className="font-semibold mb-3">Current Theme: {theme.currentTheme}</h4>
                 <div className="space-y-4">
                   <div>
                     <h5 className="font-heading text-lg mb-2">Heading Font (var(--font-heading))</h5>
@@ -163,7 +190,7 @@ export default function Home() {
           <div className="card max-w-4xl mx-auto">
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <h4 className="font-semibold mb-3">Current Theme: {currentTheme}</h4>
+                <h4 className="font-semibold mb-3">Current Theme: {theme.currentTheme}</h4>
                 <div className="space-y-2 text-sm">
                   <div>Primary: <span className="font-mono text-blue-600">var(--theme-primary)</span></div>
                   <div>Background: <span className="font-mono text-blue-600">var(--theme-background)</span></div>

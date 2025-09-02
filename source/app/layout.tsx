@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Quicksand, Lora, Dancing_Script, Poppins, Open_Sans, Pacifico, Merriweather, Source_Sans_3, Playfair_Display } from "next/font/google";
+import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import "./globals.css";
 
 const quicksand = Quicksand({
@@ -75,7 +76,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${quicksand.variable} ${lora.variable} ${dancingScript.variable} ${poppins.variable} ${openSans.variable} ${pacifico.variable} ${merriweather.variable} ${sourceSans3.variable} ${playfairDisplay.variable} antialiased`}>
-        {children}
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
