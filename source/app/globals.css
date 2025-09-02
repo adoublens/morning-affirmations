@@ -3,16 +3,18 @@
 /* CSS Custom Properties for Theme System */
 :root {
   /* Default Theme Colors (Peaceful) */
-  --theme-primary: #667eea;
-  --theme-secondary: #764ba2;
-  --theme-accent: #f093fb;
-  --theme-background: #f8fafc;
-  --theme-surface: #ffffff;
-  --theme-text-primary: #1e293b;
-  --theme-text-secondary: #64748b;
-  --theme-text-accent: #667eea;
-  --theme-border: #e2e8f0;
-  --theme-shadow: rgba(0, 0, 0, 0.1);
+  --theme-primary: #E8F4F8;
+  --theme-secondary: #B8E6B8;
+  --theme-accent: #87CEEB;
+  --theme-background: #F0F8FF;
+  --theme-background-transition: #E6F3FF;
+  --theme-surface: #F8FBFF;
+  --theme-text-primary: #2F4F4F;
+  --theme-text-secondary: #5F7F7F;
+  --theme-text-accent: #4682B4;
+  --theme-border: #D1E7DD;
+  --theme-shadow: #E3F2FD;
+  --theme-hover: #B3D9FF;
   
   /* Font Families */
   --font-heading: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -35,16 +37,18 @@
 
 /* Theme: Peaceful */
 [data-theme="peaceful"] {
-  --theme-primary: #667eea;
-  --theme-secondary: #764ba2;
-  --theme-accent: #f093fb;
-  --theme-background: #f8fafc;
-  --theme-surface: #ffffff;
-  --theme-text-primary: #1e293b;
-  --theme-text-secondary: #64748b;
-  --theme-text-accent: #667eea;
-  --theme-border: #e2e8f0;
-  --theme-shadow: rgba(0, 0, 0, 0.1);
+  --theme-primary: #E8F4F8;
+  --theme-secondary: #B8E6B8;
+  --theme-accent: #87CEEB;
+  --theme-background: #F0F8FF;
+  --theme-background-transition: #E6F3FF;
+  --theme-surface: #F8FBFF;
+  --theme-text-primary: #2F4F4F;
+  --theme-text-secondary: #5F7F7F;
+  --theme-text-accent: #4682B4;
+  --theme-border: #D1E7DD;
+  --theme-shadow: #E3F2FD;
+  --theme-hover: #B3D9FF;
   
   --font-heading: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-body: 'Lora', Georgia, 'Times New Roman', serif;
@@ -54,16 +58,18 @@
 
 /* Theme: Energetic */
 [data-theme="energetic"] {
-  --theme-primary: #f59e0b;
-  --theme-secondary: #dc2626;
-  --theme-accent: #10b981;
-  --theme-background: #fef3c7;
-  --theme-surface: #ffffff;
-  --theme-text-primary: #92400e;
-  --theme-text-secondary: #b45309;
-  --theme-text-accent: #dc2626;
-  --theme-border: #fbbf24;
-  --theme-shadow: rgba(245, 158, 11, 0.2);
+  --theme-primary: #FFE4B5;
+  --theme-secondary: #FFB6C1;
+  --theme-accent: #FFD700;
+  --theme-background: #FFF8DC;
+  --theme-background-transition: #FFEFD5;
+  --theme-surface: #FFFEF7;
+  --theme-text-primary: #4A4A4A;
+  --theme-text-secondary: #696969;
+  --theme-text-accent: #DAA520;
+  --theme-border: #FFE4E1;
+  --theme-shadow: #FFFACD;
+  --theme-hover: #FFE4C4;
   
   --font-heading: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-body: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -73,16 +79,18 @@
 
 /* Theme: Restorative */
 [data-theme="restorative"] {
-  --theme-primary: #059669;
-  --theme-secondary: #0891b2;
-  --theme-accent: #7c3aed;
-  --theme-background: #ecfdf5;
-  --theme-surface: #ffffff;
-  --theme-text-primary: #064e3b;
-  --theme-text-secondary: #065f46;
-  --theme-text-accent: #059669;
-  --theme-border: #a7f3d0;
-  --theme-shadow: rgba(5, 150, 105, 0.2);
+  --theme-primary: #E6E6FA;
+  --theme-secondary: #DDA0DD;
+  --theme-accent: #9370DB;
+  --theme-background: #F8F8FF;
+  --theme-background-transition: #F0F0FF;
+  --theme-surface: #FAFAFF;
+  --theme-text-primary: #696969;
+  --theme-text-secondary: #808080;
+  --theme-text-accent: #6A5ACD;
+  --theme-border: #E0E0FF;
+  --theme-shadow: #F0F0FF;
+  --theme-hover: #D8D8FF;
   
   --font-heading: 'Merriweather', Georgia, 'Times New Roman', serif;
   --font-body: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -174,7 +182,7 @@ a:hover {
 }
 
 .btn-primary:hover {
-  background-color: var(--theme-secondary);
+  background-color: var(--theme-hover);
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
 }
@@ -203,7 +211,7 @@ a:hover {
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-xl);
+  box-shadow: 0 20px 25px -5px var(--theme-shadow), 0 10px 10px -5px var(--theme-shadow);
 }
 
 /* Animations */

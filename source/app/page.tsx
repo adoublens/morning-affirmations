@@ -82,16 +82,24 @@ export default function Home() {
               <h3 className="text-xl font-semibold mb-4">Color Palette</h3>
               <div className="space-y-2">
                 <div className="flex items-center gap-2">
-                  <div className="w-4 h-4 rounded bg-blue-500"></div>
+                  <div className="w-4 h-4 rounded" style={{backgroundColor: 'var(--theme-primary)'}}></div>
                   <span className="text-sm">Primary</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="w-4 h-4 rounded bg-purple-500"></div>
+                  <div className="w-4 h-4 rounded" style={{backgroundColor: 'var(--theme-secondary)'}}></div>
                   <span className="text-sm">Secondary</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="w-4 h-4 rounded bg-pink-500"></div>
+                  <div className="w-4 h-4 rounded" style={{backgroundColor: 'var(--theme-accent)'}}></div>
                   <span className="text-sm">Accent</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-4 h-4 rounded" style={{backgroundColor: 'var(--theme-background)'}}></div>
+                  <span className="text-sm">Background</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-4 h-4 rounded" style={{backgroundColor: 'var(--theme-surface)'}}></div>
+                  <span className="text-sm">Surface</span>
                 </div>
               </div>
             </div>
@@ -168,11 +176,14 @@ export default function Home() {
                 <ul className="space-y-1 text-sm">
                   {themes.map((theme) => (
                     <li key={theme.id} className="flex items-center gap-2">
-                      <span className={`w-3 h-3 rounded-full ${
-                        theme.id === 'peaceful' ? 'bg-blue-500' :
-                        theme.id === 'energetic' ? 'bg-orange-500' :
-                        'bg-green-500'
-                      }`}></span>
+                      <span 
+                        className="w-3 h-3 rounded-full"
+                        style={{
+                          backgroundColor: theme.id === 'peaceful' ? '#E8F4F8' :
+                                          theme.id === 'energetic' ? '#FFE4B5' :
+                                          '#E6E6FA'
+                        }}
+                      ></span>
                       {theme.name} - {theme.description}
                     </li>
                   ))}
