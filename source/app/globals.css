@@ -178,7 +178,7 @@ a:hover {
 
 .btn-primary {
   background-color: var(--theme-primary);
-  color: white;
+  color: var(--theme-text-primary);
 }
 
 .btn-primary:hover {
