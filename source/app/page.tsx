@@ -1,6 +1,31 @@
 'use client';
 
+import { useState } from 'react';
 import { useTheme } from '@/components/theme/useTheme';
+import { LoadingSpinner, LoadingDots, LoadingPulse, ErrorBoundary, ErrorFallback } from '@/components/ui';
+
+// Test component that can trigger an error for ErrorBoundary testing
+function ErrorTestComponent() {
+  const [shouldError, setShouldError] = useState(false);
+
+  if (shouldError) {
+    throw new Error('This is a test error triggered by the ErrorTestComponent');
+  }
+
+  return (
+    <div className="space-y-4">
+      <p className="text-sm text-gray-600">
+        Click the button below to trigger an error and test the ErrorBoundary component.
+      </p>
+      <button
+        onClick={() => setShouldError(true)}
+        className="btn btn-secondary w-full"
+      >
+        Trigger Error
+      </button>
+    </div>
+  );
+}
 
 export default function Home() {
   const { theme, setTheme, togglePersistence, toggleRandom, getRandomTheme } = useTheme();
@@ -216,6 +241,49 @@ export default function Home() {
                   ))}
                 </ul>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* UI Components Test Section */}
+      <section className="section bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-2xl font-semibold text-center mb-8">
+            UI Components Test
+          </h2>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Loading Spinners Test */}
+            <div className="card">
+              <h3 className="text-xl font-semibold mb-4">Loading Spinners</h3>
+              <div className="space-y-4">
+                <LoadingSpinner size="sm" text="Small spinner" />
+                <LoadingSpinner size="md" text="Medium spinner" />
+                <LoadingSpinner size="lg" text="Large spinner" />
+                <LoadingDots text="Loading dots" />
+                <LoadingPulse text="Pulse animation" />
+              </div>
+            </div>
+
+            {/* Error Boundary Test */}
+            <div className="card">
+              <h3 className="text-xl font-semibold mb-4">Error Boundary Test</h3>
+              <ErrorBoundary>
+                <ErrorTestComponent />
+              </ErrorBoundary>
+            </div>
+
+            {/* Error Fallback Test */}
+            <div className="card">
+              <h3 className="text-xl font-semibold mb-4">Error Fallback Test</h3>
+              <ErrorFallback
+                error={new Error('This is a test error for demonstration')}
+                title="Test Error"
+                message="This is a demonstration of the error fallback component."
+                showDetails={true}
+                resetError={() => console.log('Error reset clicked')}
+              />
             </div>
           </div>
         </div>
