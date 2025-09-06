@@ -1,0 +1,88 @@
+{
+  "themes": [
+    {
+      "id": "peaceful",
+      "name": "Peaceful",
+      "description": "Relaxed, waking up slowly and enjoying the moment, well rested, looking for quiet, resting",
+      "colors": {
+        "primary": "#E8F4F8",
+        "secondary": "#B8E6B8",
+        "accent": "#87CEEB",
+        "text": "#2F4F4F",
+        "background": "#F0F8FF",
+        "backgroundTransition": "#E6F3FF"
+      },
+      "fonts": {
+        "primary": "Quicksand",
+        "secondary": "Lora",
+        "accent": "Dancing Script"
+      },
+      "fontWeights": {
+        "primary": "300",
+        "secondary": "400",
+        "accent": "500"
+      },
+      "transitions": {
+        "backgroundDuration": "3000",
+        "backgroundEasing": "ease-in-out"
+      },
+      "active": true
+    },
+    {
+      "id": "energetic",
+      "name": "Energetic",
+      "description": "Restorative, waking up with energy and ready to start the day, feeling creative, doing",
+      "colors": {
+        "primary": "#FFE4B5",
+        "secondary": "#FFB6C1",
+        "accent": "#FFD700",
+        "text": "#4A4A4A",
+        "background": "#FFF8DC",
+        "backgroundTransition": "#FFEFD5"
+      },
+      "fonts": {
+        "primary": "Poppins",
+        "secondary": "Open Sans",
+        "accent": "Pacifico"
+      },
+      "fontWeights": {
+        "primary": "600",
+        "secondary": "400",
+        "accent": "400"
+      },
+      "transitions": {
+        "backgroundDuration": "2500",
+        "backgroundEasing": "ease-out"
+      },
+      "active": true
+    },
+    {
+      "id": "restorative",
+      "name": "Restorative",
+      "description": "Contemplative, waking up with low energy or tired at end of day; looking for motivation, thinking",
+      "colors": {
+        "primary": "#E6E6FA",
+        "secondary": "#DDA0DD",
+        "accent": "#9370DB",
+        "text": "#696969",
+        "background": "#F8F8FF",
+        "backgroundTransition": "#F0F0FF"
+      },
+      "fonts": {
+        "primary": "Merriweather",
+        "secondary": "Source Sans Pro",
+        "accent": "Playfair Display"
+      },
+      "fontWeights": {
+        "primary": "400",
+        "secondary": "300",
+        "accent": "600"
+      },
+      "transitions": {
+        "backgroundDuration": "4000",
+        "backgroundEasing": "ease-in"
+      },
+      "active": true
+    }
+  ]
+}

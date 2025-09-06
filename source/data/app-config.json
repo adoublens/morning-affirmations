@@ -1,0 +1,24 @@
+{
+  "app": {
+    "name": "Morning Affirmations",
+    "version": "1.0.0",
+    "description": "Daily affirmations and wellness resources for mental and physical health"
+  },
+  "features": {
+    "themeSwitching": true,
+    "persistentThemes": true,
+    "randomization": true,
+    "offlineMode": false
+  },
+  "ui": {
+    "defaultTheme": "peaceful",
+    "autoThemeSwitch": false,
+    "animationSpeed": "normal",
+    "showThumbnails": true,
+    "showTimestamps": false
+  },
+  "performance": {
+    "maxRetries": 3,
+    "timeout": 5000
+  }
+}
