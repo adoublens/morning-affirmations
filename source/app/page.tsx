@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useTheme } from '@/components/theme/useTheme';
 import { LoadingSpinner, LoadingDots, LoadingPulse, ErrorBoundary, ErrorFallback } from '@/components/ui';
 import { Header } from '@/components/layout';
+import { ThemeContextTest } from '@/components/layout/ThemeContextTest';
 
 // Test component that can trigger an error for ErrorBoundary testing
 function ErrorTestComponent() {
@@ -231,6 +232,9 @@ export default function Home() {
           <p>&copy; 2024 Morning Affirmations. Built with Next.js and Tailwind CSS.</p>
         </div>
       </footer>
+
+      {/* Theme Context Test (temporary) */}
+      <ThemeContextTest />
     </div>
   );
 }
