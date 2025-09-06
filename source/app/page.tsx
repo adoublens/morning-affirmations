@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useTheme } from '@/components/theme/useTheme';
 import { LoadingSpinner, LoadingDots, LoadingPulse, ErrorBoundary, ErrorFallback } from '@/components/ui';
+import { Header } from '@/components/layout';
 
 // Test component that can trigger an error for ErrorBoundary testing
 function ErrorTestComponent() {
@@ -28,86 +29,22 @@ function ErrorTestComponent() {
 }
 
 export default function Home() {
-  const { theme, setTheme, togglePersistence, toggleRandom, getRandomTheme } = useTheme();
-
-  const themes = [
-    { id: 'peaceful', name: 'Peaceful', description: 'Calm and serene' },
-    { id: 'energetic', name: 'Energetic', description: 'Vibrant and dynamic' },
-    { id: 'restorative', name: 'Restorative', description: 'Healing and nurturing' }
-  ];
-
-  const changeTheme = (themeId: string) => {
-    setTheme(themeId);
-  };
-
-  const handleRandomTheme = () => {
-    const randomTheme = getRandomTheme();
-    setTheme(randomTheme.id);
-  };
+  const { theme } = useTheme();
 
   return (
     <div className="min-h-screen">
       {/* Header */}
-      <header className="bg-white shadow-sm border-b">
-        <div className="container mx-auto px-4 py-6">
-          <h1 className="text-4xl font-bold text-center text-gradient">
-            Morning Affirmations
-          </h1>
-          <p className="text-center text-lg mt-2 text-gray-600">
-            Start your day with positivity and purpose
-          </p>
-        </div>
-      </header>
+      <Header showThemeSwitcher={true} showNavigation={false} />
 
-      {/* Theme Switcher */}
-      <section className="section bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-2xl font-semibold text-center mb-6">
-            Choose Your Theme
+      {/* Welcome Section */}
+      <section className="section bg-[var(--theme-background)]">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--theme-text-primary)] mb-4">
+            Welcome to Your Morning
           </h2>
-          <div className="flex flex-wrap justify-center gap-4">
-            {themes.map((themeItem) => (
-              <button
-                key={themeItem.id}
-                onClick={() => changeTheme(themeItem.id)}
-                className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
-                  theme.currentTheme === themeItem.id
-                    ? 'bg-blue-600 text-white shadow-lg scale-105'
-                    : 'bg-white text-gray-700 hover:bg-blue-50 border border-gray-200'
-                }`}
-              >
-                {themeItem.name}
-              </button>
-            ))}
-            <button
-              onClick={handleRandomTheme}
-              className="px-6 py-3 rounded-lg font-medium transition-all duration-300 bg-purple-600 text-white hover:bg-purple-700 border border-purple-600"
-            >
-              Random Theme
-            </button>
-          </div>
-          
-          {/* Theme Controls */}
-          <div className="flex flex-wrap justify-center gap-4 mt-4">
-            <label className="flex items-center gap-2 text-sm">
-              <input
-                type="checkbox"
-                checked={theme.isPersistent}
-                onChange={togglePersistence}
-                className="rounded"
-              />
-              Persist Theme
-            </label>
-            <label className="flex items-center gap-2 text-sm">
-              <input
-                type="checkbox"
-                checked={theme.isRandom}
-                onChange={toggleRandom}
-                className="rounded"
-              />
-              Random Mode
-            </label>
-          </div>
+          <p className="text-lg md:text-xl text-[var(--theme-text-secondary)] max-w-2xl mx-auto">
+            Start your day with intention, positivity, and purpose. Choose your theme above to customize your experience.
+          </p>
         </div>
       </section>
 
@@ -226,19 +163,18 @@ export default function Home() {
               <div>
                 <h4 className="font-semibold mb-3">Available Themes</h4>
                 <ul className="space-y-1 text-sm">
-                  {themes.map((theme) => (
-                    <li key={theme.id} className="flex items-center gap-2">
-                      <span 
-                        className="w-3 h-3 rounded-full"
-                        style={{
-                          backgroundColor: theme.id === 'peaceful' ? '#E8F4F8' :
-                                          theme.id === 'energetic' ? '#FFE4B5' :
-                                          '#E6E6FA'
-                        }}
-                      ></span>
-                      {theme.name} - {theme.description}
-                    </li>
-                  ))}
+                  <li className="flex items-center gap-2">
+                    <span className="w-3 h-3 rounded-full bg-[#E8F4F8]"></span>
+                    Peaceful - Calm and serene
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-3 h-3 rounded-full bg-[#FFE4B5]"></span>
+                    Energetic - Vibrant and dynamic
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-3 h-3 rounded-full bg-[#E6E6FA]"></span>
+                    Restorative - Healing and nurturing
+                  </li>
                 </ul>
               </div>
             </div>

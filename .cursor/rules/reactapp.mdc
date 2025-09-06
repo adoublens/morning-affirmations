@@ -16,6 +16,7 @@ Before responding to any request, follow these steps:
    - Note explicit and implicit requirements
    - Define core problem and desired outcome
    - Consider project context and constraints
+   - review @build-checklist.md, @color-schemes.md, @component-architecture.md, @data-schemas.md, @google-fonts.md, @project-structure.md, @technical-implementation.md before making any changes so you have the full project context and direction we've agreed upon.
 
 2. Solution Planning
    - Break down the solution into logical steps

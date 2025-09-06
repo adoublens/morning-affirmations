@@ -196,6 +196,18 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
     }
   }, []);
 
+  // Apply random theme when random mode is enabled and no specific theme is persisted
+  useEffect(() => {
+    if (state.isRandom && !state.isPersistent && state.availableThemes.length > 0) {
+      const activeThemes = state.availableThemes.filter(theme => theme.isActive);
+      if (activeThemes.length > 0) {
+        const randomIndex = Math.floor(Math.random() * activeThemes.length);
+        const randomTheme = activeThemes[randomIndex];
+        dispatch({ type: 'SET_THEME', payload: randomTheme.id });
+      }
+    }
+  }, [state.isRandom, state.isPersistent, state.availableThemes]);
+
   // Apply theme to document
   useEffect(() => {
     if (typeof document !== 'undefined') {
@@ -205,10 +217,19 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
 
   // Save to localStorage when state changes
   useEffect(() => {
-    if (typeof window !== 'undefined' && state.isPersistent) {
-      localStorage.setItem(STORAGE_KEYS.CURRENT_THEME, state.currentTheme);
-      localStorage.setItem(STORAGE_KEYS.IS_PERSISTENT, JSON.stringify(state.isPersistent));
+    if (typeof window !== 'undefined') {
+      // Always save random mode setting independently
       localStorage.setItem(STORAGE_KEYS.IS_RANDOM, JSON.stringify(state.isRandom));
+      
+      // Only save theme and persistence when persistence is enabled
+      if (state.isPersistent) {
+        localStorage.setItem(STORAGE_KEYS.CURRENT_THEME, state.currentTheme);
+        localStorage.setItem(STORAGE_KEYS.IS_PERSISTENT, JSON.stringify(state.isPersistent));
+      } else {
+        // Clear theme persistence when disabled
+        localStorage.removeItem(STORAGE_KEYS.CURRENT_THEME);
+        localStorage.removeItem(STORAGE_KEYS.IS_PERSISTENT);
+      }
     }
   }, [state.currentTheme, state.isPersistent, state.isRandom]);
 
