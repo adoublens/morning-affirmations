@@ -75,11 +75,12 @@ export class ContentSelector {
    */
   selectVideos(videos: Video[], theme: string): Map<string, Video> {
     const themeVideos = videos.filter(video => 
-      video.themes && video.themes.includes(theme as Theme)
+      (video.theme && video.theme.includes(theme as Theme)) || 
+      (video.themes && video.themes.includes(theme as Theme))
     );
     
     const selectedVideos = new Map<string, Video>();
-    const categories = ['affirmations', 'bible', 'yoga', 'meditation', 'artsy-creative'];
+    const categories = ['motivation', 'inspiration', 'yoga', 'meditation', 'wellness'];
     
     categories.forEach(category => {
       const categoryVideos = themeVideos.filter(video => video.category === category);
