@@ -14,6 +14,7 @@ import { AffirmationsDisplayTest } from '@/components/content/AffirmationsDispla
 import { VideoGrid } from '@/components/content/VideoGrid';
 import { VideoGridTest } from '@/components/content/VideoGridTest';
 import { ErrorTestComponent } from '@/components/content/ErrorTestComponent';
+import { ThemeSwitcher } from '@/components/theme/ThemeSwitcher';
 
 // Mock welcome message data for testing
 const mockWelcomeData = {
@@ -381,10 +382,10 @@ export default function Home() {
       {/* Welcome Section */}
       <section className="section bg-[var(--theme-background)]">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-6xl font-bold text-center mb-6 text-[var(--theme-text-primary)]">
+          <h1 className="text-4xl md:text-6xl font-bold text-center mb-6 text-[var(--theme-text-primary)]" style={{ fontFamily: 'var(--font-heading)' }}>
             Morning Affirmations
           </h1>
-          <p className="text-xl md:text-2xl text-center text-[var(--theme-text-secondary)] mb-8">
+          <p className="text-xl md:text-2xl text-center text-[var(--theme-text-secondary)] mb-8" style={{ fontFamily: 'var(--font-body)' }}>
             Start your day with intention and purpose
           </p>
         </div>
@@ -399,20 +400,10 @@ export default function Home() {
       {/* Video Grid Component */}
       <VideoGrid videos={mockVideos} />
 
-      {/* Theme Preview Section */}
+      {/* Theme Switcher Section */}
       <section className="section bg-[var(--theme-primary)]">
         <div className="container mx-auto px-4">
-          <h2 className="text-2xl font-semibold text-center mb-8 text-[var(--theme-text-primary)]">
-            Current Theme: {theme.currentTheme}
-          </h2>
-          <div className="max-w-2xl mx-auto text-center">
-            <p className="text-lg text-[var(--theme-text-secondary)] mb-4">
-              Theme persistence: {theme.isPersistent ? 'Enabled' : 'Disabled'}
-            </p>
-            <p className="text-lg text-[var(--theme-text-secondary)] mb-4">
-              Random mode: {theme.isRandom ? 'Enabled' : 'Disabled'}
-            </p>
-          </div>
+          <ThemeSwitcher />
         </div>
       </section>
 

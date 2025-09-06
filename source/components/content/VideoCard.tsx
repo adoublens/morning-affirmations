@@ -39,7 +39,7 @@ export function VideoCard({ video, category }: VideoCardProps) {
     <div className="video-card bg-[var(--theme-primary)] border-2 border-[var(--theme-secondary)] rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
       {/* Category Badge */}
       <div className="mb-4">
-        <div className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium border ${getCategoryColor(category)}`}>
+        <div className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium border ${getCategoryColor(category)}`} style={{ fontFamily: 'var(--font-accent)' }}>
           <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
             <path fillRule="evenodd" d={getCategoryIcon(category)} clipRule="evenodd" />
           </svg>

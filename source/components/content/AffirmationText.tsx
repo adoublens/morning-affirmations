@@ -17,7 +17,7 @@ export function AffirmationText({ text, category }: AffirmationTextProps) {
         </div>
         
         {/* Main text */}
-        <p className="text-2xl md:text-3xl lg:text-4xl leading-relaxed font-medium text-[var(--theme-text-primary)] relative z-10">
+        <p className="text-2xl md:text-3xl lg:text-4xl leading-relaxed font-medium text-[var(--theme-text-primary)] relative z-10" style={{ fontFamily: 'var(--font-body)' }}>
           {text}
         </p>
         

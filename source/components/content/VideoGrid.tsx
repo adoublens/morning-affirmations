@@ -85,10 +85,10 @@ export function VideoGrid({ videos }: VideoGridProps) {
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-[var(--theme-text-primary)] mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--theme-text-primary)] mb-4" style={{ fontFamily: 'var(--font-heading)' }}>
               Today's Resources
             </h2>
-            <p className="text-lg text-[var(--theme-text-secondary)]">
+            <p className="text-lg text-[var(--theme-text-secondary)]" style={{ fontFamily: 'var(--font-body)' }}>
               Curated videos to inspire and guide your journey
             </p>
           </div>

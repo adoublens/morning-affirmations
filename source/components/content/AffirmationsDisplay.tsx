@@ -8,20 +8,7 @@ import { AffirmationText } from './AffirmationText';
 import { AffirmationAuthor } from './AffirmationAuthor';
 import { AffirmationCategory } from './AffirmationCategory';
 import { LoadingSpinner } from '@/components/ui/LoadingSpinner';
-
-interface Affirmation {
-  id: string;
-  text: string;
-  author: string;
-  category: string;
-  theme: string[];
-  tags: string[];
-  image?: {
-    filename: string;
-    alt: string;
-  };
-  active: boolean;
-}
+import { Affirmation } from '@/types/content';
 
 interface AffirmationsDisplayProps {
   affirmations: Affirmation[];
@@ -119,10 +106,10 @@ export function AffirmationsDisplay({ affirmations }: AffirmationsDisplayProps) 
         <div className="max-w-4xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-[var(--theme-text-primary)] mb-2">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--theme-text-primary)] mb-2" style={{ fontFamily: 'var(--font-heading)' }}>
               Today's Affirmation
             </h2>
-            <p className="text-lg text-[var(--theme-text-secondary)]">
+            <p className="text-lg text-[var(--theme-text-secondary)]" style={{ fontFamily: 'var(--font-body)' }}>
               A gentle reminder for your journey
             </p>
           </div>
@@ -131,9 +118,9 @@ export function AffirmationsDisplay({ affirmations }: AffirmationsDisplayProps) 
           <div className="bg-[var(--theme-primary)] border-2 border-[var(--theme-secondary)] rounded-2xl p-8 md:p-12 shadow-lg">
             <div className="text-center space-y-8">
               {/* Affirmation Image */}
-              {currentAffirmation.image && (
+              {currentAffirmation.imageUrl && (
                 <AffirmationImage 
-                  image={currentAffirmation.image}
+                  image={{ filename: currentAffirmation.imageUrl, alt: `Affirmation ${currentAffirmation.id}` }}
                   affirmationId={currentAffirmation.id}
                 />
               )}
