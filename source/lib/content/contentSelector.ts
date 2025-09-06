@@ -40,7 +40,7 @@ export class ContentSelector {
   selectAffirmation(affirmations: Affirmation[], theme: string): Affirmation {
     // Filter affirmations by theme
     const themeAffirmations = affirmations.filter(
-      aff => aff.themes && aff.themes.includes(theme as Theme)
+      aff => aff.theme && aff.theme.includes(theme as Theme)
     );
     
     if (themeAffirmations.length === 0) {
@@ -74,13 +74,12 @@ export class ContentSelector {
    * @returns Map of category to selected video
    */
   selectVideos(videos: Video[], theme: string): Map<string, Video> {
-    const themeVideos = videos.filter(video => 
-      (video.theme && video.theme.includes(theme as Theme)) || 
-      (video.themes && video.themes.includes(theme as Theme))
+    const themeVideos = videos.filter(video =>
+      video.theme && video.theme.includes(theme as Theme)
     );
     
     const selectedVideos = new Map<string, Video>();
-    const categories = ['motivation', 'inspiration', 'yoga', 'meditation', 'wellness'];
+    const categories = ['yoga', 'bible', 'artsy-creative'];
     
     categories.forEach(category => {
       const categoryVideos = themeVideos.filter(video => video.category === category);

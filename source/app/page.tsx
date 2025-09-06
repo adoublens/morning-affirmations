@@ -293,7 +293,7 @@ const mockVideos = [
     duration: '10:30',
     creator: 'Lavendaire',
     creatorChannel: 'https://www.youtube.com/@Lavendaire',
-    category: 'motivation' as const,
+    category: 'artsy-creative' as const,
     theme: ['energetic'],
     mood: 'energetic' as const,
     useCount: 0,
@@ -325,26 +325,6 @@ const mockVideos = [
     active: true
   },
   {
-    id: 'video-003',
-    title: '15 min Morning Yin Yoga Stretch - NO PROPS (with Luna!)',
-    description: 'A gentle morning yoga stretch perfect for starting your day with energy and flexibility',
-    url: 'https://www.youtube.com/watch?v=-JuN7kZbbvg',
-    thumbnailUrl: '/images/videos/-JuN7kZbbvg-thumbnail.jpg',
-    duration: '15:00',
-    creator: 'Yoga with Kassandra',
-    creatorChannel: 'https://www.youtube.com/@UCX32D3gKXENrhOXdZjWWtMA',
-    category: 'yoga' as const,
-    theme: ['energetic'],
-    mood: 'energetic' as const,
-    useCount: 0,
-    thumbnail: {
-      filename: '-JuN7kZbbvg-thumbnail.jpg',
-      alt: 'Thumbnail for 15 min Morning Yin Yoga Stretch - NO PROPS (with Luna!)'
-    },
-    tags: ['yoga with kassandra', 'full body stretch yoga', 'static stretching', 'morning yoga', 'yin yoga'],
-    active: true
-  },
-  {
     id: 'video-004',
     title: "#kinetic #artist Damien Bénéteau's hypnotic #sculpture - Spherical Variations - on display at HOFA",
     description: 'A mesmerizing kinetic sculpture that brings art and movement together for inspiration',
@@ -353,7 +333,7 @@ const mockVideos = [
     duration: '2:30',
     creator: 'HOFA Gallery',
     creatorChannel: 'https://www.youtube.com/@UCS323lnQprTegOIx8YNLcZA',
-    category: 'wellness' as const,
+    category: 'bible' as const,
     theme: ['peaceful', 'energetic', 'restorative'],
     mood: 'peaceful' as const,
     useCount: 0,
@@ -364,26 +344,6 @@ const mockVideos = [
     tags: ['kinetic art', 'sculpture', 'inspiration', 'creativity', 'art'],
     active: true
   },
-  {
-    id: 'video-005',
-    title: '20 min Morning Yin Yoga - Wake up & STRETCH! (NO PROPS)',
-    description: 'A gentle morning yoga practice to wake up and stretch your body without props',
-    url: 'https://www.youtube.com/watch?v=0StlPV3X_2I',
-    thumbnailUrl: '/images/videos/0StlPV3X_2I-thumbnail.jpg',
-    duration: '20:00',
-    creator: 'Yoga with Kassandra',
-    creatorChannel: 'https://www.youtube.com/@UCX32D3gKXENrhOXdZjWWtMA',
-    category: 'yoga' as const,
-    theme: ['peaceful'],
-    mood: 'peaceful' as const,
-    useCount: 0,
-    thumbnail: {
-      filename: '0StlPV3X_2I-thumbnail.jpg',
-      alt: 'Thumbnail for 20 min Morning Yin Yoga - Wake up & STRETCH! (NO PROPS)'
-    },
-    tags: ['yoga with kassandra', 'static stretching', 'yin yoga', 'morning yoga', 'yoga for beginners'],
-    active: true
-  }
 ];
 
 export default function Home() {

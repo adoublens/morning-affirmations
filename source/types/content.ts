@@ -39,16 +39,9 @@ export interface Video {
 }
 
 export type VideoCategory = 
-  | 'meditation'
   | 'yoga'
-  | 'motivation'
-  | 'mindfulness'
-  | 'breathing'
-  | 'stretching'
-  | 'workout'
-  | 'relaxation'
-  | 'inspiration'
-  | 'wellness';
+  | 'bible'
+  | 'artsy-creative';
 
 export interface WelcomeMessage {
   id: string;
