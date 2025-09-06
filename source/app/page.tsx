@@ -7,6 +7,206 @@ import { Header } from '@/components/layout';
 import { ThemeContextTest } from '@/components/layout/ThemeContextTest';
 import { ContentSelectorTest } from '@/components/content/ContentSelectorTest';
 import { ClientDataFetcher } from '@/components/content/ClientDataFetcher';
+import { WelcomeMessage } from '@/components/content/WelcomeMessage';
+import { WelcomeMessageTest } from '@/components/content/WelcomeMessageTest';
+
+// Mock welcome message data for testing
+const mockWelcomeData = {
+  themes: {
+    peaceful: {
+      timeRanges: [
+        {
+          id: 'early-morning',
+          startTime: '05:00',
+          endTime: '08:59',
+          messages: [
+            'Good morning, gentle soul',
+            'Welcome to a peaceful new day',
+            'Rise slowly, breathe deeply',
+            'Good morning, peaceful one',
+            'Hello, tranquil morning'
+          ]
+        },
+        {
+          id: 'morning',
+          startTime: '09:00',
+          endTime: '11:59',
+          messages: [
+            'Good morning, peaceful soul',
+            'Hello, serene morning',
+            'Morning peace to you',
+            'Good morning, calm spirit',
+            'Welcome to your peaceful morning'
+          ]
+        },
+        {
+          id: 'afternoon',
+          startTime: '12:00',
+          endTime: '16:59',
+          messages: [
+            'Good afternoon, peaceful one',
+            'Hello, tranquil afternoon',
+            'Afternoon peace to you',
+            'Good afternoon, serene soul',
+            'Welcome to your peaceful afternoon'
+          ]
+        },
+        {
+          id: 'evening',
+          startTime: '17:00',
+          endTime: '20:59',
+          messages: [
+            'Good evening, peaceful soul',
+            'Hello, gentle evening',
+            'Evening peace to you',
+            'Good evening, tranquil one',
+            'Welcome to your peaceful evening'
+          ]
+        },
+        {
+          id: 'night',
+          startTime: '21:00',
+          endTime: '04:59',
+          messages: [
+            'Good night, peaceful one',
+            'Hello, gentle night',
+            'Night peace to you',
+            'Good night, serene soul',
+            'Welcome to your peaceful night'
+          ]
+        }
+      ]
+    },
+    energetic: {
+      timeRanges: [
+        {
+          id: 'early-morning',
+          startTime: '05:00',
+          endTime: '08:59',
+          messages: [
+            'Good morning early bird!',
+            'Rise and shine, beautiful soul!',
+            'Welcome to a brand new day!',
+            'Good morning, world!',
+            'Hello, sunshine!'
+          ]
+        },
+        {
+          id: 'morning',
+          startTime: '09:00',
+          endTime: '11:59',
+          messages: [
+            'Good morning!',
+            'Hello, beautiful day!',
+            'Morning blessings to you!',
+            'Good morning, amazing person!',
+            'Welcome to your morning!'
+          ]
+        },
+        {
+          id: 'afternoon',
+          startTime: '12:00',
+          endTime: '16:59',
+          messages: [
+            'Good afternoon!',
+            'Hello, afternoon!',
+            'Afternoon blessings!',
+            'Good afternoon, wonderful soul!',
+            'Welcome to your afternoon!'
+          ]
+        },
+        {
+          id: 'evening',
+          startTime: '17:00',
+          endTime: '20:59',
+          messages: [
+            'Good evening!',
+            'Hello, evening!',
+            'Evening blessings!',
+            'Good evening, amazing soul!',
+            'Welcome to your evening!'
+          ]
+        },
+        {
+          id: 'night',
+          startTime: '21:00',
+          endTime: '04:59',
+          messages: [
+            'Good night!',
+            'Hello, night!',
+            'Night blessings!',
+            'Good night, wonderful soul!',
+            'Welcome to your night!'
+          ]
+        }
+      ]
+    },
+    restorative: {
+      timeRanges: [
+        {
+          id: 'early-morning',
+          startTime: '05:00',
+          endTime: '08:59',
+          messages: [
+            'Good morning, thoughtful one',
+            'Welcome to a contemplative day',
+            'Rise with purpose, gentle soul',
+            'Good morning, reflective spirit',
+            'Hello, mindful morning'
+          ]
+        },
+        {
+          id: 'morning',
+          startTime: '09:00',
+          endTime: '11:59',
+          messages: [
+            'Good morning, contemplative soul',
+            'Hello, thoughtful morning',
+            'Morning reflection to you',
+            'Good morning, mindful one',
+            'Welcome to your restorative morning'
+          ]
+        },
+        {
+          id: 'afternoon',
+          startTime: '12:00',
+          endTime: '16:59',
+          messages: [
+            'Good afternoon, thoughtful one',
+            'Hello, contemplative afternoon',
+            'Afternoon reflection to you',
+            'Good afternoon, mindful soul',
+            'Welcome to your restorative afternoon'
+          ]
+        },
+        {
+          id: 'evening',
+          startTime: '17:00',
+          endTime: '20:59',
+          messages: [
+            'Good evening, contemplative soul',
+            'Hello, thoughtful evening',
+            'Evening reflection to you',
+            'Good evening, mindful one',
+            'Welcome to your restorative evening'
+          ]
+        },
+        {
+          id: 'night',
+          startTime: '21:00',
+          endTime: '04:59',
+          messages: [
+            'Good night, thoughtful one',
+            'Hello, contemplative night',
+            'Night reflection to you',
+            'Good night, mindful soul',
+            'Welcome to your restorative night'
+          ]
+        }
+      ]
+    }
+  }
+};
 
 // Test component that can trigger an error for ErrorBoundary testing
 function ErrorTestComponent() {
@@ -51,6 +251,9 @@ export default function Home() {
           </p>
         </div>
       </section>
+
+      {/* Welcome Message Component */}
+      <WelcomeMessage data={mockWelcomeData} />
 
       {/* Theme Preview Section */}
       <section className="section bg-[var(--theme-primary)]">
@@ -123,8 +326,18 @@ export default function Home() {
       {/* Data Fetching Test Section */}
       <ClientDataFetcher />
 
-      {/* Content Selector Test Section */}
+      {/* Welcome Message Test Section */}
       <section className="section bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-2xl font-semibold text-center mb-8">
+            Welcome Message Test
+          </h2>
+          <WelcomeMessageTest />
+        </div>
+      </section>
+
+      {/* Content Selector Test Section */}
+      <section className="section bg-gray-100">
         <div className="container mx-auto px-4">
           <h2 className="text-2xl font-semibold text-center mb-8">
             Content Selection Test

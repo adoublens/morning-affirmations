@@ -98,11 +98,11 @@
 - [x] Test data loading from data/ directory ✅ **Test component created and integrated**
 
 #### **Welcome Message Component**
-- [ ] Create `components/content/WelcomeMessage.tsx`
-- [ ] Implement time-based message selection
-- [ ] Add theme-specific content filtering
-- [ ] Test different time ranges and themes
-- [ ] Verify message updates on theme change
+- [x] Create `components/content/WelcomeMessage.tsx` ✅ **Complete with time-based selection**
+- [x] Implement time-based message selection ✅ **Complete with overnight range handling**
+- [x] Add theme-specific content filtering ✅ **Complete with ContentSelector integration**
+- [x] Test different time ranges and themes ✅ **Test component created and integrated**
+- [x] Verify message updates on theme change ✅ **Real-time theme switching implemented**
 
 #### **Affirmations Display**
 - [ ] Create `components/content/AffirmationsDisplay.tsx`
@@ -244,11 +244,11 @@
 ### **Week 3 Progress: Content Components**
 - [x] Content utilities: **5/5 tasks completed** ✅ **COMPLETED**
 - [x] Data fetching: **4/4 tasks completed** ✅ **COMPLETED**
-- [ ] Welcome message: ___/5 tasks completed
+- [x] Welcome message: **5/5 tasks completed** ✅ **COMPLETED**
 - [ ] Affirmations display: ___/8 tasks completed
 - [ ] Video components: ___/8 tasks completed
 
-**Week 3 Total: **9/30 tasks completed**
+**Week 3 Total: **14/30 tasks completed**
 
 ### **Week 4 Progress: Integration & Polish**
 - [ ] Theme switcher: ___/7 tasks completed
@@ -274,8 +274,8 @@
 ## 🎯 Overall Project Progress
 
 **Total Tasks: 143**
-**Completed: **60/143**
-**Progress: **42.0%**
+**Completed: **65/143**
+**Progress: **45.5%**
 
 ---
 

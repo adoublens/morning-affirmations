@@ -104,33 +104,62 @@ export class ContentSelector {
 
   /**
    * Select welcome message based on time and theme
-   * @param messages - Welcome message data structure
+   * @param messages - Welcome message data structure (array of theme objects)
    * @param theme - Current theme ID
    * @param currentTime - Current date/time
    * @returns Selected welcome message
    */
-  selectWelcomeMessage(messages: WelcomeMessage[], theme: string, currentTime: Date): string {
-    // Filter messages by theme
-    const themeMessages = messages.filter(msg => 
+  selectWelcomeMessage(messages: any[], theme: string, currentTime: Date): string {
+    // Find the theme data
+    const themeData = messages.find(msg => 
       msg.theme.includes(theme as Theme) && msg.isActive
     );
     
-    if (themeMessages.length === 0) {
+    if (!themeData || !themeData.timeRanges) {
       return 'Good morning!';
     }
     
     const hour = currentTime.getHours();
-    const timeRange = this.getTimeRange(hour);
+    const minute = currentTime.getMinutes();
+    const currentTimeMinutes = hour * 60 + minute;
     
-    // Find messages that match the current time range
-    const timeRangeMessages = themeMessages.filter(msg => {
-      const startHour = parseInt(msg.timeRange.start.split(':')[0]);
-      const endHour = parseInt(msg.timeRange.end.split(':')[0]);
-      return hour >= startHour && hour < endHour;
+    // Find the appropriate time range
+    const activeTimeRange = themeData.timeRanges.find((range: any) => {
+      const [startHour, startMinute] = range.startTime.split(':').map(Number);
+      const [endHour, endMinute] = range.endTime.split(':').map(Number);
+      
+      const startTimeMinutes = startHour * 60 + startMinute;
+      const endTimeMinutes = endHour * 60 + endMinute;
+      
+      // Handle overnight ranges (e.g., 21:00 to 04:59)
+      if (startTimeMinutes > endTimeMinutes) {
+        return currentTimeMinutes >= startTimeMinutes || currentTimeMinutes <= endTimeMinutes;
+      }
+      
+      return currentTimeMinutes >= startTimeMinutes && currentTimeMinutes <= endTimeMinutes;
     });
     
-    if (timeRangeMessages.length > 0) {
-      return this.selectRandom(timeRangeMessages).text;
+    if (activeTimeRange && activeTimeRange.messages && activeTimeRange.messages.length > 0) {
+      // Filter out recently used messages for this time range
+      const key = `welcome-${theme}-${activeTimeRange.id}`;
+      const availableMessages = this.filterRecentlyUsed(
+        activeTimeRange.messages.map((msg: string, index: number) => ({ id: `${activeTimeRange.id}-${index}`, text: msg })),
+        key,
+        1 // 1 day avoidance for welcome messages
+      );
+      
+      if (availableMessages.length === 0) {
+        // Reset if all messages have been used recently
+        this.lastUsed.delete(key);
+        const allMessages = activeTimeRange.messages.map((msg: string, index: number) => ({ id: `${activeTimeRange.id}-${index}`, text: msg }));
+        const selected = this.selectRandom(allMessages) as { id: string; text: string };
+        this.recordUsage(key, selected.id);
+        return selected.text;
+      }
+      
+      const selected = this.selectRandom(availableMessages) as { id: string; text: string };
+      this.recordUsage(key, selected.id);
+      return selected.text;
     }
     
     return 'Good morning!';
