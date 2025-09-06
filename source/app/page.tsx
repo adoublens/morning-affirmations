@@ -5,6 +5,7 @@ import { useTheme } from '@/components/theme/useTheme';
 import { LoadingSpinner, LoadingDots, LoadingPulse, ErrorBoundary, ErrorFallback } from '@/components/ui';
 import { Header } from '@/components/layout';
 import { ThemeContextTest } from '@/components/layout/ThemeContextTest';
+import { ContentSelectorTest } from '@/components/content/ContentSelectorTest';
 
 // Test component that can trigger an error for ErrorBoundary testing
 function ErrorTestComponent() {
@@ -180,6 +181,16 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Content Selector Test Section */}
+      <section className="section bg-[var(--theme-background)]">
+        <div className="container mx-auto px-4">
+          <h2 className="text-2xl font-semibold text-center mb-8 text-[var(--theme-text-primary)]">
+            Content Selection Test
+          </h2>
+          <ContentSelectorTest />
         </div>
       </section>
 

@@ -85,11 +85,11 @@
 ## 📱 Content Components (Week 3)
 
 ### **Content Utilities**
-- [ ] Create `lib/content/contentSelector.ts` (ContentSelector class)
-- [ ] Implement singleton pattern
-- [ ] Add content selection logic (affirmations, videos, welcome messages)
-- [ ] Implement avoidance logic (7-day for affirmations, 5-day for videos)
-- [ ] Test content rotation and avoidance
+- [x] Create `lib/content/contentSelector.ts` (ContentSelector class) ✅ **Complete with singleton pattern**
+- [x] Implement singleton pattern ✅ **Complete with proper instance management**
+- [x] Add content selection logic (affirmations, videos, welcome messages) ✅ **Complete with theme filtering**
+- [x] Implement avoidance logic (7-day for affirmations, 5-day for videos) ✅ **Complete with timestamp tracking**
+- [x] Test content rotation and avoidance ✅ **Test component created and integrated**
 
 #### **Data Fetching**
 - [ ] Create `lib/utils/getContentData.ts` (server-side data loading)
@@ -242,13 +242,13 @@
 **Week 2 Total: **19/19 tasks completed** ✅ **CORE COMPONENTS COMPLETE****
 
 ### **Week 3 Progress: Content Components**
-- [ ] Content utilities: ___/5 tasks completed
+- [x] Content utilities: **5/5 tasks completed** ✅ **COMPLETED**
 - [ ] Data fetching: ___/4 tasks completed
 - [ ] Welcome message: ___/5 tasks completed
 - [ ] Affirmations display: ___/8 tasks completed
 - [ ] Video components: ___/8 tasks completed
 
-**Week 3 Total: ___/30 tasks completed**
+**Week 3 Total: **5/30 tasks completed**
 
 ### **Week 4 Progress: Integration & Polish**
 - [ ] Theme switcher: ___/7 tasks completed
@@ -274,8 +274,8 @@
 ## 🎯 Overall Project Progress
 
 **Total Tasks: 143**
-**Completed: **51/143**
-**Progress: **35.7%**
+**Completed: **56/143**
+**Progress: **39.2%**
 
 ---
 
