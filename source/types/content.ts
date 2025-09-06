@@ -26,16 +26,21 @@ export type AffirmationCategory =
 export interface Video {
   id: string;
   title: string;
-  description: string;
+  description?: string;
   url: string;
-  thumbnailUrl: string;
-  duration: string;
+  creator: string;
+  creatorChannel: string;
   category: VideoCategory;
-  theme: string[];
-  mood: 'peaceful' | 'energetic' | 'restorative';
+  themes: string[];
+  mood?: 'peaceful' | 'energetic' | 'restorative';
   lastUsed?: Date;
   useCount: number;
+  thumbnail: {
+    filename: string;
+    alt: string;
+  };
   tags: string[];
+  active: boolean;
 }
 
 export type VideoCategory = 

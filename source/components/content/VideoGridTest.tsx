@@ -13,12 +13,10 @@ const mockVideos = [
     title: 'Powerful Positive Morning Affirmations ☀️ start your day w/ bright beautiful energy',
     description: 'Start your day with powerful positive affirmations to boost your energy and mindset',
     url: 'https://www.youtube.com/watch?v=uT6ASPy2Dbs',
-    thumbnailUrl: '/images/videos/_1wjEs4iFEk-thumbnail.jpg',
-    duration: '10:30',
     creator: 'Lavendaire',
     creatorChannel: 'https://www.youtube.com/@Lavendaire',
-    category: 'artsy-creative',
-    theme: ['energetic'],
+    category: 'artsy-creative' as const,
+    themes: ['energetic'],
     mood: 'energetic' as const,
     useCount: 0,
     thumbnail: {
@@ -33,12 +31,10 @@ const mockVideos = [
     title: 'You Will See The Goodness Of The Lord | A Blessed Morning Prayer To Start Your Day',
     description: undefined,
     url: 'https://www.youtube.com/watch?v=AFezAAVFs1M',
-    thumbnailUrl: '/images/videos/AFezAAVFs1M-thumbnail.jpg',
-    duration: undefined,
     creator: 'Grace For Purpose Prayers',
     creatorChannel: 'https://www.youtube.com/@UCvu624igK22l4CVRn59pClA',
-    category: 'bible',
-    theme: ['restorative', 'peaceful', 'energetic'],
+    category: 'bible' as const,
+    themes: ['restorative', 'peaceful', 'energetic'],
     mood: undefined,
     useCount: 0,
     thumbnail: {
@@ -65,12 +61,10 @@ const mockVideos = [
     title: '45 min Yin Yoga for Tight Hips & Legs - LOWER BODY DEEP STRETCH',
     description: 'A deep stretch yoga practice for tight hips and legs to start your day with flexibility',
     url: 'https://www.youtube.com/watch?v=_h24enAaET4',
-    thumbnailUrl: '/images/videos/_h24enAaET4-thumbnail.jpg',
-    duration: '45:00',
     creator: 'Yoga with Kassandra',
     creatorChannel: 'https://www.youtube.com/@UCX32D3gKXENrhOXdZjWWtMA',
-    category: 'yoga',
-    theme: ['energetic', 'peaceful', 'restorative'],
+    category: 'yoga' as const,
+    themes: ['energetic', 'peaceful', 'restorative'],
     mood: 'peaceful' as const,
     useCount: 0,
     thumbnail: {
@@ -85,12 +79,10 @@ const mockVideos = [
     title: "#kinetic #artist Damien Bénéteau's hypnotic #sculpture - Spherical Variations - on display at HOFA",
     description: 'A mesmerizing kinetic sculpture that brings art and movement together for inspiration',
     url: 'https://www.youtube.com/watch?v=0mfd5qlJjGI',
-    thumbnailUrl: '/images/videos/0mfd5qlJjGI-thumbnail.jpg',
-    duration: '2:30',
     creator: 'HOFA Gallery',
     creatorChannel: 'https://www.youtube.com/@UCS323lnQprTegOIx8YNLcZA',
-    category: 'artsy-creative',
-    theme: ['peaceful', 'energetic', 'restorative'],
+    category: 'artsy-creative' as const,
+    themes: ['peaceful', 'energetic', 'restorative'],
     mood: 'peaceful' as const,
     useCount: 0,
     thumbnail: {
@@ -109,6 +101,7 @@ export function VideoGridTest() {
       selected: Map<string, any>;
       available: number;
       filtered: any[];
+      error?: string;
     };
   }>({});
   const [isLoading, setIsLoading] = useState(true);
@@ -125,7 +118,7 @@ export function VideoGridTest() {
         try {
           // Get videos that match this theme
           const themeVideos = mockVideos.filter(video => 
-            video.theme.includes(themeName) && video.active
+            video.themes.includes(themeName) && video.active
           );
           
           // Select videos for this theme
@@ -216,7 +209,7 @@ export function VideoGridTest() {
                   <div className="text-sm">
                     <span className="font-medium">Themes: </span>
                     <span className="text-[var(--theme-text-secondary)]">
-                      {result.filtered.map(video => video.theme.join(', ')).join('; ')}
+                      {result.filtered.map(video => video.themes.join(', ')).join('; ')}
                     </span>
                   </div>
                 </div>
@@ -257,7 +250,7 @@ export function VideoGridTest() {
               <div className="flex items-center space-x-2 text-xs text-[var(--theme-text-secondary)]">
                 <span>Themes:</span>
                 <div className="flex space-x-1">
-                  {video.theme.map(theme => (
+                  {video.themes.map(theme => (
                     <span key={theme} className="px-2 py-1 bg-[var(--theme-accent)] bg-opacity-20 rounded">
                       {theme}
                     </span>

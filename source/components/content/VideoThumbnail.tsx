@@ -4,12 +4,15 @@ import { useState } from 'react';
 import Image from 'next/image';
 
 interface VideoThumbnailProps {
-  thumbnailUrl: string;
+  thumbnail: {
+    filename: string;
+    alt: string;
+  };
   videoId: string;
   title: string;
 }
 
-export function VideoThumbnail({ thumbnailUrl, videoId, title }: VideoThumbnailProps) {
+export function VideoThumbnail({ thumbnail, videoId, title }: VideoThumbnailProps) {
   const [imageError, setImageError] = useState(false);
   const [imageLoading, setImageLoading] = useState(true);
 
@@ -63,10 +66,10 @@ export function VideoThumbnail({ thumbnailUrl, videoId, title }: VideoThumbnailP
         <div className={`relative overflow-hidden rounded-lg transition-opacity duration-300 ${
           imageLoading ? 'opacity-0' : 'opacity-100'
         }`}>
-          {thumbnailUrl ? (
+          {thumbnail ? (
             <Image
-              src={thumbnailUrl}
-              alt={`${title} video thumbnail`}
+              src={`/images/videos/${thumbnail.filename}`}
+              alt={thumbnail.alt}
               width={400}
               height={300}
               className="w-full h-full object-cover"

@@ -49,7 +49,7 @@ export function VideoCard({ video, category }: VideoCardProps) {
 
       {/* Video Thumbnail */}
       <VideoThumbnail 
-        thumbnailUrl={video.thumbnailUrl}
+        thumbnail={video.thumbnail}
         videoId={video.id}
         title={video.title}
       />

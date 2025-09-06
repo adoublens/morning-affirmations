@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Quicksand, Lora, Dancing_Script, Poppins, Open_Sans, Pacifico, Merriweather, Source_Sans_3, Playfair_Display } from "next/font/google";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import { ErrorBoundary } from "@/components/ui/ErrorBoundary";
+import { LayoutErrorFallback } from "@/components/ui/LayoutErrorFallback";
 import "./globals.css";
 
 const quicksand = Quicksand({
@@ -175,24 +176,7 @@ export default function RootLayout({
         
         {/* Error Boundary wraps the entire app */}
         <ErrorBoundary
-          fallback={
-            <div className="min-h-screen flex items-center justify-center p-4">
-              <div className="text-center">
-                <h1 className="text-2xl font-bold text-[var(--theme-text-primary)] mb-4">
-                  Something went wrong
-                </h1>
-                <p className="text-[var(--theme-text-secondary)] mb-6">
-                  We're sorry, but something unexpected happened. Please try refreshing the page.
-                </p>
-                <button
-                  onClick={() => window.location.reload()}
-                  className="btn btn-primary px-6 py-3"
-                >
-                  Refresh Page
-                </button>
-              </div>
-            </div>
-          }
+          fallback={<LayoutErrorFallback />}
         >
           {/* Theme Provider wraps all content */}
           <ThemeProvider>

@@ -75,7 +75,7 @@ export class ContentSelector {
    */
   selectVideos(videos: Video[], theme: string): Map<string, Video> {
     const themeVideos = videos.filter(video =>
-      video.theme && video.theme.includes(theme as Theme)
+      video.themes && video.themes.includes(theme as Theme)
     );
     
     const selectedVideos = new Map<string, Video>();
@@ -283,7 +283,7 @@ export class ContentSelector {
     );
     
     const themeVideos = videos.filter(
-      video => video.theme.includes(theme as Theme)
+      video => video.themes.includes(theme as Theme)
     );
     
     const categories: Record<string, number> = {};

@@ -206,11 +206,24 @@ export function WelcomeMessageTest() {
   const { theme } = useTheme();
   const [currentMessage, setCurrentMessage] = useState<string>('');
   const [timeRange, setTimeRange] = useState<string>('');
+  const [currentTime, setCurrentTime] = useState<string>('');
   const [testResults, setTestResults] = useState<{
     [theme: string]: {
       [timeRange: string]: string[];
     };
   }>({});
+
+  // Set current time after hydration to avoid hydration mismatch
+  useEffect(() => {
+    const updateTime = () => {
+      setCurrentTime(new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
+    };
+    
+    updateTime();
+    const interval = setInterval(updateTime, 1000);
+    
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     const testWelcomeMessages = () => {
@@ -315,7 +328,7 @@ export function WelcomeMessageTest() {
           <span className="mx-2">•</span>
           <span className="capitalize">{theme.currentTheme}</span>
           <span className="mx-2">•</span>
-          <span>{new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
+          <span>{currentTime || '--:--'}</span>
         </div>
       </div>
 
