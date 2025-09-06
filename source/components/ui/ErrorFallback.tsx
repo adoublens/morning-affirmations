@@ -24,7 +24,9 @@ export function ErrorFallback({
       resetError();
     } else {
       // Fallback: reload the page
-      window.location.reload();
+      if (typeof window !== 'undefined') {
+        window.location.reload();
+      }
     }
   };
 
@@ -115,7 +117,11 @@ export function ErrorFallback({
         </button>
 
         <button
-          onClick={() => window.location.href = '/'}
+          onClick={() => {
+            if (typeof window !== 'undefined') {
+              window.location.href = '/';
+            }
+          }}
           className="btn btn-secondary px-6 py-3"
           aria-label="Go to home page"
         >

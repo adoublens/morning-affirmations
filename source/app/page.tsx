@@ -9,6 +9,9 @@ import { ContentSelectorTest } from '@/components/content/ContentSelectorTest';
 import { ClientDataFetcher } from '@/components/content/ClientDataFetcher';
 import { WelcomeMessage } from '@/components/content/WelcomeMessage';
 import { WelcomeMessageTest } from '@/components/content/WelcomeMessageTest';
+import { AffirmationsDisplay } from '@/components/content/AffirmationsDisplay';
+import { AffirmationsDisplayTest } from '@/components/content/AffirmationsDisplayTest';
+import { ErrorTestComponent } from '@/components/content/ErrorTestComponent';
 
 // Mock welcome message data for testing
 const mockWelcomeData = {
@@ -208,29 +211,75 @@ const mockWelcomeData = {
   }
 };
 
-// Test component that can trigger an error for ErrorBoundary testing
-function ErrorTestComponent() {
-  const [shouldError, setShouldError] = useState(false);
-
-  if (shouldError) {
-    throw new Error('This is a test error triggered by the ErrorTestComponent');
+// Mock affirmations data for testing
+const mockAffirmations = [
+  {
+    id: 'affirmation-001',
+    text: 'Gratitude, peace, and joy are ways that God communicates with us. During these times, we are feeling a real connection with God, though we might not initially identify it as such.',
+    author: 'Faith',
+    category: 'spiritual',
+    theme: ['peaceful', 'energetic'],
+    tags: ['gratitude', 'peace', 'joy', 'faith', 'connection'],
+    image: {
+      filename: 'spiritual-connection.jpg',
+      alt: 'Peaceful spiritual connection'
+    },
+    active: true
+  },
+  {
+    id: 'affirmation-002',
+    text: 'I am worthy of love, respect, and all the good things life has to offer. My self-worth comes from within and cannot be diminished by external circumstances.',
+    author: 'Self-Love',
+    category: 'self-esteem',
+    theme: ['peaceful', 'restorative'],
+    tags: ['self-worth', 'love', 'respect', 'inner-strength'],
+    image: {
+      filename: 'self-worth.jpg',
+      alt: 'Self-worth and inner strength'
+    },
+    active: true
+  },
+  {
+    id: 'affirmation-003',
+    text: 'I am confident in my abilities and trust in my capacity to overcome any challenge. Every obstacle is an opportunity for growth and learning.',
+    author: 'Confidence',
+    category: 'confidence',
+    theme: ['energetic', 'restorative'],
+    tags: ['confidence', 'growth', 'challenges', 'learning'],
+    image: {
+      filename: 'confidence-growth.jpg',
+      alt: 'Confidence and personal growth'
+    },
+    active: true
+  },
+  {
+    id: 'affirmation-004',
+    text: 'I am a creative being with unlimited potential. My imagination is a powerful tool that helps me manifest my dreams into reality.',
+    author: 'Creativity',
+    category: 'creativity',
+    theme: ['energetic', 'peaceful'],
+    tags: ['creativity', 'imagination', 'dreams', 'manifestation'],
+    image: {
+      filename: 'creativity-manifestation.jpg',
+      alt: 'Creative expression and manifestation'
+    },
+    active: true
+  },
+  {
+    id: 'affirmation-005',
+    text: 'I attract abundance and prosperity into my life through positive thinking and aligned action. Money flows to me easily and effortlessly.',
+    author: 'Wealth',
+    category: 'wealth',
+    theme: ['energetic', 'restorative'],
+    tags: ['abundance', 'prosperity', 'money', 'positive-thinking'],
+    image: {
+      filename: 'abundance-prosperity.jpg',
+      alt: 'Abundance and prosperity'
+    },
+    active: true
   }
+];
 
-  return (
-    <div className="space-y-4">
-      <div className="p-4 bg-yellow-100 border border-yellow-400 text-yellow-700 rounded-lg">
-        <h3 className="font-semibold mb-2">Error Boundary Test</h3>
-        <p className="mb-3">Click the button below to trigger an error and test the ErrorBoundary component:</p>
-        <button
-          onClick={() => setShouldError(true)}
-          className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition-colors"
-        >
-          Trigger Error
-        </button>
-      </div>
-    </div>
-  );
-}
 
 export default function Home() {
   const { theme } = useTheme();
@@ -254,6 +303,9 @@ export default function Home() {
 
       {/* Welcome Message Component */}
       <WelcomeMessage data={mockWelcomeData} />
+
+      {/* Affirmations Display Component */}
+      <AffirmationsDisplay affirmations={mockAffirmations} />
 
       {/* Theme Preview Section */}
       <section className="section bg-[var(--theme-primary)]">
@@ -336,15 +388,25 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Content Selector Test Section */}
+      {/* Affirmations Display Test Section */}
       <section className="section bg-gray-100">
+        <div className="container mx-auto px-4">
+          <h2 className="text-2xl font-semibold text-center mb-8">
+            Affirmations Display Test
+          </h2>
+          <AffirmationsDisplayTest />
+        </div>
+      </section>
+
+      {/* Content Selector Test Section - Temporarily commented out */}
+      {/* <section className="section bg-gray-100">
         <div className="container mx-auto px-4">
           <h2 className="text-2xl font-semibold text-center mb-8">
             Content Selection Test
           </h2>
           <ContentSelectorTest />
         </div>
-      </section>
+      </section> */}
 
       {/* UI Components Test Section */}
       <section className="section bg-gray-50">

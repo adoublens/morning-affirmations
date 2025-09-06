@@ -40,7 +40,7 @@ export class ContentSelector {
   selectAffirmation(affirmations: Affirmation[], theme: string): Affirmation {
     // Filter affirmations by theme
     const themeAffirmations = affirmations.filter(
-      aff => aff.theme.includes(theme as Theme)
+      aff => aff.themes && aff.themes.includes(theme as Theme)
     );
     
     if (themeAffirmations.length === 0) {
@@ -75,7 +75,7 @@ export class ContentSelector {
    */
   selectVideos(videos: Video[], theme: string): Map<string, Video> {
     const themeVideos = videos.filter(video => 
-      video.theme.includes(theme as Theme)
+      video.themes && video.themes.includes(theme as Theme)
     );
     
     const selectedVideos = new Map<string, Video>();
@@ -112,7 +112,7 @@ export class ContentSelector {
   selectWelcomeMessage(messages: any[], theme: string, currentTime: Date): string {
     // Find the theme data
     const themeData = messages.find(msg => 
-      msg.theme.includes(theme as Theme) && msg.isActive
+      msg.theme && msg.theme.includes(theme as Theme) && msg.isActive
     );
     
     if (!themeData || !themeData.timeRanges) {
