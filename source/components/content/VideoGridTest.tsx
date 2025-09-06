@@ -29,6 +29,38 @@ const mockVideos = [
     active: true
   },
   {
+    id: 'AFezAAVFs1M',
+    title: 'You Will See The Goodness Of The Lord | A Blessed Morning Prayer To Start Your Day',
+    description: undefined,
+    url: 'https://www.youtube.com/watch?v=AFezAAVFs1M',
+    thumbnailUrl: '/images/videos/AFezAAVFs1M-thumbnail.jpg',
+    duration: undefined,
+    creator: 'Grace For Purpose Prayers',
+    creatorChannel: 'https://www.youtube.com/@UCvu624igK22l4CVRn59pClA',
+    category: 'bible',
+    theme: ['restorative', 'peaceful', 'energetic'],
+    mood: undefined,
+    useCount: 0,
+    thumbnail: {
+      filename: 'AFezAAVFs1M-thumbnail.jpg',
+      alt: 'Thumbnail for You Will See The Goodness Of The Lord | A Blessed Morning Prayer To Start Your Day'
+    },
+    tags: [
+      'Meditation',
+      'Christian',
+      'Sleep',
+      'Relaxation',
+      'Godly',
+      'Meditate',
+      'Abide',
+      'Peaceful',
+      'Scriptures',
+      'Bible Talkdown',
+      'Sermon'
+    ],
+    active: true
+  },
+  {
     id: 'video-002',
     title: '45 min Yin Yoga for Tight Hips & Legs - LOWER BODY DEEP STRETCH',
     description: 'A deep stretch yoga practice for tight hips and legs to start your day with flexibility',
@@ -57,7 +89,7 @@ const mockVideos = [
     duration: '2:30',
     creator: 'HOFA Gallery',
     creatorChannel: 'https://www.youtube.com/@UCS323lnQprTegOIx8YNLcZA',
-    category: 'bible',
+    category: 'artsy-creative',
     theme: ['peaceful', 'energetic', 'restorative'],
     mood: 'peaceful' as const,
     useCount: 0,
