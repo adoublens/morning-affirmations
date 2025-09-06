@@ -1,11 +1,199 @@
-import { DataFetchingSection } from '@/components/content/DataFetchingSection';
-import { ClientPageContent } from '@/components/content/ClientPageContent';
+'use client';
+
+import { useState } from 'react';
+import { useTheme } from '@/components/theme/useTheme';
+import { LoadingSpinner, ErrorBoundary, ErrorFallback } from '@/components/ui';
+import { Header } from '@/components/layout';
+import { ThemeContextTest } from '@/components/layout/ThemeContextTest';
+import { ContentSelectorTest } from '@/components/content/ContentSelectorTest';
+import { ClientDataFetcher } from '@/components/content/ClientDataFetcher';
+
+// Test component that can trigger an error for ErrorBoundary testing
+function ErrorTestComponent() {
+  const [shouldError, setShouldError] = useState(false);
+
+  if (shouldError) {
+    throw new Error('This is a test error triggered by the ErrorTestComponent');
+  }
+
+  return (
+    <div className="space-y-4">
+      <div className="p-4 bg-yellow-100 border border-yellow-400 text-yellow-700 rounded-lg">
+        <h3 className="font-semibold mb-2">Error Boundary Test</h3>
+        <p className="mb-3">Click the button below to trigger an error and test the ErrorBoundary component:</p>
+        <button
+          onClick={() => setShouldError(true)}
+          className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition-colors"
+        >
+          Trigger Error
+        </button>
+      </div>
+    </div>
+  );
+}
 
 export default function Home() {
+  const { theme } = useTheme();
+
   return (
-    <>
-      <ClientPageContent />
-      <DataFetchingSection />
-    </>
+    <div className="min-h-screen">
+      {/* Header */}
+      <Header showThemeSwitcher={true} showNavigation={false} />
+
+      {/* Welcome Section */}
+      <section className="section bg-[var(--theme-background)]">
+        <div className="container mx-auto px-4">
+          <h1 className="text-4xl md:text-6xl font-bold text-center mb-6 text-[var(--theme-text-primary)]">
+            Morning Affirmations
+          </h1>
+          <p className="text-xl md:text-2xl text-center text-[var(--theme-text-secondary)] mb-8">
+            Start your day with intention and purpose
+          </p>
+        </div>
+      </section>
+
+      {/* Theme Preview Section */}
+      <section className="section bg-[var(--theme-primary)]">
+        <div className="container mx-auto px-4">
+          <h2 className="text-2xl font-semibold text-center mb-8 text-[var(--theme-text-primary)]">
+            Current Theme: {theme.currentTheme}
+          </h2>
+          <div className="max-w-2xl mx-auto text-center">
+            <p className="text-lg text-[var(--theme-text-secondary)] mb-4">
+              Theme persistence: {theme.isPersistent ? 'Enabled' : 'Disabled'}
+            </p>
+            <p className="text-lg text-[var(--theme-text-secondary)] mb-4">
+              Random mode: {theme.isRandom ? 'Enabled' : 'Disabled'}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Font Demonstration Section */}
+      <section className="section bg-[var(--theme-background)]">
+        <div className="container mx-auto px-4">
+          <h2 className="text-2xl font-semibold text-center mb-8 text-[var(--theme-text-primary)]">
+            Typography Preview
+          </h2>
+          <div className="max-w-4xl mx-auto space-y-6">
+            <div className="text-center">
+              <h3 className="text-3xl font-bold mb-4 text-[var(--theme-text-primary)]" style={{ fontFamily: 'var(--font-primary)' }}>
+                Primary Font - {theme.currentTheme === 'peaceful' ? 'Quicksand' : theme.currentTheme === 'energetic' ? 'Poppins' : 'Merriweather'}
+              </h3>
+              <p className="text-lg text-[var(--theme-text-secondary)]" style={{ fontFamily: 'var(--font-secondary)' }}>
+                Secondary Font - {theme.currentTheme === 'peaceful' ? 'Lora' : theme.currentTheme === 'energetic' ? 'Open Sans' : 'Source Sans Pro'}
+              </p>
+              <p className="text-xl text-[var(--theme-accent)]" style={{ fontFamily: 'var(--font-accent)' }}>
+                Accent Font - {theme.currentTheme === 'peaceful' ? 'Dancing Script' : theme.currentTheme === 'energetic' ? 'Pacifico' : 'Playfair Display'}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CSS Variables Demo */}
+      <section className="section bg-[var(--theme-secondary)]">
+        <div className="container mx-auto px-4">
+          <h2 className="text-2xl font-semibold text-center mb-8 text-[var(--theme-text-primary)]">
+            CSS Custom Properties
+          </h2>
+          <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="p-6 bg-[var(--theme-primary)] rounded-lg">
+                <h3 className="text-xl font-semibold mb-4 text-[var(--theme-text-primary)]">Primary Colors</h3>
+                <ul className="space-y-2 text-[var(--theme-text-secondary)]">
+                  <li>Primary: <span className="font-mono text-sm bg-white px-2 py-1 rounded">var(--theme-primary)</span></li>
+                  <li>Secondary: <span className="font-mono text-sm bg-white px-2 py-1 rounded">var(--theme-secondary)</span></li>
+                  <li>Accent: <span className="font-mono text-sm bg-white px-2 py-1 rounded">var(--theme-accent)</span></li>
+                </ul>
+              </div>
+              <div className="p-6 bg-[var(--theme-background)] rounded-lg">
+                <h3 className="text-xl font-semibold mb-4 text-[var(--theme-text-primary)]">Background Colors</h3>
+                <ul className="space-y-2 text-[var(--theme-text-secondary)]">
+                  <li>Background: <span className="font-mono text-sm bg-white px-2 py-1 rounded">var(--theme-background)</span></li>
+                  <li>Surface: <span className="font-mono text-sm bg-white px-2 py-1 rounded">var(--theme-surface)</span></li>
+                  <li>Text: <span className="font-mono text-sm bg-white px-2 py-1 rounded">var(--theme-text-primary)</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Data Fetching Test Section */}
+      <ClientDataFetcher />
+
+      {/* Content Selector Test Section */}
+      <section className="section bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-2xl font-semibold text-center mb-8">
+            Content Selection Test
+          </h2>
+          <ContentSelectorTest />
+        </div>
+      </section>
+
+      {/* UI Components Test Section */}
+      <section className="section bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-2xl font-semibold text-center mb-8">
+            UI Components Test
+          </h2>
+          <div className="max-w-4xl mx-auto space-y-8">
+            {/* Loading Spinners */}
+            <div className="card">
+              <h3 className="text-xl font-semibold mb-4">Loading Spinners</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="text-center">
+                  <LoadingSpinner size="sm" text="Small" />
+                </div>
+                <div className="text-center">
+                  <LoadingSpinner size="md" text="Medium" />
+                </div>
+                <div className="text-center">
+                  <LoadingSpinner size="lg" text="Large" />
+                </div>
+              </div>
+            </div>
+
+            {/* Loading Variations */}
+            <div className="card">
+              <h3 className="text-xl font-semibold mb-4">Loading Variations</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="text-center">
+                  <LoadingSpinner size="sm" text="Small" />
+                </div>
+                <div className="text-center">
+                  <LoadingSpinner size="md" text="Medium" />
+                </div>
+                <div className="text-center">
+                  <LoadingSpinner size="lg" text="Large" />
+                </div>
+              </div>
+            </div>
+
+            {/* Error Boundary Test */}
+            <div className="card">
+              <h3 className="text-xl font-semibold mb-4">Error Boundary Test</h3>
+              <ErrorBoundary fallback={<ErrorFallback title="Test Error" message="This is a test error fallback" />}>
+                <ErrorTestComponent />
+              </ErrorBoundary>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-[var(--theme-primary)] py-8">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-[var(--theme-text-secondary)]">
+            Built with Next.js 15, TypeScript, and Tailwind CSS
+          </p>
+        </div>
+      </footer>
+
+      {/* Theme Context Test (temporary) */}
+      <ThemeContextTest />
+    </div>
   );
 }
