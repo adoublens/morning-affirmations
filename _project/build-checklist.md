@@ -161,7 +161,8 @@
 - [X] Remove "Morning affirmations" text from page since it's already in the header
 - [X] Remove section titles like "Today's Affirmation" and "Today's Resources" so I can get to the content faster and reduce scrolling
 - [X] Remove Theme Display text from all sections as well as additional info not needed (e.g. date/time info)
-- [ ] Remove tags from Video cards - they don't need to be displayed
+- [ ] Center align the page column so it appears in the middle of the page rather than on the left side of the page
+- [X] Remove tags from Video cards - they don't need to be displayed
 - [ ] Fix alignment issues in page header "Morning Affirmations: Start your day with intention and purpose"
 - [ ] Fix spacing issues with Video Cards and Affirmation quotes
 - [ ] Confirm all fonts are loaded and displayed with their respective theme (Peaceful, Energetic, Restorative)
