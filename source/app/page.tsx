@@ -82,10 +82,7 @@ export default async function HomePage() {
           </div>
         </section>
 
-        {/* Theme Switcher */}
-        <section className="newsletter-section">
-          <ThemeSwitcher />
-        </section>
+
 
         {/* Welcome Message with Suspense */}
         <Suspense fallback={<SectionLoading title="welcome message" />}>
@@ -101,6 +98,11 @@ export default async function HomePage() {
         <Suspense fallback={<SectionLoading title="video resources" />}>
           <VideoGrid videos={contentData.videos.map(transformVideoData)} />
         </Suspense>
+
+        {/* Theme Switcher */}
+        <section className="newsletter-section">
+          <ThemeSwitcher />
+        </section>        
 
         {/* Footer */}
         <footer className="newsletter-section text-center">

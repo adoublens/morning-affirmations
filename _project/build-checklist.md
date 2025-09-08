@@ -156,6 +156,12 @@
 ### **Improve Page Design**
 - [x] Change page into an 'email newsletter' style where all content is one center column you can scroll down the page to view ✅ **Complete with single column layout**
 - [x] Stack videos vertically instead of side-by-side grid layout ✅ **Complete with horizontal card layout**
+- [X] Move "Choose Your Mood" section to the bottom of the page so the content is higher on the page and is more visible
+- [ ] Remove tags from Video cards - they don't need to be displayed
+- [ ] Remove "Morning affirmations" text from page since it's already in the header
+- [ ] Remove Theme Switcher from the page header since it's already in the content  (at the bottom of the page )
+- [ ] Remove section titles like "Today's Affirmation" and "Today's Resources" so I can get to the content faster and reduce scrolling
+- [ ] Fix spacing issues with Video Cards and Affirmation quotes
 - [ ] Confirm all fonts are loaded and displayed with their respective theme (Peaceful, Energetic, Restorative)
 - [ ] Update the ReadMe file to provide instructions on how to add a new Category in the future (e.g. if we have categories of Yoga, Bible, Artsy Creative - in the future I might want to add a new one)
 
