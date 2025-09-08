@@ -64,26 +64,6 @@ export default async function HomePage() {
         {/* Header */}
         <Header showThemeSwitcher={true} showNavigation={false} />
 
-        {/* Welcome Section */}
-        <section className="newsletter-section">
-          <div className="text-center mb-8">
-            <h1 
-              className="text-4xl md:text-5xl font-bold mb-4 text-[var(--theme-text-primary)]"
-              style={{ fontFamily: 'var(--font-heading)' }}
-            >
-              Morning Affirmations
-            </h1>
-            <p 
-              className="text-lg md:text-xl text-[var(--theme-text-secondary)] mb-6"
-              style={{ fontFamily: 'var(--font-body)' }}
-            >
-              Start your day with intention and purpose
-            </p>
-          </div>
-        </section>
-
-
-
         {/* Welcome Message with Suspense */}
         <Suspense fallback={<SectionLoading title="welcome message" />}>
           <WelcomeMessage data={contentData.welcomeMessages} />
