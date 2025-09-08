@@ -83,16 +83,6 @@ export function VideoGrid({ videos }: VideoGridProps) {
     <section className="video-grid-section">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          {/* Section Header */}
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-[var(--theme-text-primary)] mb-4" style={{ fontFamily: 'var(--font-heading)' }}>
-              Today's Resources
-            </h2>
-            <p className="text-lg text-[var(--theme-text-secondary)]" style={{ fontFamily: 'var(--font-body)' }}>
-              Curated videos to inspire and guide your journey
-            </p>
-          </div>
-
           {/* Video Stack - Single Column */}
           <div className="space-y-6">
             {categories.map(category => {
@@ -107,16 +97,6 @@ export function VideoGrid({ videos }: VideoGridProps) {
                 />
               );
             })}
-          </div>
-
-          {/* Theme Info */}
-          <div className="text-center mt-8">
-            <div className="inline-flex items-center space-x-2 text-sm text-[var(--theme-text-secondary)]">
-              <span className="w-2 h-2 bg-[var(--theme-accent)] rounded-full"></span>
-              <span className="capitalize">{theme.currentTheme} Theme</span>
-              <span>•</span>
-              <span>{new Date().toLocaleDateString()}</span>
-            </div>
           </div>
         </div>
       </div>

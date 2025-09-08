@@ -104,15 +104,6 @@ export function AffirmationsDisplay({ affirmations }: AffirmationsDisplayProps) 
     <section className="affirmations-section">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          {/* Section Header */}
-          <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-[var(--theme-text-primary)] mb-2" style={{ fontFamily: 'var(--font-heading)' }}>
-              Today's Affirmation
-            </h2>
-            <p className="text-lg text-[var(--theme-text-secondary)]" style={{ fontFamily: 'var(--font-body)' }}>
-              A gentle reminder for your journey
-            </p>
-          </div>
 
           {/* Main Affirmation Card */}
           <div className="bg-[var(--theme-primary)] border-2 border-[var(--theme-secondary)] rounded-2xl p-8 md:p-12 shadow-lg">
@@ -142,16 +133,6 @@ export function AffirmationsDisplay({ affirmations }: AffirmationsDisplayProps) 
                 category={currentAffirmation.category}
                 tags={currentAffirmation.tags}
               />
-            </div>
-          </div>
-
-          {/* Theme Info */}
-          <div className="text-center mt-6">
-            <div className="inline-flex items-center space-x-2 text-sm text-[var(--theme-text-secondary)]">
-              <span className="w-2 h-2 bg-[var(--theme-accent)] rounded-full"></span>
-              <span className="capitalize">{theme.currentTheme} Theme</span>
-              <span>•</span>
-              <span>{new Date().toLocaleDateString()}</span>
             </div>
           </div>
         </div>

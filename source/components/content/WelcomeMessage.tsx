@@ -106,13 +106,6 @@ export function WelcomeMessage({ data }: WelcomeMessageProps) {
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-[var(--theme-text-primary)]">
           {message}
         </h2>
-        <div className="text-sm md:text-base text-[var(--theme-text-secondary)] opacity-80">
-          <span className="capitalize">{timeRange.replace('-', ' ')}</span>
-          <span className="mx-2">•</span>
-          <span className="capitalize">{theme.currentTheme}</span>
-          <span className="mx-2">•</span>
-          <span>{new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
-        </div>
       </div>
     </section>
   );

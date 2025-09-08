@@ -158,10 +158,11 @@
 - [x] Stack videos vertically instead of side-by-side grid layout ✅ **Complete with horizontal card layout**
 - [X] Move "Choose Your Mood" section to the bottom of the page so the content is higher on the page and is more visible
 - [X] Remove Theme Switcher from the page header by default and keep it in the menu for desktop and mobile
+- [X] Remove "Morning affirmations" text from page since it's already in the header
+- [X] Remove section titles like "Today's Affirmation" and "Today's Resources" so I can get to the content faster and reduce scrolling
+- [X] Remove Theme Display text from all sections as well as additional info not needed (e.g. date/time info)
 - [ ] Remove tags from Video cards - they don't need to be displayed
 - [ ] Fix alignment issues in page header "Morning Affirmations: Start your day with intention and purpose"
-- [X] Remove "Morning affirmations" text from page since it's already in the header
-- [ ] Remove section titles like "Today's Affirmation" and "Today's Resources" so I can get to the content faster and reduce scrolling
 - [ ] Fix spacing issues with Video Cards and Affirmation quotes
 - [ ] Confirm all fonts are loaded and displayed with their respective theme (Peaceful, Energetic, Restorative)
 - [ ] Update the ReadMe file to provide instructions on how to add a new Category in the future (e.g. if we have categories of Yoga, Bible, Artsy Creative - in the future I might want to add a new one)
