@@ -153,6 +153,13 @@
 - [x] Validate all JSON against defined schemas ✅ **All files validated against schemas**
 - [x] Test data loading and parsing ✅ **All files load and parse correctly**
 
+### **Improve Page Design**
+- [x] Change page into an 'email newsletter' style where all content is one center column you can scroll down the page to view ✅ **Complete with single column layout**
+- [x] Stack videos vertically instead of side-by-side grid layout ✅ **Complete with horizontal card layout**
+- [ ] Confirm all fonts are loaded and displayed with their respective theme (Peaceful, Energetic, Restorative)
+- [ ] Update the ReadMe file to provide instructions on how to add a new Category in the future (e.g. if we have categories of Yoga, Bible, Artsy Creative - in the future I might want to add a new one)
+
+
 ### **Image Assets**
 - [ ] Create thumbnail images for affirmations
 - [ ] Create thumbnail images for videos
@@ -254,9 +261,10 @@
 - [x] Theme switcher: **7/7 tasks completed** ✅ **COMPLETED**
 - [x] Main page: **5/5 tasks completed** ✅ **COMPLETED**
 - [x] Data files: **7/7 tasks completed** ✅ **COMPLETED**
+- [x] Improve page design: **2/4 tasks completed** ✅ **NEWSLETTER LAYOUT & VIDEO STACKING COMPLETE**
 - [ ] Image assets: ___/7 tasks completed
 
-**Week 4 Total: **19/26 tasks completed**
+**Week 4 Total: **20/26 tasks completed**
 
 ### **Final Phase: Testing & Deployment**
 - [ ] Component testing: ___/5 tasks completed
@@ -274,8 +282,8 @@
 ## 🎯 Overall Project Progress
 
 **Total Tasks: 143**
-**Completed: **100/143**
-**Progress: **69.9%**
+**Completed: **101/143**
+**Progress: **70.6%**
 
 ---
 

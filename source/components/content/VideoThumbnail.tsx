@@ -27,8 +27,8 @@ export function VideoThumbnail({ thumbnail, videoId, title }: VideoThumbnailProp
 
   if (imageError) {
     return (
-      <div className="mb-4">
-        <div className="relative w-full h-48 bg-[var(--theme-secondary)] rounded-lg overflow-hidden">
+      <div className="mb-0">
+        <div className="relative w-full h-48 md:h-40 bg-[var(--theme-secondary)] rounded-lg overflow-hidden">
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="text-center text-[var(--theme-text-secondary)]">
               <div className="w-16 h-16 mx-auto mb-3 bg-[var(--theme-accent)] rounded-full flex items-center justify-center">
@@ -55,8 +55,8 @@ export function VideoThumbnail({ thumbnail, videoId, title }: VideoThumbnailProp
   }
 
   return (
-    <div className="mb-4">
-      <div className="relative w-full h-48 rounded-lg overflow-hidden">
+    <div className="mb-0">
+      <div className="relative w-full h-48 md:h-40 rounded-lg overflow-hidden">
         {imageLoading && (
           <div className="absolute inset-0 bg-[var(--theme-secondary)] animate-pulse flex items-center justify-center">
             <div className="w-8 h-8 border-2 border-[var(--theme-accent)] border-t-transparent rounded-full animate-spin"></div>

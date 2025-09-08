@@ -71,7 +71,7 @@ export function Header({
               </h1>
               <p className="text-xs md:text-sm text-[var(--theme-text-secondary)] 
                           font-[var(--font-body)] hidden sm:block">
-                Start your day with positivity
+                Start your day with intention and purpose
               </p>
             </div>
           </div>

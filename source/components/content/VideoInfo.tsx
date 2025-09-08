@@ -9,9 +9,9 @@ interface VideoInfoProps {
 
 export function VideoInfo({ video, category }: VideoInfoProps) {
   return (
-    <div className="mb-4">
+    <div className="mb-0">
       {/* Video Title */}
-      <h3 className="text-lg font-semibold text-[var(--theme-text-primary)] mb-2 line-clamp-2 leading-tight" style={{ fontFamily: 'var(--font-heading)' }}>
+      <h3 className="text-lg font-semibold text-[var(--theme-text-primary)] mb-3 line-clamp-2 leading-tight" style={{ fontFamily: 'var(--font-heading)' }}>
         {video.title}
       </h3>
       
@@ -29,9 +29,9 @@ export function VideoInfo({ video, category }: VideoInfoProps) {
 
       {/* Tags */}
       {video.tags && video.tags.length > 0 && (
-        <div className="mb-3">
+        <div className="mb-4">
           <div className="flex flex-wrap gap-1">
-            {video.tags.slice(0, 3).map((tag, index) => (
+            {video.tags.slice(0, 4).map((tag, index) => (
               <span
                 key={index}
                 className="inline-block px-2 py-1 text-xs font-medium bg-[var(--theme-secondary)] text-[var(--theme-text-secondary)] rounded-full border border-[var(--theme-accent)] opacity-75"
@@ -39,9 +39,9 @@ export function VideoInfo({ video, category }: VideoInfoProps) {
                 #{tag}
               </span>
             ))}
-            {video.tags.length > 3 && (
+            {video.tags.length > 4 && (
               <span className="inline-block px-2 py-1 text-xs font-medium bg-[var(--theme-secondary)] text-[var(--theme-text-secondary)] rounded-full border border-[var(--theme-accent)] opacity-75">
-                +{video.tags.length - 3}
+                +{video.tags.length - 4}
               </span>
             )}
           </div>
