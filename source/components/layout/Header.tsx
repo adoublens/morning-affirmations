@@ -76,74 +76,10 @@ export function Header({
             </div>
           </div>
 
-          {/* Desktop Theme Switcher */}
-          {showThemeSwitcher && (
-            <div className="hidden md:flex items-center space-x-4">
-              {/* Theme Buttons */}
-              <div className="flex items-center space-x-2">
-                {themes.map((themeItem) => (
-                  <button
-                    key={themeItem.id}
-                    onClick={() => handleThemeChange(themeItem.id)}
-                    className={`
-                      px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300
-                      border-2 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[var(--theme-accent)]
-                      ${theme.currentTheme === themeItem.id
-                        ? 'bg-[var(--theme-accent)] text-white border-[var(--theme-accent)] shadow-lg'
-                        : 'bg-[var(--theme-primary)] text-[var(--theme-text-primary)] border-[var(--theme-border)] hover:bg-[var(--theme-hover)]'
-                      }
-                    `}
-                    title={themeItem.description}
-                    aria-label={`Switch to ${themeItem.name} theme`}
-                  >
-                    {themeItem.name}
-                  </button>
-                ))}
-                <button
-                  onClick={handleRandomTheme}
-                  className="px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300
-                           bg-[var(--theme-secondary)] text-[var(--theme-text-primary)] 
-                           border-2 border-[var(--theme-border)] hover:bg-[var(--theme-hover)]
-                           hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[var(--theme-accent)]"
-                  title="Select a random theme"
-                  aria-label="Select random theme"
-                >
-                  🎲
-                </button>
-              </div>
-
-              {/* Theme Controls */}
-              <div className="flex items-center space-x-3 pl-4 border-l border-[var(--theme-border)]">
-                <label className="flex items-center space-x-2 text-sm cursor-pointer">
-                  <input
-                    type="checkbox"
-                    checked={theme.isPersistent}
-                    onChange={togglePersistence}
-                    className="w-4 h-4 text-[var(--theme-accent)] bg-[var(--theme-primary)] 
-                             border-[var(--theme-border)] rounded focus:ring-[var(--theme-accent)]"
-                    aria-label="Persist theme selection"
-                  />
-                  <span className="text-[var(--theme-text-secondary)]">Save</span>
-                </label>
-                <label className="flex items-center space-x-2 text-sm cursor-pointer">
-                  <input
-                    type="checkbox"
-                    checked={theme.isRandom}
-                    onChange={toggleRandom}
-                    className="w-4 h-4 text-[var(--theme-accent)] bg-[var(--theme-primary)] 
-                             border-[var(--theme-border)] rounded focus:ring-[var(--theme-accent)]"
-                    aria-label="Enable random theme mode"
-                  />
-                  <span className="text-[var(--theme-text-secondary)]">Random</span>
-                </label>
-              </div>
-            </div>
-          )}
-
           {/* Mobile Menu Button */}
           <button
             onClick={toggleMobileMenu}
-            className="md:hidden p-2 rounded-lg text-[var(--theme-text-primary)] 
+            className=" p-2 rounded-lg text-[var(--theme-text-primary)] 
                      hover:bg-[var(--theme-hover)] focus:outline-none focus:ring-2 focus:ring-[var(--theme-accent)]"
             aria-label="Toggle mobile menu"
             aria-expanded={isMobileMenuOpen}
@@ -165,7 +101,7 @@ export function Header({
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden border-t border-[var(--theme-border)] py-4">
+          <div className=" border-t border-[var(--theme-border)] py-4">
             {showThemeSwitcher && (
               <div className="space-y-4">
                 {/* Mobile Theme Buttons */}
