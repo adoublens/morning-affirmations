@@ -161,12 +161,14 @@
 - [X] Remove "Morning affirmations" text from page since it's already in the header
 - [X] Remove section titles like "Today's Affirmation" and "Today's Resources" so I can get to the content faster and reduce scrolling
 - [X] Remove Theme Display text from all sections as well as additional info not needed (e.g. date/time info)
-- [ ] Center align the page column so it appears in the middle of the page rather than on the left side of the page
 - [X] Remove tags from Video cards - they don't need to be displayed
+- [X] Confirm all fonts are loaded and displayed with their respective theme (Peaceful, Energetic, Restorative)
+- [ ] Center align the page column so it appears in the middle of the page rather than on the left side of the page
 - [ ] Fix alignment issues in page header "Morning Affirmations: Start your day with intention and purpose"
+- [ ] Reduce overall font size for all headings and video titles
 - [ ] Fix spacing issues with Video Cards and Affirmation quotes
-- [ ] Confirm all fonts are loaded and displayed with their respective theme (Peaceful, Energetic, Restorative)
 - [ ] Update the ReadMe file to provide instructions on how to add a new Category in the future (e.g. if we have categories of Yoga, Bible, Artsy Creative - in the future I might want to add a new one)
+- [ ] Add morning affirmations videos to .json file and incorporate into codebase
 
 
 ### **Image Assets**
