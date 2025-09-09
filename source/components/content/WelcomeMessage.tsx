@@ -90,7 +90,7 @@ export function WelcomeMessage({ data }: WelcomeMessageProps) {
   if (isLoading) {
     return (
       <section className="welcome-message-section">
-        <div className="container mx-auto px-4 text-center">
+        <div className="container mx-auto px-4 text-center !mt-8 !mb-8">
           <div className="animate-pulse">
             <div className="h-8 bg-[var(--theme-primary)] rounded-lg mb-2"></div>
             <div className="h-4 bg-[var(--theme-secondary)] rounded w-1/3 mx-auto"></div>
@@ -102,7 +102,7 @@ export function WelcomeMessage({ data }: WelcomeMessageProps) {
 
   return (
     <section className="welcome-message-section">
-      <div className="container mx-auto px-4 text-center">
+      <div className="container mx-auto px-4 text-center !mt-8 !mb-8">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-[var(--theme-text-primary)]">
           {message}
         </h2>

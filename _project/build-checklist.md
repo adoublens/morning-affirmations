@@ -165,6 +165,7 @@
 - [X] Confirm all fonts are loaded and displayed with their respective theme (Peaceful, Energetic, Restorative)
 - [X] Fix alignment issues in page header "Morning Affirmations: Start your day with intention and purpose"
 - [X] Center align the page column so it appears in the middle of the page rather than on the left side of the page
+- [ ] All of the video cards should have a vertically stacked layout: video thumbnail on top with video info  displayed underneath
 - [ ] Reduce overall font size for all headings and video titles
 - [ ] Fix spacing issues with Video Cards and Affirmation quotes
 - [ ] Update the ReadMe file to provide instructions on how to add a new Category in the future (e.g. if we have categories of Yoga, Bible, Artsy Creative - in the future I might want to add a new one)
