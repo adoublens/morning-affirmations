@@ -163,6 +163,7 @@ export default function RootLayout({
         ${merriweather.variable} ${sourceSans3.variable} ${playfairDisplay.variable} 
         antialiased min-h-screen bg-[var(--theme-background)] text-[var(--theme-text-primary)]
         transition-colors duration-300 ease-in-out
+        flex flex-col items-center
       `}>
         {/* Skip to main content for accessibility */}
         <a 
