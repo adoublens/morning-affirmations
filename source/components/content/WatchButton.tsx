@@ -16,11 +16,11 @@ export function WatchButton({ url, title }: WatchButtonProps) {
   return (
     <button
       onClick={handleWatchClick}
-      className="w-full bg-[var(--theme-accent)] text-[var(--theme-text-primary)] font-semibold py-3 px-4 rounded-lg hover:bg-opacity-90 transition-all duration-200 flex items-center justify-center space-x-2 group"
+      className="w-full bg-[var(--theme-accent)] text-[var(--theme-text-primary)] font-semibold !py-3 !px-4 rounded-lg hover:bg-opacity-90 transition-all duration-200 flex items-center justify-center space-x-2 group"
       aria-label={`Watch video: ${title}`}
     >
       <svg 
-        className="w-5 h-5 group-hover:scale-110 transition-transform duration-200" 
+        className="!w-5 !h-5 !mr-2 group-hover:scale-110 transition-transform duration-200" 
         fill="currentColor" 
         viewBox="0 0 20 20"
         aria-hidden="true"
@@ -28,15 +28,7 @@ export function WatchButton({ url, title }: WatchButtonProps) {
         <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
       </svg>
       <span>Watch Video</span>
-      <svg 
-        className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" 
-        fill="none" 
-        stroke="currentColor" 
-        viewBox="0 0 24 24"
-        aria-hidden="true"
-      >
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-      </svg>
+      
     </button>
   );
 }
