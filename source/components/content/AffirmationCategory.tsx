@@ -39,11 +39,11 @@ export function AffirmationCategory({ category, tags }: AffirmationCategoryProps
   };
 
   return (
-    <div className="space-y-4 !mb-8 !mt-5">
+    <div className="!space-y-4 !mb-8 !mt-5">
       {/* Category Badge */}
       <div className="flex justify-center">
-        <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium border ${getCategoryColor(category)}`}>
-          <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+        <div className={`inline-flex items-center !px-4 !py-2 rounded-full text-sm font-medium !border ${getCategoryColor(category)}`}>
+          <svg className="!w-4 !h-4 !mr-2" fill="currentColor" viewBox="0 0 20 20">
             <path fillRule="evenodd" d={getCategoryIcon(category)} clipRule="evenodd" />
           </svg>
           <span className="capitalize">{category.replace('-', ' ')}</span>
