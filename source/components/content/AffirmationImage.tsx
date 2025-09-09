@@ -63,27 +63,27 @@ export function AffirmationImage({ image, affirmationId }: AffirmationImageProps
 
   return (
     <div className="mb-8">
-      <div className="relative w-full max-w-md mx-auto">
+      <div className="relative w-full max-w-md">
         {imageLoading && (
           <div className="absolute inset-0 bg-[var(--theme-secondary)] rounded-lg animate-pulse flex items-center justify-center">
             <div className="w-8 h-8 border-2 border-[var(--theme-accent)] border-t-transparent rounded-full animate-spin"></div>
           </div>
         )}
         
-        <div className={`relative overflow-hidden rounded-lg shadow-lg transition-opacity duration-300 ${
-          imageLoading ? 'opacity-0' : 'opacity-100'
-        }`}>
-          <Image
-            src={`/images/affirmations/${imageToUse.filename}`}
-            alt={imageToUse.alt}
-            width={400}
-            height={300}
-            className="w-full h-64 object-cover"
-            onError={handleImageError}
-            onLoad={handleImageLoad}
-            priority={true}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
-          />
+<div className={`relative overflow-hidden rounded-lg shadow-lg transition-opacity duration-300 bg-gray-200 ${
+  imageLoading ? 'opacity-0' : 'opacity-100'
+}`}>
+  <Image
+    src={`/images/affirmations/${imageToUse.filename}`}
+    alt={imageToUse.alt}
+    width={400}
+    height={300}
+    className="w-full h-64 object-cover !object-center"
+    onError={handleImageError}
+    onLoad={handleImageLoad}
+    priority={true}
+    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
+  />
           
           {/* Image overlay for better text readability */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>

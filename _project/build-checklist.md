@@ -165,7 +165,9 @@
 - [X] Confirm all fonts are loaded and displayed with their respective theme (Peaceful, Energetic, Restorative)
 - [X] Fix alignment issues in page header "Morning Affirmations: Start your day with intention and purpose"
 - [X] Center align the page column so it appears in the middle of the page rather than on the left side of the page
-- [x] Add a random default image for all Affirmations that don't have one. Choose from a set of 5 default images that are labelled `default-#.jpg` from the folder `public/images/affirmations`. For example `public/images/affirmations/default-1.jpg`, `public/images/affirmations/default-2.jpg`
+- [X] Add a random default image for all Affirmations that don't have one. Choose from a set of 5 default images that are labelled `default-#.jpg` from the folder `public/images/affirmations`. For example `public/images/affirmations/default-1.jpg`, `public/images/affirmations/default-2.jpg`
+- [X] If the 'author' field for the affirmations text is empty, we should hide it
+- [X] Add more padding before/after the affirmations tags (e.g. "Happiness")
 - [ ] Review affirmations text and remove old ones, add better ones
 - [ ] Review affirmations text and add more images to them
 - [ ] All of the video cards should have a vertically stacked layout: video thumbnail on top with video info  displayed underneath
