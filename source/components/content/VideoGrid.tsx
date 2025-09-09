@@ -81,7 +81,7 @@ export function VideoGrid({ videos }: VideoGridProps) {
 
   return (
     <section className="video-grid-section">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 !mb-10">
         <div className="max-w-6xl mx-auto">
           {/* Video Stack - Single Column */}
           <div className="space-y-6">

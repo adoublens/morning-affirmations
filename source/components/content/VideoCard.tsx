@@ -36,7 +36,7 @@ export function VideoCard({ video, category }: VideoCardProps) {
   };
 
   return (
-    <div className="video-card bg-[var(--theme-primary)] border-2 border-[var(--theme-secondary)] rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+    <div className="video-card !mb-10 !p-5 bg-[var(--theme-primary)] border-2 border-[var(--theme-secondary)] rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
       <div className="flex flex-col md:flex-row gap-6">
         {/* Left Side - Video Thumbnail */}
         <div className="flex-shrink-0 md:w-80">
@@ -51,8 +51,8 @@ export function VideoCard({ video, category }: VideoCardProps) {
         <div className="flex-1 flex flex-col justify-between">
           {/* Category Badge */}
           <div className="mb-4">
-            <div className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium border ${getCategoryColor(category)}`} style={{ fontFamily: 'var(--font-accent)' }}>
-              <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+            <div className={`inline-flex items-center !px-3 !py-1 rounded-full text-sm font-medium !border ${getCategoryColor(category)}`} style={{ fontFamily: 'var(--font-accent)' }}>
+              <svg className="!w-4 !h-4 !mr-2" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d={getCategoryIcon(category)} clipRule="evenodd" />
               </svg>
               <span className="capitalize">{category.replace('-', ' ')}</span>

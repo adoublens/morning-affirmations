@@ -102,7 +102,7 @@ export function AffirmationsDisplay({ affirmations }: AffirmationsDisplayProps) 
 
   return (
     <section className="affirmations-section">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 !mb-10">
         <div className="max-w-4xl mx-auto">
 
           {/* Main Affirmation Card */}
