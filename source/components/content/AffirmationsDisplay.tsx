@@ -108,13 +108,14 @@ export function AffirmationsDisplay({ affirmations }: AffirmationsDisplayProps) 
           {/* Main Affirmation Card */}
           <div className="bg-[var(--theme-primary)] border-2 border-[var(--theme-secondary)] rounded-2xl p-8 md:p-12 shadow-lg">
             <div className="text-center space-y-8">
-              {/* Affirmation Image */}
-              {currentAffirmation.imageUrl && (
-                <AffirmationImage 
-                  image={{ filename: currentAffirmation.imageUrl, alt: `Affirmation ${currentAffirmation.id}` }}
-                  affirmationId={currentAffirmation.id}
-                />
-              )}
+              {/* Affirmation Image - Always show an image */}
+              <AffirmationImage 
+                image={{ 
+                  filename: currentAffirmation.imageUrl || '', 
+                  alt: `Affirmation ${currentAffirmation.id}` 
+                }}
+                affirmationId={currentAffirmation.id}
+              />
 
               {/* Affirmation Text */}
               <AffirmationText 

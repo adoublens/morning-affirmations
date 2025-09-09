@@ -14,6 +14,19 @@ interface AffirmationImageProps {
 export function AffirmationImage({ image, affirmationId }: AffirmationImageProps) {
   const [imageError, setImageError] = useState(false);
   const [imageLoading, setImageLoading] = useState(true);
+  const [defaultImageIndex, setDefaultImageIndex] = useState<number | null>(null);
+
+  // Generate a consistent random default image based on affirmationId
+  const getDefaultImageIndex = (id: string): number => {
+    // Use the affirmation ID to generate a consistent "random" number
+    let hash = 0;
+    for (let i = 0; i < id.length; i++) {
+      const char = id.charCodeAt(i);
+      hash = ((hash << 5) - hash) + char;
+      hash = hash & hash; // Convert to 32-bit integer
+    }
+    return Math.abs(hash) % 5 + 1; // Returns 1-5
+  };
 
   const handleImageError = () => {
     setImageError(true);
@@ -23,6 +36,12 @@ export function AffirmationImage({ image, affirmationId }: AffirmationImageProps
   const handleImageLoad = () => {
     setImageLoading(false);
   };
+
+  // Check if we need to use a default image
+  const needsDefaultImage = !image.filename || image.filename.trim() === '';
+  const imageToUse = needsDefaultImage 
+    ? { filename: `default-${getDefaultImageIndex(affirmationId)}.jpg`, alt: 'Beautiful affirmation image' }
+    : image;
 
   if (imageError) {
     return (
@@ -55,8 +74,8 @@ export function AffirmationImage({ image, affirmationId }: AffirmationImageProps
           imageLoading ? 'opacity-0' : 'opacity-100'
         }`}>
           <Image
-            src={`/images/affirmations/${image.filename}`}
-            alt={image.alt}
+            src={`/images/affirmations/${imageToUse.filename}`}
+            alt={imageToUse.alt}
             width={400}
             height={300}
             className="w-full h-64 object-cover"
