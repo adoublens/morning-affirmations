@@ -46,7 +46,7 @@ export function Header({
         {/* Main Header Content */}
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo and Title */}
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-5">
             <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[var(--theme-accent)] 
                           flex items-center justify-center shadow-[var(--shadow-sm)]">
               <svg 
@@ -64,9 +64,9 @@ export function Header({
                 />
               </svg>
             </div>
-            <div className="flex flex-col">
+            <div className="flex flex-col !ml-4">
               <h1 className="text-xl md:text-2xl font-bold text-[var(--theme-text-primary)] 
-                           font-[var(--font-heading)]">
+                           font-[var(--font-heading)] mb-0">
                 Morning Affirmations
               </h1>
               <p className="text-xs md:text-sm text-[var(--theme-text-secondary)] 
