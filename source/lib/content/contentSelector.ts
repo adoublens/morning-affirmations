@@ -38,27 +38,19 @@ export class ContentSelector {
    * @returns Selected affirmation
    */
   selectAffirmation(affirmations: Affirmation[], theme: string): Affirmation {
-    // Filter affirmations by theme
-    const themeAffirmations = affirmations.filter(
-      aff => aff.theme && aff.theme.includes(theme as Theme)
-    );
-    
-    if (themeAffirmations.length === 0) {
-      // Fallback to any affirmation
-      if (affirmations.length === 0) {
-        throw new Error('No affirmations available');
-      }
-      return this.selectRandom(affirmations);
+    // Since affirmations no longer have themes, select from all available affirmations
+    if (affirmations.length === 0) {
+      throw new Error('No affirmations available');
     }
 
     // Filter out recently used affirmations (within 7 days)
-    const available = this.filterRecentlyUsed(themeAffirmations, 'affirmations', 7);
+    const available = this.filterRecentlyUsed(affirmations, 'affirmations', 7);
     
     if (available.length === 0) {
       // Reset if all have been used recently
       this.lastUsed.delete('affirmations');
       this.lastUsedTimestamps.delete('affirmations');
-      return this.selectRandom(themeAffirmations);
+      return this.selectRandom(affirmations);
     }
 
     const selected = this.selectRandom(available);
@@ -278,10 +270,7 @@ export class ContentSelector {
     videos: number;
     categories: Record<string, number>;
   } {
-    const themeAffirmations = affirmations.filter(
-      aff => aff.theme.includes(theme as Theme)
-    );
-    
+    // Since affirmations no longer have themes, count all available affirmations
     const themeVideos = videos.filter(
       video => video.themes.includes(theme as Theme)
     );
@@ -294,7 +283,7 @@ export class ContentSelector {
     });
     
     return {
-      affirmations: themeAffirmations.length,
+      affirmations: affirmations.length, // All affirmations are available
       videos: themeVideos.length,
       categories
     };

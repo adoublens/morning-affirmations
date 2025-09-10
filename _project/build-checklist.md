@@ -168,7 +168,7 @@
 - [X] Add a random default image for all Affirmations that don't have one. Choose from a set of 5 default images that are labelled `default-#.jpg` from the folder `public/images/affirmations`. For example `public/images/affirmations/default-1.jpg`, `public/images/affirmations/default-2.jpg`
 - [X] If the 'author' field for the affirmations text is empty, we should hide it
 - [X] Add more padding before/after the affirmations tags (e.g. "Happiness")
-- [ ] Remove `"themes": []` from affirmations.json and update any related code
+- [x] Remove `"themes": []` from affirmations.json and update any related code
 - [ ] Review affirmations text and remove old ones, add better ones
 - [ ] Review affirmations text and add more images to them
 - [ ] All of the video cards should have a vertically stacked layout: video thumbnail on top with video info  displayed underneath

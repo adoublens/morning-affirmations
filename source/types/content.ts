@@ -3,7 +3,6 @@ export interface Affirmation {
   text: string;
   author: string;
   category: AffirmationCategory;
-  theme: string[];
   mood: 'peaceful' | 'energetic' | 'restorative';
   imageUrl: string;
   lastUsed?: Date;

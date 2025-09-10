@@ -12,7 +12,6 @@ const mockAffirmations = [
     text: 'Gratitude, peace, and joy are ways that God communicates with us. During these times, we are feeling a real connection with God, though we might not initially identify it as such.',
     author: 'Faith',
     category: 'spiritual',
-    theme: ['peaceful', 'energetic'],
     tags: ['gratitude', 'peace', 'joy', 'faith', 'connection'],
     image: {
       filename: 'spiritual-connection.jpg',
@@ -25,7 +24,6 @@ const mockAffirmations = [
     text: 'I am worthy of love, respect, and all the good things life has to offer. My self-worth comes from within and cannot be diminished by external circumstances.',
     author: 'Self-Love',
     category: 'self-esteem',
-    theme: ['peaceful', 'restorative'],
     tags: ['self-worth', 'love', 'respect', 'inner-strength'],
     image: {
       filename: 'self-worth.jpg',
@@ -38,7 +36,6 @@ const mockAffirmations = [
     text: 'I am confident in my abilities and trust in my capacity to overcome any challenge. Every obstacle is an opportunity for growth and learning.',
     author: 'Confidence',
     category: 'confidence',
-    theme: ['energetic', 'restorative'],
     tags: ['confidence', 'growth', 'challenges', 'learning'],
     image: {
       filename: 'confidence-growth.jpg',
@@ -51,7 +48,6 @@ const mockAffirmations = [
     text: 'I am a creative being with unlimited potential. My imagination is a powerful tool that helps me manifest my dreams into reality.',
     author: 'Creativity',
     category: 'creativity',
-    theme: ['energetic', 'peaceful'],
     tags: ['creativity', 'imagination', 'dreams', 'manifestation'],
     image: {
       filename: 'creativity-manifestation.jpg',
@@ -64,7 +60,6 @@ const mockAffirmations = [
     text: 'I attract abundance and prosperity into my life through positive thinking and aligned action. Money flows to me easily and effortlessly.',
     author: 'Wealth',
     category: 'wealth',
-    theme: ['energetic', 'restorative'],
     tags: ['abundance', 'prosperity', 'money', 'positive-thinking'],
     image: {
       filename: 'abundance-prosperity.jpg',
@@ -95,18 +90,16 @@ export function AffirmationsDisplayTest() {
       
       themes.forEach(themeName => {
         try {
-          // Get affirmations that match this theme
-          const themeAffirmations = mockAffirmations.filter(aff => 
-            aff.theme.includes(themeName) && aff.active
-          );
+          // Since affirmations no longer have themes, all active affirmations are available
+          const availableAffirmations = mockAffirmations.filter(aff => aff.active);
           
           // Select one affirmation for this theme
           const selected = selector.selectAffirmation(mockAffirmations, themeName);
           
           results[themeName] = {
             selected,
-            available: themeAffirmations.length,
-            filtered: themeAffirmations
+            available: availableAffirmations.length,
+            filtered: availableAffirmations
           };
         } catch (error) {
           results[themeName] = {
@@ -181,9 +174,9 @@ export function AffirmationsDisplayTest() {
                   )}
                   
                   <div className="text-sm">
-                    <span className="font-medium">Themes: </span>
+                    <span className="font-medium">Available: </span>
                     <span className="text-[var(--theme-text-secondary)]">
-                      {result.filtered.map(aff => aff.theme.join(', ')).join('; ')}
+                      {result.available} affirmations
                     </span>
                   </div>
                 </div>
@@ -260,23 +253,27 @@ export function AffirmationsDisplayTest() {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {['peaceful', 'energetic', 'restorative'].map(themeName => {
-          const themeAffirmations = mockAffirmations.filter(aff => 
-            aff.theme.includes(themeName) && aff.active
-          );
+          // Since affirmations no longer have themes, all active affirmations are available
+          const availableAffirmations = mockAffirmations.filter(aff => aff.active);
             
             return (
               <div key={themeName} className="border border-[var(--theme-secondary)] rounded-lg p-4">
                 <h4 className="font-semibold mb-2 capitalize">{themeName} Theme</h4>
                 <div className="text-sm text-[var(--theme-text-secondary)]">
                   <div className="mb-2">
-                    <span className="font-medium">{themeAffirmations.length}</span> affirmations available
+                    <span className="font-medium">{availableAffirmations.length}</span> affirmations available
                   </div>
                   <div className="space-y-1">
-                    {themeAffirmations.map(aff => (
+                    {availableAffirmations.slice(0, 3).map(aff => (
                       <div key={aff.id} className="text-xs">
                         {aff.author} - {aff.category}
                       </div>
                     ))}
+                    {availableAffirmations.length > 3 && (
+                      <div className="text-xs text-[var(--theme-accent)]">
+                        ...and {availableAffirmations.length - 3} more
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>

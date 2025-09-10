@@ -15,7 +15,6 @@ function transformAffirmationData(data: AffirmationData): Affirmation {
     text: data.text,
     author: data.author,
     category: data.category as any, // Type assertion for category compatibility
-    theme: data.themes,
     mood: 'peaceful' as const, // Default mood, could be enhanced
     imageUrl: data.image?.filename || '',
     useCount: 0,
