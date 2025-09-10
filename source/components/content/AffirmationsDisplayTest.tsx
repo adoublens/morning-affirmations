@@ -214,34 +214,6 @@ export function AffirmationsDisplayTest() {
                 )}
               </div>
               
-              <div className="flex items-center space-x-2 text-xs text-[var(--theme-text-secondary)]">
-                <span>Themes:</span>
-                <div className="flex space-x-1">
-                  {affirmation.theme.map(theme => (
-                    <span key={theme} className="px-2 py-1 bg-[var(--theme-accent)] bg-opacity-20 rounded">
-                      {theme}
-                    </span>
-                  ))}
-                </div>
-              </div>
-              
-              {affirmation.tags && affirmation.tags.length > 0 && (
-                <div className="flex items-center space-x-2 text-xs text-[var(--theme-text-secondary)] mt-2">
-                  <span>Tags:</span>
-                  <div className="flex space-x-1">
-                    {affirmation.tags.slice(0, 3).map(tag => (
-                      <span key={tag} className="px-2 py-1 bg-[var(--theme-secondary)] rounded">
-                        #{tag}
-                      </span>
-                    ))}
-                    {affirmation.tags.length > 3 && (
-                      <span className="px-2 py-1 bg-[var(--theme-secondary)] rounded">
-                        +{affirmation.tags.length - 3}
-                      </span>
-                    )}
-                  </div>
-                </div>
-              )}
             </div>
           ))}
         </div>

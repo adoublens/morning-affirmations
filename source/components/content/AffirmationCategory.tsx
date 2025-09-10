@@ -2,10 +2,9 @@
 
 interface AffirmationCategoryProps {
   category: string;
-  tags: string[];
 }
 
-export function AffirmationCategory({ category, tags }: AffirmationCategoryProps) {
+export function AffirmationCategory({ category }: AffirmationCategoryProps) {
   const getCategoryColor = (category: string) => {
     const categoryColors: { [key: string]: string } = {
       'spiritual': 'bg-purple-100 text-purple-800 border-purple-200',
@@ -50,24 +49,6 @@ export function AffirmationCategory({ category, tags }: AffirmationCategoryProps
         </div>
       </div>
 
-      {/* Tags */}
-      {tags && tags.length > 0 && (
-        <div className="flex flex-wrap justify-center gap-2">
-          {tags.slice(0, 5).map((tag, index) => (
-            <span
-              key={index}
-              className="inline-block px-3 py-1 text-xs font-medium bg-[var(--theme-secondary)] text-[var(--theme-text-secondary)] rounded-full border border-[var(--theme-accent)] opacity-75"
-            >
-              #{tag}
-            </span>
-          ))}
-          {tags.length > 5 && (
-            <span className="inline-block px-3 py-1 text-xs font-medium bg-[var(--theme-secondary)] text-[var(--theme-text-secondary)] rounded-full border border-[var(--theme-accent)] opacity-75">
-              +{tags.length - 5} more
-            </span>
-          )}
-        </div>
-      )}
     </div>
   );
 }

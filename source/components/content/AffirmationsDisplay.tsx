@@ -132,7 +132,6 @@ export function AffirmationsDisplay({ affirmations }: AffirmationsDisplayProps) 
               {/* Category Badge */}
               <AffirmationCategory 
                 category={currentAffirmation.category}
-                tags={currentAffirmation.tags}
               />
             </div>
           </div>

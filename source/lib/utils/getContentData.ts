@@ -7,7 +7,6 @@ export interface AffirmationData {
   text: string;
   author: string;
   category: string;
-  tags: string[];
   image: {
     filename: string;
     alt: string;

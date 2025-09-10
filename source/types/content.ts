@@ -7,7 +7,6 @@ export interface Affirmation {
   imageUrl: string;
   lastUsed?: Date;
   useCount: number;
-  tags: string[];
 }
 
 export type AffirmationCategory = 

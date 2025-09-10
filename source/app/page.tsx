@@ -18,7 +18,6 @@ function transformAffirmationData(data: AffirmationData): Affirmation {
     mood: 'peaceful' as const, // Default mood, could be enhanced
     imageUrl: data.image?.filename || '',
     useCount: 0,
-    tags: data.tags,
   };
 }
 
