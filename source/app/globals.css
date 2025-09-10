@@ -64,8 +64,8 @@
 /* Theme: Energetic - Colors defined here are the authoritative source */
 [data-theme="energetic"] {
   --theme-primary: #FFE4B5;
-  --theme-secondary: #FFB6C1;
-  --theme-accent: #FFD700;
+  --theme-secondary: #FFD700;
+  --theme-accent: #669deb; /* eb667a*/
   --theme-background: #FFF8DC;
   --theme-background-transition: #FFEFD5;
   --theme-surface: #FFFEF7;
