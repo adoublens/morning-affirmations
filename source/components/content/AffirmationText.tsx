@@ -7,7 +7,7 @@ interface AffirmationTextProps {
 
 export function AffirmationText({ text, category }: AffirmationTextProps) {
   return (
-    <div className="mb-6 !mt-8">
+    <div className="mb-6 !mt-5">
       <blockquote className="relative">
         
         {/* Main text */}

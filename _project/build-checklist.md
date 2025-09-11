@@ -170,11 +170,12 @@
 - [X] Add more padding before/after the affirmations tags (e.g. "Happiness")
 - [X] Remove `"themes": []` from affirmations.json and update any related code
 - [X] Remove `tags": [],` from affirmations.json and update any related code
-- [ ] Review affirmations text and remove old ones, add better ones
+- [X] Review affirmations text and remove old ones, add better ones
+- [X] Reduce overall font size for all headings and video titles
+- [X] Fix spacing issues with Video Cards and Affirmation quotes
+- [X] Resize default affirmations images to be full width of `div`, modify code if n eeded
 - [ ] Review affirmations text and add more images to them
 - [ ] All of the video cards should have a vertically stacked layout: video thumbnail on top with video info  displayed underneath
-- [ ] Reduce overall font size for all headings and video titles
-- [ ] Fix spacing issues with Video Cards and Affirmation quotes
 - [ ] Update the ReadMe file to provide instructions on how to add a new Category in the future (e.g. if we have categories of Yoga, Bible, Artsy Creative - in the future I might want to add a new one)
 - [ ] Add morning affirmations videos to .json file and incorporate into codebase
 

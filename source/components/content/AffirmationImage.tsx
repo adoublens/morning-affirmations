@@ -63,7 +63,7 @@ export function AffirmationImage({ image, affirmationId }: AffirmationImageProps
 
   return (
     <div className="mb-8">
-      <div className="relative w-full max-w-md">
+      <div className="relative w-full">
         {imageLoading && (
           <div className="absolute inset-0 bg-[var(--theme-secondary)] rounded-lg animate-pulse flex items-center justify-center">
             <div className="w-8 h-8 border-2 border-[var(--theme-accent)] border-t-transparent rounded-full animate-spin"></div>
