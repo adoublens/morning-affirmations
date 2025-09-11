@@ -25,7 +25,7 @@ export function AffirmationImage({ image, affirmationId }: AffirmationImageProps
       hash = ((hash << 5) - hash) + char;
       hash = hash & hash; // Convert to 32-bit integer
     }
-    return Math.abs(hash) % 5 + 1; // Returns 1-5
+    return Math.abs(hash) % 13 + 1; // Returns 1-9
   };
 
   const handleImageError = () => {
