@@ -4,10 +4,9 @@ import { Video } from '@/types/content';
 
 interface VideoInfoProps {
   video: Video;
-  category: string;
 }
 
-export function VideoInfo({ video, category }: VideoInfoProps) {
+export function VideoInfo({ video }: VideoInfoProps) {
   return (
     <div className="mb-0">
       {/* Video Title */}

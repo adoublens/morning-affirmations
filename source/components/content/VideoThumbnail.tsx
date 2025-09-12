@@ -8,11 +8,9 @@ interface VideoThumbnailProps {
     filename: string;
     alt: string;
   };
-  videoId: string;
-  title: string;
 }
 
-export function VideoThumbnail({ thumbnail, videoId, title }: VideoThumbnailProps) {
+export function VideoThumbnail({ thumbnail }: VideoThumbnailProps) {
   const [imageError, setImageError] = useState(false);
   const [imageLoading, setImageLoading] = useState(true);
 
