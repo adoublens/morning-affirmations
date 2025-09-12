@@ -13,7 +13,7 @@ export function AffirmationAuthor({ author, category }: AffirmationAuthorProps) 
 
   return (
     <div className="mb-6">
-      <footer className="text-lg md:text-xl text-[var(--theme-text-secondary)] font-medium" style={{ fontFamily: 'var(--font-accent)' }}>
+      <footer className="text-lg md:text-sm text-[var(--theme-text-secondary)] font-medium !pl-8 !pr-8" style={{ fontFamily: 'var(--font-accent)' }}>
         <div className="flex items-center justify-center space-x-2">
           <span>~ {author}</span>
         </div>
