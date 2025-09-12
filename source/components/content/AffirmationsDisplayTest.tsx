@@ -94,7 +94,7 @@ export function AffirmationsDisplayTest() {
           const availableAffirmations = mockAffirmations.filter(aff => aff.active);
           
           // Select one affirmation for this theme
-          const selected = selector.selectAffirmation(mockAffirmations, themeName);
+          const selected = selector.selectAffirmation(mockAffirmations);
           
           results[themeName] = {
             selected,
