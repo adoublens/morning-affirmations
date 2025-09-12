@@ -14,7 +14,7 @@ function transformAffirmationData(data: AffirmationData): Affirmation {
     id: data.id,
     text: data.text,
     author: data.author,
-    category: data.category as any, // Type assertion for category compatibility
+    category: data.category as Affirmation['category'], // Type assertion for category compatibility
     mood: 'peaceful' as const, // Default mood, could be enhanced
     imageUrl: data.image?.filename || '',
     useCount: 0,
@@ -28,7 +28,7 @@ function transformVideoData(data: VideoData): Video {
     url: data.url,
     creator: data.creator,
     creatorChannel: data.creatorChannel,
-    category: data.category as any, // Type assertion for category compatibility
+    category: data.category as Video['category'], // Type assertion for category compatibility
     themes: data.themes,
     mood: 'peaceful' as const, // Default mood, could be enhanced
     useCount: 0,

@@ -2,10 +2,9 @@
 
 interface AffirmationAuthorProps {
   author: string;
-  category: string;
 }
 
-export function AffirmationAuthor({ author, category }: AffirmationAuthorProps) {
+export function AffirmationAuthor({ author }: AffirmationAuthorProps) {
   // Don't render if author is empty or undefined
   if (!author || author.trim() === '') {
     return null;
