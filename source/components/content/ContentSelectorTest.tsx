@@ -152,7 +152,7 @@ export function ContentSelectorTest() {
   useEffect(() => {
     // Test content selection
     try {
-      const affirmation = selector.selectAffirmation(mockAffirmations, theme.currentTheme);
+      const affirmation = selector.selectAffirmation(mockAffirmations);
       setSelectedAffirmation(affirmation);
 
       const videos = selector.selectVideos(mockVideos, theme.currentTheme);
@@ -175,7 +175,7 @@ export function ContentSelectorTest() {
 
   const handleTestSelection = () => {
     try {
-      const affirmation = selector.selectAffirmation(mockAffirmations, theme.currentTheme);
+      const affirmation = selector.selectAffirmation(mockAffirmations);
       setSelectedAffirmation(affirmation);
 
       const videos = selector.selectVideos(mockVideos, theme.currentTheme);
