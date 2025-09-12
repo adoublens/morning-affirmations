@@ -3,17 +3,16 @@
 import { useState, useEffect } from 'react';
 import { DataFetchingDisplay } from './DataFetchingDisplay';
 import { LoadingSpinner } from '@/components/ui';
+import { ContentData } from '@/lib/utils/getContentData';
 
 // Mock data for client-side testing
-const mockContentData = {
+const mockContentData: ContentData = {
   affirmations: [
     {
       id: 'mock-1',
       text: 'I am grateful for this new day and all the possibilities it brings.',
       author: 'Test Author',
       category: 'gratitude',
-      themes: ['peaceful', 'energetic'],
-      tags: ['gratitude', 'morning'],
       image: {
         filename: 'mock-image.jpg',
         alt: 'Mock affirmation image'
@@ -28,7 +27,7 @@ const mockContentData = {
       url: 'https://youtube.com/watch?v=mock',
       creator: 'Mock Creator',
       creatorChannel: 'https://youtube.com/@mock',
-      category: 'meditation',
+      category: 'yoga',
       themes: ['peaceful'],
       thumbnail: {
         filename: 'mock-thumbnail.jpg',
@@ -129,9 +128,9 @@ const mockContentData = {
 };
 
 export function ClientDataFetcher() {
-  const [contentData, setContentData] = useState(null);
+  const [contentData, setContentData] = useState<ContentData | null>(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     // Simulate data loading
