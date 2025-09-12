@@ -120,13 +120,11 @@ export function AffirmationsDisplay({ affirmations }: AffirmationsDisplayProps) 
               {/* Affirmation Text */}
               <AffirmationText 
                 text={currentAffirmation.text}
-                category={currentAffirmation.category}
               />
 
               {/* Author */}
               <AffirmationAuthor 
                 author={currentAffirmation.author}
-                category={currentAffirmation.category}
               />
 
               {/* Category Badge */}
