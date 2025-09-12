@@ -1,4 +1,4 @@
-import { Affirmation, Video, WelcomeMessage } from '@/types/content';
+import { Affirmation, Video } from '@/types/content';
 
 type Theme = 'peaceful' | 'energetic' | 'restorative';
 
@@ -37,7 +37,7 @@ export class ContentSelector {
    * @param theme - Current theme ID
    * @returns Selected affirmation
    */
-  selectAffirmation(affirmations: Affirmation[], theme: string): Affirmation {
+  selectAffirmation(affirmations: Affirmation[]): Affirmation {
     // Since affirmations no longer have themes, select from all available affirmations
     if (affirmations.length === 0) {
       throw new Error('No affirmations available');
@@ -101,7 +101,7 @@ export class ContentSelector {
    * @param currentTime - Current date/time
    * @returns Selected welcome message
    */
-  selectWelcomeMessage(messages: any[], theme: string, currentTime: Date): string {
+  selectWelcomeMessage(messages: Array<{ theme: string[]; isActive: boolean; timeRanges: Array<{ id: string; startTime: string; endTime: string; messages: string[] }> }>, theme: string, currentTime: Date): string {
     // Find the theme data
     const themeData = messages.find(msg => 
       msg.theme && msg.theme.includes(theme as Theme) && msg.isActive
@@ -116,7 +116,7 @@ export class ContentSelector {
     const currentTimeMinutes = hour * 60 + minute;
     
     // Find the appropriate time range
-    const activeTimeRange = themeData.timeRanges.find((range: any) => {
+    const activeTimeRange = themeData.timeRanges.find((range: { startTime: string; endTime: string }) => {
       const [startHour, startMinute] = range.startTime.split(':').map(Number);
       const [endHour, endMinute] = range.endTime.split(':').map(Number);
       
@@ -187,7 +187,7 @@ export class ContentSelector {
     const cutoffTime = Date.now() - (days * 24 * 60 * 60 * 1000);
     
     // Filter out items used within the cutoff time
-    const availableItems = items.filter((item, index) => {
+    const availableItems = items.filter((item) => {
       const itemIndex = recentlyUsed.indexOf(item.id);
       if (itemIndex === -1) return true; // Not used recently
       
