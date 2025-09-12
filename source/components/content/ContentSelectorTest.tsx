@@ -145,57 +145,6 @@ const mockWelcomeMessagesForSelector = [
   }
 ];
 
-// Keep the original WelcomeMessage[] for other uses
-const mockWelcomeMessages: WelcomeMessage[] = [
-  {
-    id: 'msg-1',
-    text: 'Good morning, peaceful soul',
-    timeRange: { start: '06:00', end: '11:59' },
-    theme: ['peaceful'],
-    mood: 'peaceful',
-    isActive: true
-  },
-  {
-    id: 'msg-2',
-    text: 'Welcome to a serene day',
-    timeRange: { start: '06:00', end: '11:59' },
-    theme: ['peaceful'],
-    mood: 'peaceful',
-    isActive: true
-  },
-  {
-    id: 'msg-3',
-    text: 'Good morning! Let\'s make today amazing!',
-    timeRange: { start: '06:00', end: '11:59' },
-    theme: ['energetic'],
-    mood: 'energetic',
-    isActive: true
-  },
-  {
-    id: 'msg-4',
-    text: 'Rise and shine!',
-    timeRange: { start: '06:00', end: '11:59' },
-    theme: ['energetic'],
-    mood: 'energetic',
-    isActive: true
-  },
-  {
-    id: 'msg-5',
-    text: 'Good morning, take time to nurture yourself',
-    timeRange: { start: '06:00', end: '11:59' },
-    theme: ['restorative'],
-    mood: 'restorative',
-    isActive: true
-  },
-  {
-    id: 'msg-6',
-    text: 'Welcome to your healing day',
-    timeRange: { start: '06:00', end: '11:59' },
-    theme: ['restorative'],
-    mood: 'restorative',
-    isActive: true
-  }
-];
 
 export function ContentSelectorTest() {
   const { theme } = useTheme();
@@ -299,7 +248,7 @@ export function ContentSelectorTest() {
             <div className="text-sm text-[var(--theme-text-secondary)]">
               <div>Author: {selectedAffirmation.author}</div>
               <div>Category: {selectedAffirmation.category}</div>
-              <div>Themes: {selectedAffirmation.theme.join(', ')}</div>
+              <div>Mood: {selectedAffirmation.mood}</div>
             </div>
           </div>
         )}
