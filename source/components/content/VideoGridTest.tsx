@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useTheme } from '@/components/theme/useTheme';
 import { ContentSelector } from '@/lib/content/contentSelector';
 import { VideoGrid } from './VideoGrid';
 import { Video } from '@/types/content';
@@ -95,12 +94,11 @@ const mockVideos = [
 ];
 
 export function VideoGridTest() {
-  const { theme } = useTheme();
   const [testResults, setTestResults] = useState<{
     [theme: string]: {
-      selected: Map<string, any>;
+      selected: Map<string, Video>;
       available: number;
-      filtered: any[];
+      filtered: Video[];
       error?: string;
     };
   }>({});
@@ -108,7 +106,7 @@ export function VideoGridTest() {
 
   useEffect(() => {
     const testVideos = () => {
-      const results: any = {};
+      const results: { [theme: string]: { selected: Map<string, Video>; available: number; filtered: Video[]; error?: string } } = {};
       const selector = ContentSelector.getInstance();
 
       // Test each theme
@@ -224,7 +222,7 @@ export function VideoGridTest() {
         <h3 className="text-xl font-semibold mb-4">Available Videos Overview</h3>
         
         <div className="space-y-4">
-          {mockVideos.map((video, index) => (
+          {mockVideos.map((video) => (
             <div key={video.id} className="border border-[var(--theme-secondary)] rounded-lg p-4">
               <div className="flex items-start justify-between mb-2">
                 <div className="flex-1">
