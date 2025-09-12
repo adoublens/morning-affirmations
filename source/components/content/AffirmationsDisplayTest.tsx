@@ -6,66 +6,51 @@ import { AffirmationsDisplay } from './AffirmationsDisplay';
 import { Affirmation } from '@/types/content';
 
 // Mock affirmations data for testing
-const mockAffirmations = [
+const mockAffirmations: Affirmation[] = [
   {
     id: 'affirmation-001',
     text: 'Gratitude, peace, and joy are ways that God communicates with us. During these times, we are feeling a real connection with God, though we might not initially identify it as such.',
     author: 'Faith',
-    category: 'spiritual',
-    tags: ['gratitude', 'peace', 'joy', 'faith', 'connection'],
-    image: {
-      filename: 'spiritual-connection.jpg',
-      alt: 'Peaceful spiritual connection'
-    },
-    active: true
+    category: 'gratitude',
+    mood: 'peaceful',
+    imageUrl: 'spiritual-connection.jpg',
+    useCount: 0
   },
   {
     id: 'affirmation-002',
     text: 'I am worthy of love, respect, and all the good things life has to offer. My self-worth comes from within and cannot be diminished by external circumstances.',
     author: 'Self-Love',
-    category: 'self-esteem',
-    tags: ['self-worth', 'love', 'respect', 'inner-strength'],
-    image: {
-      filename: 'self-worth.jpg',
-      alt: 'Self-worth and inner strength'
-    },
-    active: true
+    category: 'self-love',
+    mood: 'peaceful',
+    imageUrl: 'self-worth.jpg',
+    useCount: 0
   },
   {
     id: 'affirmation-003',
     text: 'I am confident in my abilities and trust in my capacity to overcome any challenge. Every obstacle is an opportunity for growth and learning.',
     author: 'Confidence',
     category: 'confidence',
-    tags: ['confidence', 'growth', 'challenges', 'learning'],
-    image: {
-      filename: 'confidence-growth.jpg',
-      alt: 'Confidence and personal growth'
-    },
-    active: true
+    mood: 'energetic',
+    imageUrl: 'confidence-growth.jpg',
+    useCount: 0
   },
   {
     id: 'affirmation-004',
     text: 'I am a creative being with unlimited potential. My imagination is a powerful tool that helps me manifest my dreams into reality.',
     author: 'Creativity',
     category: 'creativity',
-    tags: ['creativity', 'imagination', 'dreams', 'manifestation'],
-    image: {
-      filename: 'creativity-manifestation.jpg',
-      alt: 'Creative expression and manifestation'
-    },
-    active: true
+    mood: 'energetic',
+    imageUrl: 'creativity-manifestation.jpg',
+    useCount: 0
   },
   {
     id: 'affirmation-005',
     text: 'I attract abundance and prosperity into my life through positive thinking and aligned action. Money flows to me easily and effortlessly.',
     author: 'Wealth',
-    category: 'wealth',
-    tags: ['abundance', 'prosperity', 'money', 'positive-thinking'],
-    image: {
-      filename: 'abundance-prosperity.jpg',
-      alt: 'Abundance and prosperity'
-    },
-    active: true
+    category: 'gratitude',
+    mood: 'energetic',
+    imageUrl: 'abundance-prosperity.jpg',
+    useCount: 0
   }
 ];
 
@@ -90,8 +75,8 @@ export function AffirmationsDisplayTest() {
       
       themes.forEach(themeName => {
         try {
-          // Since affirmations no longer have themes, all active affirmations are available
-          const availableAffirmations = mockAffirmations.filter(aff => aff.active);
+          // Since affirmations no longer have themes, all affirmations are available
+          const availableAffirmations = mockAffirmations;
           
           // Select one affirmation for this theme
           const selected = selector.selectAffirmation(mockAffirmations);
@@ -225,8 +210,8 @@ export function AffirmationsDisplayTest() {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {['peaceful', 'energetic', 'restorative'].map(themeName => {
-          // Since affirmations no longer have themes, all active affirmations are available
-          const availableAffirmations = mockAffirmations.filter(aff => aff.active);
+          // Since affirmations no longer have themes, all affirmations are available
+          const availableAffirmations = mockAffirmations;
             
             return (
               <div key={themeName} className="border border-[var(--theme-secondary)] rounded-lg p-4">
