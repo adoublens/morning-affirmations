@@ -106,10 +106,10 @@ export function Header({
               <div className="space-y-4">
                 {/* Mobile Theme Buttons */}
                 <div className="space-y-2">
-                  <h3 className="text-sm font-semibold text-[var(--theme-text-primary)] mb-2">
+                  <h3 className="text-sm font-semibold text-[var(--theme-text-primary)] !mb-3">
                     Choose Theme
                   </h3>
-                  <div className="grid grid-cols-1 gap-2">
+                  <div className="grid grid-cols-1 !gap-2">
                     {themes.map((themeItem) => (
                       <button
                         key={themeItem.id}
@@ -118,7 +118,7 @@ export function Header({
                           setIsMobileMenuOpen(false);
                         }}
                         className={`
-                          px-4 py-3 rounded-lg text-left font-medium transition-all duration-300
+                          !px-4 !py-3 rounded-lg text-left font-medium transition-all duration-300
                           border-2 focus:outline-none focus:ring-2 focus:ring-[var(--theme-accent)]
                           ${theme.currentTheme === themeItem.id
                             ? 'bg-[var(--theme-accent)] text-white border-[var(--theme-accent)]'
@@ -135,7 +135,7 @@ export function Header({
                         handleRandomTheme();
                         setIsMobileMenuOpen(false);
                       }}
-                      className="px-4 py-3 rounded-lg text-left font-medium transition-all duration-300
+                      className="!px-4 !py-3 rounded-lg text-left font-medium transition-all duration-300
                                bg-[var(--theme-secondary)] text-[var(--theme-text-primary)] 
                                border-2 border-[var(--theme-border)] hover:bg-[var(--theme-hover)]
                                focus:outline-none focus:ring-2 focus:ring-[var(--theme-accent)]"
@@ -147,11 +147,11 @@ export function Header({
                 </div>
 
                 {/* Mobile Theme Controls */}
-                <div className="pt-4 border-t border-[var(--theme-border)]">
-                  <h3 className="text-sm font-semibold text-[var(--theme-text-primary)] mb-3">
+                <div className="!pt-4 border-t border-[var(--theme-border)]">
+                  <h3 className="text-sm font-semibold text-[var(--theme-text-primary)] !mb-3">
                     Settings
                   </h3>
-                  <div className="space-y-3">
+                  <div className="!space-y-3">
                     <label className="flex items-center justify-between cursor-pointer">
                       <span className="text-sm text-[var(--theme-text-secondary)]">
                         Save theme selection
