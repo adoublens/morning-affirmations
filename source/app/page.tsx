@@ -1,6 +1,5 @@
 import { Suspense } from 'react';
 import { Header } from '@/components/layout';
-import { ThemeSwitcher } from '@/components/theme/ThemeSwitcher';
 import { WelcomeMessage } from '@/components/content/WelcomeMessage';
 import { AffirmationsDisplay } from '@/components/content/AffirmationsDisplay';
 import { VideoGrid } from '@/components/content/VideoGrid';

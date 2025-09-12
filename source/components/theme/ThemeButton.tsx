@@ -1,6 +1,5 @@
 'use client';
 
-import { useTheme } from './useTheme';
 
 interface ThemeButtonProps {
   themeId: string;
