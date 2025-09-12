@@ -228,7 +228,7 @@ export function WelcomeMessageTest() {
   useEffect(() => {
     const testWelcomeMessages = () => {
       const selector = ContentSelector.getInstance();
-      const results: any = {};
+      const results: { [theme: string]: { [timeRange: string]: string } } = {};
 
       // Test all themes and time ranges
       Object.keys(mockWelcomeData.themes).forEach(themeName => {
@@ -321,7 +321,7 @@ export function WelcomeMessageTest() {
       <div className="mb-6 p-4 bg-[var(--theme-primary)] rounded-lg">
         <h4 className="font-semibold mb-2">Current Message:</h4>
         <div className="text-2xl font-bold text-[var(--theme-text-primary)] mb-2">
-          "{currentMessage}"
+          &ldquo;{currentMessage}&rdquo;
         </div>
         <div className="text-sm text-[var(--theme-text-secondary)]">
           <span className="capitalize">{timeRange.replace('-', ' ')}</span>
@@ -347,7 +347,7 @@ export function WelcomeMessageTest() {
                   <div className="space-y-1 text-sm">
                     {messages.map((message, index) => (
                       <div key={index} className="text-[var(--theme-text-secondary)]">
-                        "{message}"
+                        &ldquo;{message}&rdquo;
                       </div>
                     ))}
                   </div>

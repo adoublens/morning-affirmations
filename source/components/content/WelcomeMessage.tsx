@@ -22,7 +22,6 @@ interface WelcomeMessageProps {
 export function WelcomeMessage({ data }: WelcomeMessageProps) {
   const { theme } = useTheme();
   const [message, setMessage] = useState<string>('');
-  const [timeRange, setTimeRange] = useState<string>('');
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -49,36 +48,10 @@ export function WelcomeMessage({ data }: WelcomeMessageProps) {
         
         setMessage(selectedMessage);
         
-        // Determine current time range for display
-        const currentHour = currentTime.getHours();
-        const currentMinute = currentTime.getMinutes();
-        const currentTimeString = `${currentHour.toString().padStart(2, '0')}:${currentMinute.toString().padStart(2, '0')}`;
-        
-        const themeData = data.themes[theme.currentTheme];
-        if (themeData) {
-          const activeTimeRange = themeData.timeRanges.find(range => {
-            const [startHour, startMinute] = range.startTime.split(':').map(Number);
-            const [endHour, endMinute] = range.endTime.split(':').map(Number);
-            
-            const startTime = startHour * 60 + startMinute;
-            const endTime = endHour * 60 + endMinute;
-            const currentTimeMinutes = currentHour * 60 + currentMinute;
-            
-            // Handle overnight ranges (e.g., 21:00 to 04:59)
-            if (startTime > endTime) {
-              return currentTimeMinutes >= startTime || currentTimeMinutes <= endTime;
-            }
-            
-            return currentTimeMinutes >= startTime && currentTimeMinutes <= endTime;
-          });
-          
-          setTimeRange(activeTimeRange?.id || 'unknown');
-        }
         
       } catch (error) {
         console.error('Error selecting welcome message:', error);
         setMessage('Good morning!');
-        setTimeRange('morning');
       } finally {
         setIsLoading(false);
       }
