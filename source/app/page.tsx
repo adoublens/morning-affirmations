@@ -79,7 +79,7 @@ export default async function HomePage() {
 
         {/* Theme Switcher */}
         <section className="newsletter-section">
-          <ThemeSwitcher />
+          {/* <ThemeSwitcher /> */}
         </section>        
 
         {/* Footer */}
