@@ -54,7 +54,7 @@ export function DataFetchingDisplay({ contentData }: DataFetchingDisplayProps) {
           <div className="p-4 bg-[var(--theme-surface)] rounded-lg">
             <h4 className="font-semibold mb-2">Sample Affirmation:</h4>
             <div className="text-sm">
-              <p className="mb-2">"{contentData.affirmations[0].text}"</p>
+              <p className="mb-2">&ldquo;{contentData.affirmations[0].text}&rdquo;</p>
               <div className="text-[var(--theme-text-secondary)]">
                 <div>ID: {contentData.affirmations[0].id}</div>
                 <div>Category: {contentData.affirmations[0].category}</div>

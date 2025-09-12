@@ -226,14 +226,14 @@ export function ContentSelectorTest() {
         {/* Welcome Message */}
         <div className="p-3 bg-[var(--theme-secondary)] rounded-lg">
           <h4 className="font-semibold mb-2">Welcome Message:</h4>
-          <p className="text-[var(--theme-text-primary)]">"{selectedMessage}"</p>
+          <p className="text-[var(--theme-text-primary)]">&ldquo;{selectedMessage}&rdquo;</p>
         </div>
 
         {/* Selected Affirmation */}
         {selectedAffirmation && (
           <div className="p-3 bg-[var(--theme-primary)] rounded-lg">
             <h4 className="font-semibold mb-2">Selected Affirmation:</h4>
-            <p className="text-[var(--theme-text-primary)] mb-2">"{selectedAffirmation.text}"</p>
+            <p className="text-[var(--theme-text-primary)] mb-2">&ldquo;{selectedAffirmation.text}&rdquo;</p>
             <div className="text-sm text-[var(--theme-text-secondary)]">
               <div>Author: {selectedAffirmation.author}</div>
               <div>Category: {selectedAffirmation.category}</div>
