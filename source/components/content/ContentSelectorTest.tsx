@@ -12,33 +12,27 @@ const mockAffirmations: Affirmation[] = [
     text: 'I am grateful for this new day and all the opportunities it brings.',
     author: 'Test Author',
     category: 'gratitude',
-    theme: ['peaceful', 'energetic'],
     mood: 'peaceful',
     imageUrl: '/images/affirmations/gratitude-1.jpg',
-    useCount: 0,
-    tags: ['gratitude', 'morning']
+    useCount: 0
   },
   {
     id: 'aff-2',
     text: 'I am confident in my abilities and ready to tackle any challenge.',
     author: 'Test Author 2',
     category: 'confidence',
-    theme: ['energetic', 'restorative'],
     mood: 'energetic',
     imageUrl: '/images/affirmations/confidence-1.jpg',
-    useCount: 0,
-    tags: ['confidence', 'strength']
+    useCount: 0
   },
   {
     id: 'aff-3',
     text: 'I choose to focus on the positive and let go of what I cannot control.',
     author: 'Test Author 3',
     category: 'mindfulness',
-    theme: ['peaceful', 'restorative'],
     mood: 'restorative',
     imageUrl: '/images/affirmations/mindfulness-1.jpg',
-    useCount: 0,
-    tags: ['mindfulness', 'peace']
+    useCount: 0
   }
 ];
 
