@@ -93,6 +93,59 @@ const mockVideos: Video[] = [
   }
 ];
 
+// Mock data for ContentSelector.selectWelcomeMessage method
+const mockWelcomeMessagesForSelector = [
+  {
+    theme: ['peaceful'],
+    isActive: true,
+    timeRanges: [
+      {
+        id: 'morning-peaceful',
+        startTime: '06:00',
+        endTime: '11:59',
+        messages: [
+          'Good morning, peaceful soul',
+          'Welcome to a serene day',
+          'May your day be filled with tranquility'
+        ]
+      }
+    ]
+  },
+  {
+    theme: ['energetic'],
+    isActive: true,
+    timeRanges: [
+      {
+        id: 'morning-energetic',
+        startTime: '06:00',
+        endTime: '11:59',
+        messages: [
+          'Good morning! Let\'s make today amazing!',
+          'Rise and shine!',
+          'Ready to conquer the day!'
+        ]
+      }
+    ]
+  },
+  {
+    theme: ['restorative'],
+    isActive: true,
+    timeRanges: [
+      {
+        id: 'morning-restorative',
+        startTime: '06:00',
+        endTime: '11:59',
+        messages: [
+          'Good morning, take time to nurture yourself',
+          'Welcome to your healing day',
+          'May you find peace and restoration today'
+        ]
+      }
+    ]
+  }
+];
+
+// Keep the original WelcomeMessage[] for other uses
 const mockWelcomeMessages: WelcomeMessage[] = [
   {
     id: 'msg-1',
@@ -167,7 +220,7 @@ export function ContentSelectorTest() {
       const videos = selector.selectVideos(mockVideos, theme.currentTheme);
       setSelectedVideos(videos);
 
-      const message = selector.selectWelcomeMessage(mockWelcomeMessages, theme.currentTheme, new Date());
+      const message = selector.selectWelcomeMessage(mockWelcomeMessagesForSelector, theme.currentTheme, new Date());
       setSelectedMessage(message);
 
       // Get usage statistics
@@ -190,7 +243,7 @@ export function ContentSelectorTest() {
       const videos = selector.selectVideos(mockVideos, theme.currentTheme);
       setSelectedVideos(videos);
 
-      const message = selector.selectWelcomeMessage(mockWelcomeMessages, theme.currentTheme, new Date());
+      const message = selector.selectWelcomeMessage(mockWelcomeMessagesForSelector, theme.currentTheme, new Date());
       setSelectedMessage(message);
 
       // Update stats
