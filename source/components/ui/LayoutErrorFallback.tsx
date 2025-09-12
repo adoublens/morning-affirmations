@@ -14,7 +14,7 @@ export function LayoutErrorFallback() {
           Something went wrong
         </h1>
         <p className="text-[var(--theme-text-secondary)] mb-6">
-          We're sorry, but something unexpected happened. Please try refreshing the page.
+          We&apos;re sorry, but something unexpected happened. Please try refreshing the page.
         </p>
         <button
           onClick={handleRefresh}

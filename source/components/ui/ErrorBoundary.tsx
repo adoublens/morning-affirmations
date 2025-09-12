@@ -130,7 +130,7 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
   };
 
   render() {
-    const { hasError, error, errorInfo } = this.state;
+    const { hasError, error } = this.state;
     const { children, fallback, className } = this.props;
 
     if (hasError) {
@@ -173,7 +173,7 @@ export function withErrorBoundary<P extends object>(
 
 // Hook for functional components to trigger error boundary
 export function useErrorHandler() {
-  return (error: Error, errorInfo?: { componentStack?: string }) => {
+  return (error: Error) => {
     // This will be caught by the nearest ErrorBoundary
     throw error;
   };
