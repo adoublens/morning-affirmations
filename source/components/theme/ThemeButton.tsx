@@ -17,7 +17,6 @@ export function ThemeButton({
   onClick, 
   className = '' 
 }: ThemeButtonProps) {
-  const { theme } = useTheme();
 
   const getThemeIcon = (themeId: string) => {
     const icons: { [key: string]: string } = {

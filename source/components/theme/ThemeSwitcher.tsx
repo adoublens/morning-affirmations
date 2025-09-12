@@ -21,7 +21,7 @@ export function ThemeSwitcher({
     setTheme(themeId);
   };
 
-  const handlePersistentToggle = (checked: boolean) => {
+  const handlePersistentToggle = () => {
     togglePersistence();
   };
 
@@ -60,7 +60,7 @@ export function ThemeSwitcher({
           )}
           {showDescription && (
             <p className="text-lg text-[var(--theme-text-secondary)] max-w-2xl mx-auto">
-              Select a theme that matches how you're feeling today. Each theme offers a unique experience with different colors, fonts, and content.
+              Select a theme that matches how you&apos;re feeling today. Each theme offers a unique experience with different colors, fonts, and content.
             </p>
           )}
         </div>

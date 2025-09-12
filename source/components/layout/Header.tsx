@@ -190,7 +190,7 @@ export function Header({
                     className="block px-4 py-2 text-[var(--theme-text-primary)] hover:bg-[var(--theme-hover)] rounded-lg"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    Today's Affirmation
+                    Today&apos;s Affirmation
                   </a>
                   <a 
                     href="#videos" 
@@ -218,7 +218,7 @@ export function Header({
 
 // Compact header variant for smaller spaces
 export function CompactHeader({ className = '' }: { className?: string }) {
-  const { theme, setTheme, getRandomTheme } = useTheme();
+  const { setTheme, getRandomTheme } = useTheme();
 
   const handleRandomTheme = () => {
     const randomTheme = getRandomTheme();
