@@ -200,7 +200,7 @@ async function loadJsonFile(filePath: string): Promise<string> {
  * @param data - Content data to validate
  * @throws ContentDataError - If validation fails
  */
-function validateContentData(data: any): void {
+function validateContentData(data: ContentData): void {
   const { affirmations, videos, welcomeMessages, themes, appConfig } = data;
 
   // Validate affirmations
@@ -238,21 +238,21 @@ function validateContentData(data: any): void {
   }
 
   // Validate theme structure
-  themes.forEach((theme: any, index: number) => {
+  themes.forEach((theme: ThemeConfigData, index: number) => {
     if (!theme.id || !theme.name || !theme.colors) {
       throw new ContentDataError(`Theme at index ${index} is missing required properties`);
     }
   });
 
   // Validate affirmation structure
-  affirmations.forEach((affirmation: any, index: number) => {
+  affirmations.forEach((affirmation: AffirmationData, index: number) => {
     if (!affirmation.id || !affirmation.text || !affirmation.category) {
       throw new ContentDataError(`Affirmation at index ${index} is missing required properties`);
     }
   });
 
   // Validate video structure
-  videos.forEach((video: any, index: number) => {
+  videos.forEach((video: VideoData, index: number) => {
     if (!video.id || !video.title || !video.url || !video.category) {
       throw new ContentDataError(`Video at index ${index} is missing required properties`);
     }
@@ -295,7 +295,7 @@ export async function getContentDataWithFallback(): Promise<Partial<ContentData>
       }
     } catch (error) {
       console.warn(`Failed to load ${mapping.file}, using fallback:`, error);
-      result[mapping.key] = mapping.fallback as any;
+      result[mapping.key] = mapping.fallback;
     }
   }
 
