@@ -32,7 +32,7 @@ export function AffirmationsDisplay({ affirmations }: AffirmationsDisplayProps) 
         }
 
         const selector = ContentSelector.getInstance();
-        const selected = selector.selectAffirmation(affirmations, theme.currentTheme);
+        const selected = selector.selectAffirmation(affirmations);
         
         setCurrentAffirmation(selected);
       } catch (err) {
