@@ -104,7 +104,10 @@ export interface VideoCardProps extends BaseComponentProps {
 }
 
 export interface VideoThumbnailProps extends BaseComponentProps {
-  thumbnailUrl: string;
+  thumbnail: {
+    filename: string;
+    alt: string;
+  };
   title: string;
   duration?: string;
   theme: Theme;

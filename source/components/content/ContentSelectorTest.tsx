@@ -42,39 +42,54 @@ const mockVideos: Video[] = [
     title: 'Morning Yoga Flow',
     description: 'A gentle morning yoga flow to start your day',
     url: 'https://youtube.com/watch?v=test1',
-    thumbnailUrl: '/images/videos/yoga-flow.jpg',
-    duration: '15:30',
+    creator: 'Test Creator',
+    creatorChannel: 'Test Channel',
     category: 'yoga',
-    theme: ['peaceful', 'restorative'],
+    themes: ['peaceful', 'restorative'],
     mood: 'peaceful',
     useCount: 0,
-    tags: ['yoga', 'morning', 'flow']
+    thumbnail: {
+      filename: 'yoga-flow.jpg',
+      alt: 'Morning yoga flow thumbnail'
+    },
+    tags: ['yoga', 'morning', 'flow'],
+    active: true
   },
   {
     id: 'vid-2',
     title: 'High Energy Workout',
     description: 'An energizing workout to get your blood pumping',
     url: 'https://youtube.com/watch?v=test2',
-    thumbnailUrl: '/images/videos/workout.jpg',
-    duration: '20:00',
-    category: 'workout',
-    theme: ['energetic'],
+    creator: 'Test Creator 2',
+    creatorChannel: 'Test Channel 2',
+    category: 'yoga',
+    themes: ['energetic'],
     mood: 'energetic',
     useCount: 0,
-    tags: ['workout', 'energy', 'fitness']
+    thumbnail: {
+      filename: 'workout.jpg',
+      alt: 'High energy workout thumbnail'
+    },
+    tags: ['workout', 'energy', 'fitness'],
+    active: true
   },
   {
     id: 'vid-3',
     title: 'Meditation for Beginners',
     description: 'A simple meditation practice for beginners',
     url: 'https://youtube.com/watch?v=test3',
-    thumbnailUrl: '/images/videos/meditation.jpg',
-    duration: '10:00',
-    category: 'meditation',
-    theme: ['peaceful', 'restorative'],
+    creator: 'Test Creator 3',
+    creatorChannel: 'Test Channel 3',
+    category: 'yoga',
+    themes: ['peaceful', 'restorative'],
     mood: 'restorative',
     useCount: 0,
-    tags: ['meditation', 'mindfulness', 'calm']
+    thumbnail: {
+      filename: 'meditation.jpg',
+      alt: 'Meditation for beginners thumbnail'
+    },
+    tags: ['meditation', 'mindfulness', 'calm'],
+    active: true
   }
 ];
 
