@@ -1,9 +1,9 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useTheme } from '@/components/theme/useTheme';
 import { ContentSelector } from '@/lib/content/contentSelector';
 import { AffirmationsDisplay } from './AffirmationsDisplay';
+import { Affirmation } from '@/types/content';
 
 // Mock affirmations data for testing
 const mockAffirmations = [
@@ -70,19 +70,19 @@ const mockAffirmations = [
 ];
 
 export function AffirmationsDisplayTest() {
-  const { theme } = useTheme();
   const [testResults, setTestResults] = useState<{
     [theme: string]: {
-      selected: any;
+      selected: Affirmation | null;
       available: number;
-      filtered: any[];
+      filtered: Affirmation[];
+      error?: string;
     };
   }>({});
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const testAffirmations = () => {
-      const results: any = {};
+      const results: { [theme: string]: { selected: Affirmation | null; available: number; filtered: Affirmation[]; error?: string } } = {};
       const selector = ContentSelector.getInstance();
 
       // Test each theme
@@ -168,7 +168,7 @@ export function AffirmationsDisplayTest() {
                       </div>
                       
                       <div className="text-xs text-[var(--theme-text-secondary)] line-clamp-3">
-                        "{result.selected.text}"
+                        &ldquo;{result.selected.text}&rdquo;
                       </div>
                     </div>
                   )}
@@ -191,7 +191,7 @@ export function AffirmationsDisplayTest() {
         <h3 className="text-xl font-semibold mb-4">Available Affirmations Overview</h3>
         
         <div className="space-y-4">
-          {mockAffirmations.map((affirmation, index) => (
+          {mockAffirmations.map((affirmation) => (
             <div key={affirmation.id} className="border border-[var(--theme-secondary)] rounded-lg p-4">
               <div className="flex items-start justify-between mb-2">
                 <div className="flex-1">
