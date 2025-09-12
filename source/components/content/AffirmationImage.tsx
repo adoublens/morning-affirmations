@@ -14,7 +14,6 @@ interface AffirmationImageProps {
 export function AffirmationImage({ image, affirmationId }: AffirmationImageProps) {
   const [imageError, setImageError] = useState(false);
   const [imageLoading, setImageLoading] = useState(true);
-  const [defaultImageIndex, setDefaultImageIndex] = useState<number | null>(null);
 
   // Generate a consistent random default image based on affirmationId
   const getDefaultImageIndex = (id: string): number => {

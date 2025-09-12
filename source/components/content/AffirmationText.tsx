@@ -2,10 +2,9 @@
 
 interface AffirmationTextProps {
   text: string;
-  category: string;
 }
 
-export function AffirmationText({ text, category }: AffirmationTextProps) {
+export function AffirmationText({ text }: AffirmationTextProps) {
   return (
     <div className="mb-6 !mt-5">
       <blockquote className="relative">

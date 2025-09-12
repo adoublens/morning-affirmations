@@ -91,7 +91,7 @@ export function AffirmationsDisplay({ affirmations }: AffirmationsDisplayProps) 
                 No Affirmation Available
               </h3>
               <p className="text-gray-600">
-                We couldn't find an affirmation for your current theme. Please try refreshing the page.
+                We couldn&apos;t find an affirmation for your current theme. Please try refreshing the page.
               </p>
             </div>
           </div>
