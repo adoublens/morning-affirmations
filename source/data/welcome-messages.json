@@ -9,9 +9,16 @@
           "messages": [
             "Good morning, gentle soul",
             "Welcome to a peaceful new day",
+            "Peaceful morning to you. Take it slow and breathe deep.",
             "Rise slowly, breathe deeply",
             "Good morning, peaceful one",
-            "Hello, tranquil morning"
+            "Hello, tranquil morning",
+            "Hello there, early riser.",
+            "May your day unfold beautifully.",
+            "Morning tranquility awaits you. Step into serenity.",
+            "Welcome to the quiet hours. Embrace the stillness.",
+            "Good morning, peaceful heart. Let calm guide your day.",
+            "Early morning whispers welcome you to today."
           ]
         },
         {
@@ -23,7 +30,13 @@
             "Hello, serene morning",
             "Morning peace to you",
             "Good morning, calm spirit",
-            "Welcome to your peaceful morning"
+            "Welcome to your peaceful morning",
+            "Morning calm settles around you like morning dew.",
+            "Welcome to your serene morning. All is well.",
+            "Gentle morning flows through you. Go with grace.",
+            "Good morning, quiet strength. Move with intention.",
+            "Morning peace finds you exactly where you are.",
+            "Soft morning energy carries you forward gently."
           ]
         },
         {
@@ -35,7 +48,13 @@
             "Hello, tranquil afternoon",
             "Afternoon peace to you",
             "Good afternoon, serene soul",
-            "Welcome to your peaceful afternoon"
+            "Welcome to your peaceful afternoon",
+            "Good afternoon, calm presence. Breathe in the moment.",
+            "Peaceful afternoon greetings. Let harmony guide you.",
+            "Hello, afternoon wanderer. Find beauty in the ordinary.",
+            "Good afternoon, gentle spirit. Move with quiet confidence.",
+            "Good afternoon, mindful one. Stay present and centered.",
+            "Afternoon tranquility embraces you. Rest in this moment."
           ]
         },
         {
@@ -47,7 +66,9 @@
             "Hello, gentle evening",
             "Evening peace to you",
             "Good evening, tranquil one",
-            "Welcome to your peaceful evening"
+            "Welcome to your peaceful evening",
+            "Good evening, peaceful heart. Let the day gently close.",
+            "Welcome to your serene evening. Breathe and be still."
           ]
         },
         {
@@ -59,7 +80,11 @@
             "Hello, gentle night",
             "Night peace to you",
             "Good night, serene soul",
-            "Welcome to your peaceful night"
+            "Welcome to your peaceful night",
+            "Good night, gentle soul. Tomorrow will take care of itself.",
+            "Welcome to your sacred sleep time. All is well.",
+            "Good night, quiet heart. Dreams will tend your spirit.",
+            "Good night, peaceful wanderer. Let sleep carry you gently."
           ]
         }
       ]
@@ -72,10 +97,14 @@
           "endTime": "08:59",
           "messages": [
             "Good morning early bird!",
-            "Rise and shine, beautiful soul!",
+            "Rise and shine, champion!",
+            "Today's adventure awaits!",
+            "Time to make magic happen!",
+            "Let's turn today into something amazing!",
             "Welcome to a brand new day!",
-            "Good morning, world!",
-            "Hello, sunshine!"
+            "Wake up and win! Your incredible day starts now!",
+            "Hello, sunshine!",
+            "Up with the sun and full of possibilities!"
           ]
         },
         {
@@ -85,9 +114,12 @@
           "messages": [
             "Good morning!",
             "Hello, beautiful day!",
-            "Morning blessings to you!",
+            "Morning magic is in the air - grab it and run!",
             "Good morning, amazing person!",
-            "Welcome to your morning!"
+            "Rise up, morning star! Today is your stage!",
+            "Welcome to your morning!",
+            "Morning momentum is building - hop on and ride!",
+            "Welcome morning warrior! Battle the ordinary!"
           ]
         },
         {
@@ -95,11 +127,15 @@
           "startTime": "12:00",
           "endTime": "16:59",
           "messages": [
-            "Good afternoon!",
+            "Good afternoon! Keep that energy soaring!",
             "Hello, afternoon!",
-            "Afternoon blessings!",
+            "Afternoon blessings! Unleash your potential!",
             "Good afternoon, wonderful soul!",
-            "Welcome to your afternoon!"
+            "Welcome to your afternoon!",
+            "Hello afternoon achiever! Momentum is your friend!",
+            "Afternoon adventures await - dive in fearlessly!",
+            "Welcome to your power hours!",
+            "Afternoon energy boost activated - go make things happen!"
           ]
         },
         {
@@ -108,9 +144,11 @@
           "endTime": "20:59",
           "messages": [
             "Good evening!",
-            "Hello, evening!",
+            "Good evening, electric soul! Light up the twilight!",
             "Evening blessings!",
             "Good evening, amazing soul!",
+            "Hello evening adventurer! Chase those golden hours!",
+            "Evening vibes are immaculate - ride the wave!",
             "Welcome to your evening!"
           ]
         },
@@ -119,11 +157,15 @@
           "startTime": "21:00",
           "endTime": "04:59",
           "messages": [
-            "Good night!",
-            "Hello, night!",
+            "Good night! Dream big and bold!",
+            "Hello, night! Even stars need time to shine!",
             "Night blessings!",
             "Good night, wonderful soul!",
-            "Welcome to your night!"
+            "Welcome to your night!",
+            "Good night, dreamer! Tomorrow awaits your brilliance!",
+            "Night energy shifts to dream mode - surf those waves!",
+            "Night magic is brewing - let it work through your dreams!",
+            "Good night, midnight muse!"
           ]
         }
       ]
@@ -139,7 +181,14 @@
             "Welcome to a contemplative day",
             "Rise with purpose, gentle soul",
             "Good morning, reflective spirit",
-            "Hello, mindful morning"
+            "Hello, mindful morning",
+            "Good morning, contemplative one.",
+            "Good morning, let the day unfold with intention.",
+            "Morning reflection is yours. Let it guide your day.",
+            "Good morning, thoughtful wanderer.",
+            "Morning light finds you perfectly.",
+            "Welcome to your reflective morning. Let the day begin with grace.",
+            "Welcome to your restoration time. Breathe and be well."
           ]
         },
         {
@@ -151,7 +200,12 @@
             "Hello, thoughtful morning",
             "Morning reflection to you",
             "Good morning, mindful one",
-            "Welcome to your restorative morning"
+            "Welcome to your restorative morning",
+            "Hello, healing heart. Today brings gentle progress.",
+            "Welcome to your healing morning. One step at a time.",
+            "Morning restoration begins with self-compassion.",
+            "Morning energy is gentle and healing. Breathe and be well.",
+            "Morning brings fresh hope."
           ]
         },
         {
@@ -163,7 +217,11 @@
             "Hello, contemplative afternoon",
             "Afternoon reflection to you",
             "Good afternoon, mindful soul",
-            "Welcome to your restorative afternoon"
+            "Welcome to your restorative afternoon",
+            "Good afternoon, time for gentle self-care.",
+            "Afternoon medicine: progress, not perfection.",
+            "Afternoon renewal calls to you. Answer with kindness.",
+            "Afternoon calm awaits. Breathe and be well."
           ]
         },
         {
@@ -175,7 +233,10 @@
             "Hello, thoughtful evening",
             "Evening reflection to you",
             "Good evening, mindful one",
-            "Welcome to your restorative evening"
+            "Welcome to your restorative evening",
+            "Good evening, tender heart. Wrap yourself in comfort.",
+            "Welcome to your healing hour. Be gentle with yourself.",
+            "Evening healing begins now."
           ]
         },
         {
@@ -187,7 +248,14 @@
             "Hello, contemplative night",
             "Night reflection to you",
             "Good night, mindful soul",
-            "Welcome to your restorative night"
+            "Welcome to your restorative night",
+            "Night restoration begins now. Your body knows what to do.",
+            "Welcome to your healing sleep.",
+            "Night medicine works while you sleep.",
+            "Good night, enjoy a healing sleep.",
+            "Good night, peaceful wanderer. Let sleep carry you gently.",
+            "Good night, gentle soul. Tomorrow will take care of itself.",
+            "Welcome to your sacred sleep time. All is well."
           ]
         }
       ]
