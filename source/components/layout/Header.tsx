@@ -260,7 +260,7 @@ export function Header({
                 {/* Mobile Theme Buttons */}
                 <div className="space-y-2 !pt-4">
                   <h3 className="text-sm font-semibold text-[var(--theme-text-primary)] !mb-3">
-                    Choose Your Theme <span className="text-xs text-[var(--theme-text-secondary)]">(current theme is '{theme.currentTheme}')</span>
+                    Choose Your Theme <span className="text-xs text-[var(--theme-text-secondary)]">(current theme is &apos;{theme.currentTheme}&apos;)</span>
                   </h3>
                   <div className="grid grid-cols-1 !gap-2">
                     {themes.map((themeItem) => (
