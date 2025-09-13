@@ -57,8 +57,8 @@ export function DataFetchingDisplay({ contentData }: DataFetchingDisplayProps) {
               <p className="mb-2">&ldquo;{contentData.affirmations[0].text}&rdquo;</p>
               <div className="text-[var(--theme-text-secondary)]">
                 <div>ID: {contentData.affirmations[0].id}</div>
+                <div>Author: {contentData.affirmations[0].author}</div>
                 <div>Category: {contentData.affirmations[0].category}</div>
-                <div>Themes: {contentData.affirmations[0].themes.join(', ') || 'None'}</div>
                 <div>Active: {contentData.affirmations[0].active ? 'Yes' : 'No'}</div>
               </div>
             </div>
