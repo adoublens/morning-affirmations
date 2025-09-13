@@ -67,11 +67,11 @@ export function Header({
             <div className="flex flex-col !ml-4">
               <h1 className="text-xl md:text-2xl font-bold text-[var(--theme-text-primary)] 
                            font-[var(--font-heading)] mb-0">
-                Morning Affirmations
+                Daily Affirmations
               </h1>
               <p className="text-xs md:text-sm text-[var(--theme-text-secondary)] 
                           font-[var(--font-body)] hidden sm:block">
-                Start your day with intention and purpose
+                Start and end your day with intention and purpose
               </p>
             </div>
           </div>
@@ -239,7 +239,7 @@ export function CompactHeader({ className = '' }: { className?: string }) {
               </svg>
             </div>
             <h1 className="text-lg font-bold text-[var(--theme-text-primary)] font-[var(--font-heading)]">
-              Morning Affirmations
+            Daily Affirmations
             </h1>
           </div>
           <button

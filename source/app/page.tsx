@@ -90,7 +90,7 @@ export default async function HomePage() {
             Made with ❤️ for your daily wellness journey
           </p>
           <p className="text-sm text-[var(--theme-text-secondary)]">
-            © 2024 Morning Affirmations
+            © 2025 Daily Affirmations
           </p>
         </footer>
       </div>

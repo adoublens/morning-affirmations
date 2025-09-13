@@ -67,14 +67,14 @@ const playfairDisplay = Playfair_Display({
 
 export const metadata: Metadata = {
   title: {
-    default: "Morning Affirmations",
-    template: "%s | Morning Affirmations"
+    default: "Daily Affirmations",
+    template: "%s | Daily Affirmations"
   },
-  description: "Start your day with positivity and purpose. Daily affirmations and wellness resources for mental and physical health.",
-  keywords: ["affirmations", "morning routine", "wellness", "mental health", "positivity", "meditation", "yoga"],
-  authors: [{ name: "Morning Affirmations Team" }],
-  creator: "Morning Affirmations",
-  publisher: "Morning Affirmations",
+  description: "Start and end your day with positivity and purpose. Daily affirmations and wellness resources for mental and physical health.",
+  keywords: ["affirmations", "daily routine", "wellness", "mental health", "positivity", "meditation", "yoga"],
+  authors: [{ name: "Daily Affirmations Team" }],
+  creator: "Daily Affirmations",
+  publisher: "Daily Affirmations",
   formatDetection: {
     email: false,
     address: false,
@@ -88,22 +88,22 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "/",
-    title: "Morning Affirmations",
+    title: "Daily Affirmations",
     description: "Start your day with positivity and purpose. Daily affirmations and wellness resources for mental and physical health.",
-    siteName: "Morning Affirmations",
+    siteName: "Daily Affirmations",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Morning Affirmations - Start your day with positivity",
+        alt: "Daily Affirmations - Start and end your day with positivity",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Morning Affirmations",
-    description: "Start your day with positivity and purpose. Daily affirmations and wellness resources for mental and physical health.",
+    title: "Daily Affirmations",
+    description: "Start and end your day with positivity and purpose. Daily affirmations and wellness resources for mental and physical health.",
     images: ["/og-image.jpg"],
   },
   robots: {
