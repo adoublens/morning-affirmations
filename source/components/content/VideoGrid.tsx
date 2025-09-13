@@ -77,7 +77,7 @@ export function VideoGrid({ videos }: VideoGridProps) {
     );
   }
 
-  const categories = ['yoga', 'bible', 'artsy-creative'];
+  const categories = ['affirmations', 'yoga', 'bible', 'artsy-creative'];
 
   return (
     <section className="video-grid-section">

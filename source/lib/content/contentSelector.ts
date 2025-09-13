@@ -71,7 +71,7 @@ export class ContentSelector {
     );
     
     const selectedVideos = new Map<string, Video>();
-    const categories = ['yoga', 'bible', 'artsy-creative'];
+    const categories = ['affirmations', 'yoga', 'bible', 'artsy-creative'];
     
     categories.forEach(category => {
       const categoryVideos = themeVideos.filter(video => video.category === category);
