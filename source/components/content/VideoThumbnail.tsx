@@ -8,9 +8,11 @@ interface VideoThumbnailProps {
     filename: string;
     alt: string;
   };
+  url: string;
+  title: string;
 }
 
-export function VideoThumbnail({ thumbnail }: VideoThumbnailProps) {
+export function VideoThumbnail({ thumbnail, url, title }: VideoThumbnailProps) {
   const [imageError, setImageError] = useState(false);
   const [imageLoading, setImageLoading] = useState(true);
 
@@ -23,10 +25,29 @@ export function VideoThumbnail({ thumbnail }: VideoThumbnailProps) {
     setImageLoading(false);
   };
 
+  const handleThumbnailClick = () => {
+    // Open in new tab
+    if (typeof window !== 'undefined') {
+      window.open(url, '_blank', 'noopener,noreferrer');
+    }
+  };
+
   if (imageError) {
     return (
       <div className="mb-0">
-        <div className="relative w-full h-48 md:h-40 bg-[var(--theme-secondary)] rounded-lg overflow-hidden">
+        <div 
+          className="relative w-full h-48 md:h-40 bg-[var(--theme-secondary)] rounded-lg overflow-hidden cursor-pointer hover:brightness-90 transition-all duration-200"
+          onClick={handleThumbnailClick}
+          role="button"
+          tabIndex={0}
+          aria-label={`Watch video: ${title}`}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              handleThumbnailClick();
+            }
+          }}
+        >
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="text-center text-[var(--theme-text-secondary)]">
               <div className="w-16 h-16 mx-auto mb-3 bg-[var(--theme-accent)] rounded-full flex items-center justify-center">
@@ -40,9 +61,9 @@ export function VideoThumbnail({ thumbnail }: VideoThumbnailProps) {
           </div>
           
           {/* Play Button Overlay */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-16 h-16 bg-black bg-opacity-50 rounded-full flex items-center justify-center hover:bg-opacity-70 transition-all duration-200">
-              <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 20 20">
+          <div className="absolute inset-0 flex items-center justify-center group">
+            <div className="w-16 h-16 bg-black bg-opacity-50 rounded-full flex items-center justify-center group-hover:bg-opacity-70 group-hover:scale-110 transition-all duration-200">
+              <svg className="w-8 h-8 text-white ml-1 group-hover:scale-110 transition-transform duration-200" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
               </svg>
             </div>
@@ -54,7 +75,19 @@ export function VideoThumbnail({ thumbnail }: VideoThumbnailProps) {
 
   return (
     <div className="mb-0">
-      <div className="relative w-full h-48 md:h-40 rounded-lg overflow-hidden">
+      <div 
+        className="relative w-full h-48 md:h-40 rounded-lg overflow-hidden cursor-pointer"
+        onClick={handleThumbnailClick}
+        role="button"
+        tabIndex={0}
+        aria-label={`Watch video: ${title}`}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            handleThumbnailClick();
+          }
+        }}
+      >
         {imageLoading && (
           <div className="absolute inset-0 bg-[var(--theme-secondary)] animate-pulse flex items-center justify-center">
             <div className="w-8 h-8 border-2 border-[var(--theme-accent)] border-t-transparent rounded-full animate-spin"></div>
@@ -92,8 +125,8 @@ export function VideoThumbnail({ thumbnail }: VideoThumbnailProps) {
           
           {/* Play Button Overlay */}
           <div className="absolute inset-0 flex items-center justify-center group">
-            <div className="w-16 h-16 bg-black bg-opacity-50 rounded-full flex items-center justify-center group-hover:bg-opacity-70 transition-all duration-200">
-              <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 20 20">
+            <div className="w-16 h-16 bg-black bg-opacity-50 rounded-full flex items-center justify-center group-hover:bg-opacity-70 group-hover:scale-110 transition-all duration-200">
+              <svg className="w-8 h-8 text-white ml-1 group-hover:scale-110 transition-transform duration-200" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
               </svg>
             </div>
