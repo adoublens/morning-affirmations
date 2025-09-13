@@ -224,7 +224,7 @@ export function Header({
               </h1>
               <p className="text-xs md:text-sm text-[var(--theme-text-secondary)] 
                           font-[var(--font-body)] hidden sm:block">
-                Start and end your day with intention and purpose
+                Start your day with intention and purpose
               </p>
             </div>
           </div>
@@ -254,13 +254,13 @@ export function Header({
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className=" border-t border-[var(--theme-border)] py-4">
+          <div className=" !mb-8 border-t border-[var(--theme-border)] py-4">
             {showThemeSwitcher && (
               <div className="space-y-4">
                 {/* Mobile Theme Buttons */}
-                <div className="space-y-2">
+                <div className="space-y-2 !pt-4">
                   <h3 className="text-sm font-semibold text-[var(--theme-text-primary)] !mb-3">
-                    Choose Theme
+                    Choose Your Theme <span className="text-xs text-[var(--theme-text-secondary)]">(current theme is '{theme.currentTheme}')</span>
                   </h3>
                   <div className="grid grid-cols-1 !gap-2">
                     {themes.map((themeItem) => (
@@ -289,11 +289,11 @@ export function Header({
                         setIsMobileMenuOpen(false);
                       }}
                       className="!px-4 !py-3 rounded-lg text-left font-medium transition-all duration-300
-                               bg-[var(--theme-secondary)] text-[var(--theme-text-primary)] 
+                               bg-[var(--theme-primary)] text-[var(--theme-text-primary)] 
                                border-2 border-[var(--theme-border)] hover:bg-[var(--theme-hover)]
                                focus:outline-none focus:ring-2 focus:ring-[var(--theme-accent)]"
                     >
-                      <div className="font-semibold">🎲 Random Theme</div>
+                      <div className="font-semibold">Random Theme 🎲 </div>
                       <div className="text-xs opacity-80">Let us choose for you</div>
                     </button>
                   </div>
