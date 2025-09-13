@@ -226,16 +226,16 @@
       "author": "My Affirmations",
       "category": "health",
       "image": {
-        "filename": "health-2.jpg",
+        "filename": "",
         "alt": ""
       },
       "active": true
     },
     {
       "id": "22",
-      "text": "Overcoming illness is easy for me",
-      "author": "My Affirmations",
-      "category": "health",
+      "text": "You want to do something creative: write a story or a song, paint a picture, dream up your perfect career, or come up with a zinger of a solution to an office problem. But you have no idea where to start. Your mind keeps coming up empty. During times like these... you can program it to launch the imaginative process simply by asking yourself a small question.",
+      "author": "One Small Step Change Your Life: The Kaizen Way, Robert Maurer",
+      "category": "self-improvement",
       "image": {
         "filename": "",
         "alt": ""
@@ -508,9 +508,10 @@
     },
     {
       "id": "47",
-      "text": "I radiate beauty, charm, and grace.",
-      "author": "My Affirmations",
-      "category": "positive thinking",
+      "text": "Live like nature. Explode slowly, day by day, from the center outwards. You won’t notice how brightly you burn or how big you’ve grown until you look back. And then you will be amazed.",
+      "author": "I Wrote This For You: 2007 - 2017, Ian S. Thomas",
+      "category": "fiction",
+
       "image": {
         "filename": "",
         "alt": ""
@@ -640,9 +641,9 @@
     },
     {
       "id": "59",
-      "text": "I am living a healthy life style",
-      "author": "My Affirmations",
-      "category": "weightloss",
+      "text": "When you're implementing a plan for change but find yourself bored, restless, and stuck, look around for hidden moments of delight. People who are most successful at improving their health habits are those who can transform exercise or eating well into a source of excitement and pride.",
+      "author": "One Small Step Change Your Life: The Kaizen Way, Robert Maurer",
+      "category": "self-improvement",
       "image": {
         "filename": "",
         "alt": ""
@@ -651,9 +652,9 @@
     },
     {
       "id": "60",
-      "text": "I am completely focused on losing weight",
-      "author": "",
-      "category": "weightloss",
+      "text": "Times will be tough like old leather and gravel roads occasionally. Times will be easy, like Sunday morning, every now and then. What you do during these times will define you as a person and a human being. Your humanity towards others, your will to make the world a better place for you and those around you and your identity as a citizen of the world. All these things count.",
+      "author": "I Wrote This For You: 2007 - 2017, Ian S. Thomas",
+      "category": "fiction",
       "image": {
         "filename": "",
         "alt": ""
@@ -663,8 +664,8 @@
     {
       "id": "61",
       "text": "I am strong in mind and body",
-      "author": "",
-      "category": "weightloss",
+      "author": "My Affirmations",
+      "category": "health",
       "image": {
         "filename": "",
         "alt": ""
@@ -673,9 +674,9 @@
     },
     {
       "id": "62",
-      "text": "I deserve to be slim, healthy, and happy",
-      "author": "",
-      "category": "weightloss",
+      "text": "The true creator may be recognized by his ability to always find about him, in the commonest and humblest thing, items worthy of note.",
+      "author": "Igor Stravinsky",
+      "category": "quotes",
       "image": {
         "filename": "",
         "alt": ""
@@ -684,9 +685,9 @@
     },
     {
       "id": "63",
-      "text": "I find it easy to stay in shape",
-      "author": "",
-      "category": "weightloss",
+      "text": "I enjoy eating healthy and staying in shape.",
+      "author": "My Affirmations",
+      "category": "health",
       "image": {
         "filename": "",
         "alt": ""
@@ -695,9 +696,9 @@
     },
     {
       "id": "64",
-      "text": "I find it easy to lose weight",
-      "author": "",
-      "category": "weightloss",
+      "text": "Most of us will spend more time reading status updates than we spend reading books. Most of us will take pictures of ourselves instead of actually looking at the world around us. Most of us will take the one unique and precious life we've been given and spend it being, just ok. Most of us will make do. And you will meet most of us and when you do, remember this. Be the few.",
+      "author": "I Wrote This For You: 2007 - 2017, Ian S. Thomas",
+      "category": "fiction",
       "image": {
         "filename": "",
         "alt": ""
@@ -707,7 +708,7 @@
     {
       "id": "65",
       "text": "I deserve to have a healthy relationship",
-      "author": "",
+      "author": "My Affirmations",
       "category": "relationship",
       "image": {
         "filename": "",
@@ -718,7 +719,7 @@
     {
       "id": "66",
       "text": "I am full of positive loving energy",
-      "author": "",
+      "author": "My Affirmations",
       "category": "relationship",
       "image": {
         "filename": "",
@@ -729,7 +730,7 @@
     {
       "id": "67",
       "text": "I always bring positivity to my relationship",
-      "author": "",
+      "author": "My Affirmations",
       "category": "relationship",
       "image": {
         "filename": "",
@@ -739,9 +740,9 @@
     },
     {
       "id": "68",
-      "text": "I always express respect and love for my partner",
-      "author": "",
-      "category": "relationship",
+      "text": "An open, 'beginner's' mind allows us to be receptive to new possibilities and prevents us from getting stuck in the rut of our own expertise, which often thinks it knows more than it does.",
+      "author": "Letting Everything Become Your Teacher: 100 Lessons in Mindfulness, Jon Kabat-Zinn",
+      "category": "mindfulness",
       "image": {
         "filename": "",
         "alt": ""
@@ -750,9 +751,9 @@
     },
     {
       "id": "69",
-      "text": "I am overflowing with gratitude for my happy relationship",
-      "author": "",
-      "category": "relationship",
+      "text": "Joy. Peace. Happiness. All these things are found in the tiniest of spaces. You just need to know where to look.",
+      "author": "I Wrote This For You: 2007 - 2017, Ian S. Thomas",
+      "category": "fiction",
       "image": {
         "filename": "",
         "alt": ""
@@ -761,8 +762,8 @@
     },
     {
       "id": "70",
-      "text": "My relationship is becoming healthier and happier",
-      "author": "",
+      "text": "My relationships are becoming healthier and happier",
+      "author": "My Affirmations",
       "category": "relationship",
       "image": {
         "filename": "",
@@ -772,8 +773,8 @@
     },
     {
       "id": "71",
-      "text": "Each day I am happier and happier in my relationship",
-      "author": "",
+      "text": "Each day I am happier and happier in my relationships with family, friends and loved ones.",
+      "author": "My Affirmations",
       "category": "relationship",
       "image": {
         "filename": "",
@@ -794,9 +795,9 @@
     },
     {
       "id": "73",
-      "text": "There is a natural connection between my partner and I",
-      "author": "",
-      "category": "relationship",
+      "text": "...That is when your commitment to practice is of greatest value. It keeps you engaged in the process. The momentum of regular practice helps to maintain a certain mental stability and resilience even as you go through states of turmoil, confusion, lack of clarity, and procrastination.",
+      "author": "Letting Everything Become Your Teacher: 100 Lessons in Mindfulness, Jon Kabat-Zinn",
+      "category": "mindfulness",
       "image": {
         "filename": "",
         "alt": ""
@@ -805,9 +806,9 @@
     },
     {
       "id": "74",
-      "text": "I am naturally confident",
-      "author": "My Affirmations",
-      "category": "confidence",
+      "text": "In the same way we cultivate patience toward our own minds and bodies when practicing mindfulness. We intentionally remind ourselves that there is no need to be impatient with ourselves because we find the mind judging all the time, or because we are tense or agitated or frightened, or because we have been practicing for some time and nothing positive seems to have happened.",
+      "author": "Letting Everything Become Your Teacher: 100 Lessons in Mindfulness, Jon Kabat-Zinn",
+      "category": "mindfulness",
       "image": {
         "filename": "",
         "alt": ""
@@ -849,9 +850,9 @@
     },
     {
       "id": "78",
-      "text": "I enjoy being confident and open in social situations",
-      "author": "My Affirmations",
-      "category": "confidence",
+      "text": "If we are to find a more effective way of handling the stress in our lives, the first thing we will need to do is to be aware of these automatic judgments so that we can see through our own prejudices and fears and liberate ourselves from their tyranny.",
+      "author": "Letting Everything Become Your Teacher: 100 Lessons in Mindfulness, Jon Kabat-Zinn",
+      "category": "mindfulness",
       "image": {
         "filename": "",
         "alt": ""
@@ -1643,7 +1644,7 @@
       "id": "151",
       "text": "All changes, even positive ones, are scary. Attempts to reach goals through radical or revolutionary means often fail because they heighten fear. But the small steps of kaizen disarm the brain's fear response, stimulating rational thought and creative play.",
       "author": "One Small Step Change Your Life: The Kaizen Way, Robert Maurer",
-      "category": "books",
+      "category": "self-improvement",
       "image": {
         "filename": "",
         "alt": ""
@@ -1654,7 +1655,7 @@
       "id": "152",
       "text": "Small questions create a mental environment that welcomes unabashed creativity and playfulness. When you ask small questions of others, you channel that creative force toward team goals. By asking small questions of yourself, you lay the groundwork for a personalized program for change.",
       "author": "One Small Step Change Your Life: The Kaizen Way, Robert Maurer",
-      "category": "books",
+      "category": "self-improvement",
       "image": {
         "filename": "",
         "alt": ""
@@ -2205,6 +2206,17 @@
       "text": "Lord, do not let us do more if in doing less we might do it better.",
       "author": " E. Lee Phillips",
       "category": "faith",
+      "image": {
+        "filename": "",
+        "alt": ""
+      },
+      "active": true
+    },
+    {
+      "id": "204",
+      "text": "...small questions can help calm the fears that squelch creativity in other realms of life. Whatever question you use, your challenge is to ask it with a gentle and patient spirit.",
+      "author": "One Small Step Change Your Life: The Kaizen Way, Robert Maurer",
+      "category": "self-improvement",
       "image": {
         "filename": "",
         "alt": ""
