@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useTheme } from '@/components/theme/useTheme';
 import { ContentSelector } from '@/lib/content/contentSelector';
-import { Affirmation, Video, WelcomeMessage } from '@/types/content';
+import { Affirmation, Video } from '@/types/content';
 
 // Mock data for testing
 const mockAffirmations: Affirmation[] = [
@@ -261,7 +261,7 @@ export function ContentSelectorTest() {
               {Array.from(selectedVideos.entries()).map(([category, video]) => (
                 <div key={category} className="text-sm">
                   <div className="font-medium">{category}: {video.title}</div>
-                  <div className="text-[var(--theme-text-secondary)]">Duration: {video.duration}</div>
+                  <div className="text-[var(--theme-text-secondary)]">Creator: {video.creator}</div>
                 </div>
               ))}
             </div>
