@@ -42,8 +42,6 @@ export function VideoCard({ video, category }: VideoCardProps) {
         <div className="flex-shrink-0 md:w-80">
           <VideoThumbnail 
             thumbnail={video.thumbnail}
-            videoId={video.id}
-            title={video.title}
           />
         </div>
 
