@@ -228,7 +228,7 @@ export function WelcomeMessageTest() {
   useEffect(() => {
     const testWelcomeMessages = () => {
       const selector = ContentSelector.getInstance();
-      const results: { [theme: string]: { [timeRange: string]: string } } = {};
+      const results: { [theme: string]: { [timeRange: string]: string[] } } = {};
 
       // Test all themes and time ranges
       Object.keys(mockWelcomeData.themes).forEach(themeName => {
@@ -238,11 +238,11 @@ export function WelcomeMessageTest() {
         const welcomeMessages = [{
           theme: [themeName],
           isActive: true,
-          timeRanges: mockWelcomeData.themes[themeName].timeRanges
+          timeRanges: mockWelcomeData.themes[themeName as keyof typeof mockWelcomeData.themes].timeRanges
         }];
 
         // Test each time range
-        mockWelcomeData.themes[themeName].timeRanges.forEach(timeRange => {
+        mockWelcomeData.themes[themeName as keyof typeof mockWelcomeData.themes].timeRanges.forEach(timeRange => {
           const testTimes = [
             timeRange.startTime,
             timeRange.endTime,
@@ -281,7 +281,7 @@ export function WelcomeMessageTest() {
       const welcomeMessages = [{
         theme: [theme.currentTheme],
         isActive: true,
-        timeRanges: mockWelcomeData.themes[theme.currentTheme].timeRanges
+        timeRanges: mockWelcomeData.themes[theme.currentTheme as keyof typeof mockWelcomeData.themes].timeRanges
       }];
 
       const currentTime = new Date();
@@ -293,7 +293,7 @@ export function WelcomeMessageTest() {
       const minute = currentTime.getMinutes();
       const currentTimeMinutes = hour * 60 + minute;
 
-      const activeTimeRange = mockWelcomeData.themes[theme.currentTheme].timeRanges.find(range => {
+      const activeTimeRange = mockWelcomeData.themes[theme.currentTheme as keyof typeof mockWelcomeData.themes].timeRanges.find(range => {
         const [startHour, startMinute] = range.startTime.split(':').map(Number);
         const [endHour, endMinute] = range.endTime.split(':').map(Number);
         

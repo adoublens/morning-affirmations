@@ -60,7 +60,6 @@ export function VideoCard({ video, category }: VideoCardProps) {
           {/* Video Info */}
           <VideoInfo 
             video={video}
-            category={category}
           />
 
           {/* Watch Button */}

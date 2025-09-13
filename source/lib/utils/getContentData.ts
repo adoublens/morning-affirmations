@@ -268,12 +268,16 @@ export async function getContentDataWithFallback(): Promise<Partial<ContentData>
   const result: Partial<ContentData> = {};
 
   // Define file mappings
-  const fileMappings = [
-    { key: 'affirmations' as keyof ContentData, file: 'affirmations.json', fallback: [] as AffirmationData[] },
-    { key: 'videos' as keyof ContentData, file: 'youtube-videos.json', fallback: [] as VideoData[] },
-    { key: 'welcomeMessages' as keyof ContentData, file: 'welcome-messages.json', fallback: getDefaultWelcomeMessages() },
-    { key: 'themes' as keyof ContentData, file: 'themes.json', fallback: [] as ThemeConfigData[] },
-    { key: 'appConfig' as keyof ContentData, file: 'app-config.json', fallback: getDefaultAppConfig() }
+  const fileMappings: Array<{
+    key: keyof ContentData;
+    file: string;
+    fallback: ContentData[keyof ContentData];
+  }> = [
+    { key: 'affirmations', file: 'affirmations.json', fallback: [] as AffirmationData[] },
+    { key: 'videos', file: 'youtube-videos.json', fallback: [] as VideoData[] },
+    { key: 'welcomeMessages', file: 'welcome-messages.json', fallback: getDefaultWelcomeMessages() },
+    { key: 'themes', file: 'themes.json', fallback: [] as ThemeConfigData[] },
+    { key: 'appConfig', file: 'app-config.json', fallback: getDefaultAppConfig() }
   ];
 
   // Load each file with fallback
@@ -295,7 +299,7 @@ export async function getContentDataWithFallback(): Promise<Partial<ContentData>
       }
     } catch (error) {
       console.warn(`Failed to load ${mapping.file}, using fallback:`, error);
-      result[mapping.key] = mapping.fallback;
+      (result as Record<string, unknown>)[mapping.key] = mapping.fallback;
     }
   }
 
