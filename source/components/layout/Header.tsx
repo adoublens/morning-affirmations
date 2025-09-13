@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTheme } from '@/components/theme/useTheme';
 
 interface HeaderProps {
@@ -16,6 +16,33 @@ export function Header({
 }: HeaderProps) {
   const { theme, setTheme, togglePersistence, toggleRandom, getRandomTheme } = useTheme();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [currentTimeRange, setCurrentTimeRange] = useState<string>('afternoon');
+
+  // Get time range based on current hour (same logic as ContentSelector)
+  const getTimeRange = (hour: number): string => {
+    if (hour >= 5 && hour < 9) return 'early-morning';
+    if (hour >= 9 && hour < 12) return 'morning';
+    if (hour >= 12 && hour < 17) return 'afternoon';
+    if (hour >= 17 && hour < 21) return 'evening';
+    return 'night';
+  };
+
+  // Update time range on mount and every minute
+  useEffect(() => {
+    const updateTimeRange = () => {
+      const now = new Date();
+      const timeRange = getTimeRange(now.getHours());
+      setCurrentTimeRange(timeRange);
+    };
+
+    // Update immediately
+    updateTimeRange();
+
+    // Update every minute
+    const interval = setInterval(updateTimeRange, 60000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const themes = [
     { id: 'peaceful', name: 'Peaceful', description: 'Calm and serene' },
@@ -36,6 +63,145 @@ export function Header({
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  // Get SVG icon based on time range
+  const getTimeBasedIcon = (timeRange: string) => {
+    const iconProps = {
+      className: "w-6 h-6 md:w-7 md:h-7 text-white",
+      fill: "none",
+      stroke: "currentColor",
+      viewBox: "0 0 24 24",
+      "aria-hidden": true
+    };
+
+    switch (timeRange) {
+      case 'early-morning':
+        // Coffee cup icon
+        return (
+          <svg {...iconProps}>
+            <path 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              strokeWidth={2} 
+              d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z" 
+            />
+            <path 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              strokeWidth={2} 
+              d="M8 21v-4a2 2 0 012-2h4a2 2 0 012 2v4" 
+            />
+            <path 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              strokeWidth={2} 
+              d="M12 3v4" 
+            />
+          </svg>
+        );
+      
+      case 'morning':
+        // Sunrise icon
+        return (
+          <svg {...iconProps}>
+            <path 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              strokeWidth={2} 
+              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" 
+            />
+            <path 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              strokeWidth={2} 
+              d="M3 12h2m14 0h2M12 3v2m0 14v2" 
+            />
+            <path 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              strokeWidth={2} 
+              d="M6.343 6.343l1.414 1.414m8.485 0l1.414-1.414M6.343 17.657l1.414-1.414m8.485 0l1.414 1.414" 
+            />
+          </svg>
+        );
+      
+      case 'afternoon':
+        // Sun icon (current)
+        return (
+          <svg {...iconProps}>
+            <path 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              strokeWidth={2} 
+              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" 
+            />
+          </svg>
+        );
+      
+      case 'evening':
+        // Sunset icon
+        return (
+          <svg {...iconProps}>
+            <path 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              strokeWidth={2} 
+              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" 
+            />
+            <path 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              strokeWidth={2} 
+              d="M3 12h2m14 0h2M12 3v2m0 14v2" 
+            />
+            <path 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              strokeWidth={2} 
+              d="M6.343 6.343l1.414 1.414m8.485 0l1.414-1.414M6.343 17.657l1.414-1.414m8.485 0l1.414 1.414" 
+            />
+            <path 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              strokeWidth={2} 
+              d="M2 12h20M4 12h16M6 12h12M8 12h8" 
+            />
+          </svg>
+        );
+      
+      case 'night':
+        // Moon icon
+        return (
+          <svg {...iconProps}>
+            <path 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              strokeWidth={2} 
+              d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" 
+            />
+            <path 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              strokeWidth={2} 
+              d="M12 3v1m0 16v1" 
+            />
+          </svg>
+        );
+      
+      default:
+        // Default sun icon
+        return (
+          <svg {...iconProps}>
+            <path 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              strokeWidth={2} 
+              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" 
+            />
+          </svg>
+        );
+    }
+  };
+
   return (
     <header className={`
       w-full bg-[var(--theme-surface)] border-b-2 border-[var(--theme-border)]
@@ -49,20 +215,7 @@ export function Header({
           <div className="flex items-center space-x-5">
             <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[var(--theme-accent)] 
                           flex items-center justify-center shadow-[var(--shadow-sm)]">
-              <svg 
-                className="w-6 h-6 md:w-7 md:h-7 text-white" 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  strokeWidth={2} 
-                  d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" 
-                />
-              </svg>
+              {getTimeBasedIcon(currentTimeRange)}
             </div>
             <div className="flex flex-col !ml-4">
               <h1 className="text-xl md:text-2xl font-bold text-[var(--theme-text-primary)] 
