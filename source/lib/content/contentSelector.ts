@@ -406,7 +406,7 @@ export class ContentSelector {
   getCurrentSelection(): { 
     hasLockedContent: boolean; 
     lockedContent: LockedContent | null;
-    lastUsed: Record<string, string[]>;
+    lastUsed: Record<string, { count: number; lastUsed: string[] }>;
   } {
     return {
       hasLockedContent: this.getLockedContent() !== null,

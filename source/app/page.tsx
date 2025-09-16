@@ -73,7 +73,6 @@ export default async function HomePage() {
           <LockedContentManager 
             affirmations={contentData.affirmations.map(transformAffirmationData)}
             videos={contentData.videos.map(transformVideoData)}
-            welcomeMessages={contentData.welcomeMessages}
           />
         </Suspense>
 
