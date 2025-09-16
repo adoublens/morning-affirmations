@@ -72,3 +72,10 @@ export interface ContentSelection {
   welcomeMessage: WelcomeMessage;
   selectedAt: Date;
 }
+
+export interface LockedContent {
+  theme: string;
+  affirmation: Affirmation;
+  videos: Map<string, Video>;
+  lockedAt: Date;
+}

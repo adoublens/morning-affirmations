@@ -7,3 +7,5 @@ export {
   useErrorHandler, 
   createErrorBoundary 
 } from './ErrorBoundary';
+export { LockBanner } from './LockBanner';
+export { ContentUnavailableError } from './ContentUnavailableError';
