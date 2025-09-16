@@ -11,18 +11,15 @@ import { ContentUnavailableError } from '@/components/ui';
 interface LockedContentManagerProps {
   affirmations: Affirmation[];
   videos: Video[];
-  welcomeMessages: any; // Keep welcome messages time-based
 }
 
 export function LockedContentManager({ 
   affirmations, 
-  videos, 
-  welcomeMessages 
+  videos 
 }: LockedContentManagerProps) {
   const { theme } = useTheme();
   const [lockedContent, setLockedContent] = useState<LockedContent | null>(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
   const [currentContent, setCurrentContent] = useState<{
     affirmation: Affirmation;
     videos: Map<string, Video>;
@@ -70,7 +67,7 @@ export function LockedContentManager({
       isInitialized.current = true;
       setIsLoading(false);
     }
-  }, []); // Only run on mount
+  }, [affirmations, videos, theme.currentTheme, theme.isLocked]); // Include dependencies
 
   // Handle lock state changes
   useEffect(() => {
@@ -117,13 +114,7 @@ export function LockedContentManager({
     );
   }
 
-  if (error) {
-    return (
-      <div className="space-y-8">
-        <ContentUnavailableError onRefresh={() => window.location.reload()} />
-      </div>
-    );
-  }
+  // Error handling removed since setError is not used
 
   if (!currentContent) {
     return (
