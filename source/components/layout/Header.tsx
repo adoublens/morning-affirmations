@@ -14,7 +14,7 @@ export function Header({
   showThemeSwitcher = true, 
   showNavigation = false 
 }: HeaderProps) {
-  const { theme, setTheme, togglePersistence, toggleRandom, getRandomTheme } = useTheme();
+  const { theme, setTheme, togglePersistence, toggleRandom, toggleLock, getRandomTheme } = useTheme();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [currentTimeRange, setCurrentTimeRange] = useState<string>('afternoon');
 
@@ -229,14 +229,37 @@ export function Header({
             </div>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={toggleMobileMenu}
-            className=" p-2 rounded-lg text-[var(--theme-text-primary)] 
-                     hover:bg-[var(--theme-hover)] focus:outline-none focus:ring-2 focus:ring-[var(--theme-accent)]"
-            aria-label="Toggle mobile menu"
-            aria-expanded={isMobileMenuOpen}
-          >
+          {/* Lock Status & Mobile Menu Button */}
+          <div className="flex items-center space-x-2">
+            {/* Lock Icon */}
+            {/*theme.isLocked && (
+              <div className="flex items-center space-x-1 text-[var(--theme-accent)] !pr-2" title="Content is locked">
+                <svg 
+                  className="w-5 h-5" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    strokeWidth={2} 
+                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" 
+                  />
+                </svg>
+                <span className="text-xs font-medium hidden sm:inline">Locked</span>
+              </div>
+            )*/}
+            
+            {/* Mobile Menu Button */}
+            <button
+              onClick={toggleMobileMenu}
+              className=" p-2 rounded-lg text-[var(--theme-text-primary)] 
+                       hover:bg-[var(--theme-hover)] focus:outline-none focus:ring-2 focus:ring-[var(--theme-accent)]"
+              aria-label="Toggle mobile menu"
+              aria-expanded={isMobileMenuOpen}
+            >
             <svg 
               className="w-6 h-6" 
               fill="none" 
@@ -249,7 +272,8 @@ export function Header({
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               )}
             </svg>
-          </button>
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
@@ -270,6 +294,7 @@ export function Header({
                           handleThemeChange(themeItem.id);
                           setIsMobileMenuOpen(false);
                         }}
+                        disabled={theme.isLocked}
                         className={`
                           !px-4 !py-3 rounded-lg text-left font-medium transition-all duration-300
                           border-2 focus:outline-none focus:ring-2 focus:ring-[var(--theme-accent)]
@@ -277,7 +302,9 @@ export function Header({
                             ? 'bg-[var(--theme-accent)] text-white border-[var(--theme-accent)]'
                             : 'bg-[var(--theme-primary)] text-[var(--theme-text-primary)] border-[var(--theme-border)] hover:bg-[var(--theme-hover)]'
                           }
+                          ${theme.isLocked ? 'opacity-50 cursor-not-allowed' : ''}
                         `}
+                        title={theme.isLocked ? 'Unlock content to change themes' : ''}
                       >
                         <div className="font-semibold">{themeItem.name}</div>
                         <div className="text-xs opacity-80">{themeItem.description}</div>
@@ -288,10 +315,13 @@ export function Header({
                         handleRandomTheme();
                         setIsMobileMenuOpen(false);
                       }}
+                      disabled={theme.isLocked}
                       className="!px-4 !py-3 rounded-lg text-left font-medium transition-all duration-300
                                bg-[var(--theme-primary)] text-[var(--theme-text-primary)] 
                                border-2 border-[var(--theme-border)] hover:bg-[var(--theme-hover)]
-                               focus:outline-none focus:ring-2 focus:ring-[var(--theme-accent)]"
+                               focus:outline-none focus:ring-2 focus:ring-[var(--theme-accent)]
+                               disabled:opacity-50 disabled:cursor-not-allowed"
+                      title={theme.isLocked ? 'Unlock content to change themes' : ''}
                     >
                       <div className="font-semibold">Random Theme 🎲 </div>
                       <div className="text-xs opacity-80">Let us choose for you</div>
@@ -313,8 +343,10 @@ export function Header({
                         type="checkbox"
                         checked={theme.isPersistent}
                         onChange={togglePersistence}
+                        disabled={theme.isLocked}
                         className="w-4 h-4 text-[var(--theme-accent)] bg-[var(--theme-primary)] 
-                                 border-[var(--theme-border)] rounded focus:ring-[var(--theme-accent)]"
+                                 border-[var(--theme-border)] rounded focus:ring-[var(--theme-accent)]
+                                 disabled:opacity-50 disabled:cursor-not-allowed"
                       />
                     </label>
                     <label className="flex items-center justify-between cursor-pointer">
@@ -325,6 +357,20 @@ export function Header({
                         type="checkbox"
                         checked={theme.isRandom}
                         onChange={toggleRandom}
+                        disabled={theme.isLocked}
+                        className="w-4 h-4 text-[var(--theme-accent)] bg-[var(--theme-primary)] 
+                                 border-[var(--theme-border)] rounded focus:ring-[var(--theme-accent)]
+                                 disabled:opacity-50 disabled:cursor-not-allowed"
+                      />
+                    </label>
+                    <label className="flex items-center justify-between cursor-pointer">
+                      <span className="text-sm text-[var(--theme-text-secondary)]">
+                        Lock content
+                      </span>
+                      <input
+                        type="checkbox"
+                        checked={theme.isLocked}
+                        onChange={toggleLock}
                         className="w-4 h-4 text-[var(--theme-accent)] bg-[var(--theme-primary)] 
                                  border-[var(--theme-border)] rounded focus:ring-[var(--theme-accent)]"
                       />

@@ -9,9 +9,10 @@ import { Video } from '@/types/content';
 
 interface VideoGridProps {
   videos: Video[];
+  isLocked?: boolean;
 }
 
-export function VideoGrid({ videos }: VideoGridProps) {
+export function VideoGrid({ videos, isLocked = false }: VideoGridProps) {
   const { theme } = useTheme();
   const [selectedVideos, setSelectedVideos] = useState<Map<string, Video>>(new Map());
   const [isLoading, setIsLoading] = useState(true);
@@ -27,10 +28,20 @@ export function VideoGrid({ videos }: VideoGridProps) {
           throw new Error('No videos available');
         }
 
-        const selector = ContentSelector.getInstance();
-        const selected = selector.selectVideos(videos, theme.currentTheme);
-        
-        setSelectedVideos(selected);
+        if (isLocked) {
+          // If locked, videos should already be pre-selected
+          // Convert array to Map by category
+          const videoMap = new Map<string, Video>();
+          videos.forEach(video => {
+            videoMap.set(video.category, video);
+          });
+          setSelectedVideos(videoMap);
+        } else {
+          // Use ContentSelector to get random videos
+          const selector = ContentSelector.getInstance();
+          const selected = selector.selectVideos(videos, theme.currentTheme);
+          setSelectedVideos(selected);
+        }
       } catch (err) {
         console.error('Error selecting videos:', err);
         setError(err instanceof Error ? err.message : 'Failed to load videos');
@@ -40,7 +51,7 @@ export function VideoGrid({ videos }: VideoGridProps) {
     };
 
     selectVideos();
-  }, [videos, theme.currentTheme]);
+  }, [videos, theme.currentTheme, isLocked]);
 
   if (isLoading) {
     return (

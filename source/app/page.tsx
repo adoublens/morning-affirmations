@@ -1,9 +1,8 @@
 import { Suspense } from 'react';
 import { Header } from '@/components/layout';
 import { WelcomeMessage } from '@/components/content/WelcomeMessage';
-import { AffirmationsDisplay } from '@/components/content/AffirmationsDisplay';
-import { VideoGrid } from '@/components/content/VideoGrid';
-import { LoadingSpinner } from '@/components/ui/LoadingSpinner';
+import { LockedContentManager } from '@/components/content/LockedContentManager';
+import { LoadingSpinner, LockBanner } from '@/components/ui';
 import { getContentData, AffirmationData, VideoData } from '@/lib/utils/getContentData';
 import { Affirmation, Video } from '@/types/content';
 
@@ -60,20 +59,22 @@ export default async function HomePage() {
         
         {/* Header */}
         <Header showThemeSwitcher={true} showNavigation={false} />
+        
+        {/* Lock Banner */}
+        <LockBanner />
 
         {/* Welcome Message with Suspense */}
         <Suspense fallback={<SectionLoading title="welcome message" />}>
           <WelcomeMessage data={contentData.welcomeMessages} />
         </Suspense>
 
-        {/* Main Affirmation with Suspense */}
-        <Suspense fallback={<SectionLoading title="today's affirmation" />}>
-          <AffirmationsDisplay affirmations={contentData.affirmations.map(transformAffirmationData)} />
-        </Suspense>
-
-        {/* Video Resources with Suspense */}
-        <Suspense fallback={<SectionLoading title="video resources" />}>
-          <VideoGrid videos={contentData.videos.map(transformVideoData)} />
+        {/* Content with Lock Management */}
+        <Suspense fallback={<SectionLoading title="content" />}>
+          <LockedContentManager 
+            affirmations={contentData.affirmations.map(transformAffirmationData)}
+            videos={contentData.videos.map(transformVideoData)}
+            welcomeMessages={contentData.welcomeMessages}
+          />
         </Suspense>
 
         {/* Theme Switcher */}

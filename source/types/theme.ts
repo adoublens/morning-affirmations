@@ -35,6 +35,7 @@ export interface ThemeConfig {
   currentTheme: string;
   isPersistent: boolean;
   isRandom: boolean;
+  isLocked: boolean;
   availableThemes: Theme[];
 }
 
@@ -43,5 +44,6 @@ export interface ThemeContextType {
   setTheme: (themeId: string) => void;
   togglePersistence: () => void;
   toggleRandom: () => void;
+  toggleLock: () => void;
   getRandomTheme: () => Theme;
 }

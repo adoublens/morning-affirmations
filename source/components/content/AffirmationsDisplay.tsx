@@ -12,9 +12,10 @@ import { Affirmation } from '@/types/content';
 
 interface AffirmationsDisplayProps {
   affirmations: Affirmation[];
+  isLocked?: boolean;
 }
 
-export function AffirmationsDisplay({ affirmations }: AffirmationsDisplayProps) {
+export function AffirmationsDisplay({ affirmations, isLocked = false }: AffirmationsDisplayProps) {
   const { theme } = useTheme();
   const [currentAffirmation, setCurrentAffirmation] = useState<Affirmation | null>(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -31,10 +32,15 @@ export function AffirmationsDisplay({ affirmations }: AffirmationsDisplayProps) 
           throw new Error('No affirmations available');
         }
 
-        const selector = ContentSelector.getInstance();
-        const selected = selector.selectAffirmation(affirmations);
-        
-        setCurrentAffirmation(selected);
+        if (isLocked && affirmations.length === 1) {
+          // If locked and only one affirmation provided, use it directly
+          setCurrentAffirmation(affirmations[0]);
+        } else {
+          // Use ContentSelector to get a random affirmation
+          const selector = ContentSelector.getInstance();
+          const selected = selector.selectAffirmation(affirmations);
+          setCurrentAffirmation(selected);
+        }
       } catch (err) {
         console.error('Error selecting affirmation:', err);
         setError(err instanceof Error ? err.message : 'Failed to load affirmation');
@@ -44,7 +50,7 @@ export function AffirmationsDisplay({ affirmations }: AffirmationsDisplayProps) 
     };
 
     selectAffirmation();
-  }, [affirmations, theme.currentTheme, retryCount]);
+  }, [affirmations, theme.currentTheme, retryCount, isLocked]);
 
   if (isLoading) {
     return (

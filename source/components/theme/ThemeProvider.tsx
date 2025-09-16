@@ -8,6 +8,7 @@ interface ThemeState {
   currentTheme: string;
   isPersistent: boolean;
   isRandom: boolean;
+  isLocked: boolean;
   availableThemes: Theme[];
 }
 
@@ -16,6 +17,7 @@ type ThemeAction =
   | { type: 'SET_THEME'; payload: string }
   | { type: 'TOGGLE_PERSISTENCE' }
   | { type: 'TOGGLE_RANDOM' }
+  | { type: 'TOGGLE_LOCK' }
   | { type: 'INITIALIZE_THEMES'; payload: Theme[] }
   | { type: 'LOAD_FROM_STORAGE'; payload: Partial<ThemeState> };
 
@@ -24,6 +26,7 @@ const initialState: ThemeState = {
   currentTheme: 'peaceful',
   isPersistent: true,
   isRandom: false,
+  isLocked: false,
   availableThemes: [],
 };
 
@@ -44,6 +47,11 @@ function themeReducer(state: ThemeState, action: ThemeAction): ThemeState {
       return {
         ...state,
         isRandom: !state.isRandom,
+      };
+    case 'TOGGLE_LOCK':
+      return {
+        ...state,
+        isLocked: !state.isLocked,
       };
     case 'INITIALIZE_THEMES':
       return {
@@ -68,6 +76,8 @@ const STORAGE_KEYS = {
   CURRENT_THEME: 'morning-affirmations-theme',
   IS_PERSISTENT: 'morning-affirmations-persistent',
   IS_RANDOM: 'morning-affirmations-random',
+  IS_LOCKED: 'morning-affirmations-locked',
+  LOCKED_CONTENT: 'morning-affirmations-locked-content',
 } as const;
 
 // Available themes data - colors are defined in globals.css
@@ -177,6 +187,14 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
       const savedTheme = localStorage.getItem(STORAGE_KEYS.CURRENT_THEME);
       const savedPersistence = localStorage.getItem(STORAGE_KEYS.IS_PERSISTENT);
       const savedRandom = localStorage.getItem(STORAGE_KEYS.IS_RANDOM);
+      const savedLocked = localStorage.getItem(STORAGE_KEYS.IS_LOCKED);
+
+      console.log('ThemeProvider: Loading from localStorage -', {
+        savedTheme,
+        savedPersistence,
+        savedRandom,
+        savedLocked
+      });
 
       const loadedState: Partial<ThemeState> = {};
       
@@ -189,6 +207,11 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
       if (savedRandom !== null) {
         loadedState.isRandom = JSON.parse(savedRandom);
       }
+      if (savedLocked !== null) {
+        loadedState.isLocked = JSON.parse(savedLocked);
+      }
+
+      console.log('ThemeProvider: Loaded state:', loadedState);
 
       if (Object.keys(loadedState).length > 0) {
         dispatch({ type: 'LOAD_FROM_STORAGE', payload: loadedState });
@@ -218,8 +241,9 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
   // Save to localStorage when state changes
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      // Always save random mode setting independently
+      // Always save random mode and lock settings independently
       localStorage.setItem(STORAGE_KEYS.IS_RANDOM, JSON.stringify(state.isRandom));
+      localStorage.setItem(STORAGE_KEYS.IS_LOCKED, JSON.stringify(state.isLocked));
       
       // Only save theme and persistence when persistence is enabled
       if (state.isPersistent) {
@@ -231,7 +255,7 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
         localStorage.removeItem(STORAGE_KEYS.IS_PERSISTENT);
       }
     }
-  }, [state.currentTheme, state.isPersistent, state.isRandom]);
+  }, [state.currentTheme, state.isPersistent, state.isRandom, state.isLocked]);
 
   // Context value
   const contextValue: ThemeContextType = {
@@ -239,9 +263,14 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
       currentTheme: state.currentTheme,
       isPersistent: state.isPersistent,
       isRandom: state.isRandom,
+      isLocked: state.isLocked,
       availableThemes: state.availableThemes,
     },
     setTheme: (themeId: string) => {
+      // Don't allow theme changes when locked
+      if (state.isLocked) {
+        return;
+      }
       dispatch({ type: 'SET_THEME', payload: themeId });
     },
     togglePersistence: () => {
@@ -249,6 +278,9 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
     },
     toggleRandom: () => {
       dispatch({ type: 'TOGGLE_RANDOM' });
+    },
+    toggleLock: () => {
+      dispatch({ type: 'TOGGLE_LOCK' });
     },
     getRandomTheme: () => {
       const activeThemes = state.availableThemes.filter(theme => theme.isActive);

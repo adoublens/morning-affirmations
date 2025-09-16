@@ -1,4 +1,4 @@
-import { Affirmation, Video } from '@/types/content';
+import { Affirmation, Video, LockedContent } from '@/types/content';
 
 type Theme = 'peaceful' | 'energetic' | 'restorative';
 
@@ -286,6 +286,132 @@ export class ContentSelector {
       affirmations: affirmations.length, // All affirmations are available
       videos: themeVideos.length,
       categories
+    };
+  }
+
+  /**
+   * Lock current content for persistent display
+   * @param affirmations - Array of all affirmations
+   * @param videos - Array of all videos
+   * @param theme - Current theme ID
+   * @returns LockedContent object with current selections
+   */
+  lockCurrentContent(affirmations: Affirmation[], videos: Video[], theme: string): LockedContent {
+    const selectedAffirmation = this.selectAffirmation(affirmations);
+    const selectedVideos = this.selectVideos(videos, theme);
+    
+    return {
+      theme,
+      affirmation: selectedAffirmation,
+      videos: selectedVideos,
+      lockedAt: new Date(),
+    };
+  }
+
+  /**
+   * Get locked content from localStorage
+   * @returns LockedContent or null if not found
+   */
+  getLockedContent(): LockedContent | null {
+    if (typeof window === 'undefined') return null;
+    
+    try {
+      const stored = localStorage.getItem('morning-affirmations-locked-content');
+      if (!stored) return null;
+      
+      const parsed = JSON.parse(stored);
+      
+      // Convert videos Map back from serialized format
+      const videosMap = new Map<string, Video>();
+      if (parsed.videos && Array.isArray(parsed.videos)) {
+        parsed.videos.forEach(([key, value]: [string, Video]) => {
+          videosMap.set(key, value);
+        });
+      }
+      
+      return {
+        ...parsed,
+        videos: videosMap,
+        lockedAt: new Date(parsed.lockedAt),
+      };
+    } catch (error) {
+      console.error('Error loading locked content:', error);
+      return null;
+    }
+  }
+
+  /**
+   * Save locked content to localStorage
+   * @param lockedContent - Content to lock
+   */
+  saveLockedContent(lockedContent: LockedContent): void {
+    if (typeof window === 'undefined') return;
+    
+    try {
+      // Convert videos Map to serializable format
+      const serializable = {
+        ...lockedContent,
+        videos: Array.from(lockedContent.videos.entries()),
+      };
+      
+      localStorage.setItem('morning-affirmations-locked-content', JSON.stringify(serializable));
+    } catch (error) {
+      console.error('Error saving locked content:', error);
+    }
+  }
+
+  /**
+   * Clear locked content from localStorage
+   */
+  clearLockedContent(): void {
+    if (typeof window === 'undefined') return;
+    localStorage.removeItem('morning-affirmations-locked-content');
+  }
+
+  /**
+   * Select content based on lock state
+   * @param affirmations - Array of all affirmations
+   * @param videos - Array of all videos
+   * @param theme - Current theme ID
+   * @param isLocked - Whether content is locked
+   * @returns Object with selected content
+   */
+  selectContentWithLock(
+    affirmations: Affirmation[], 
+    videos: Video[], 
+    theme: string, 
+    isLocked: boolean
+  ): { affirmation: Affirmation; videos: Map<string, Video> } {
+    if (isLocked) {
+      const lockedContent = this.getLockedContent();
+      if (lockedContent) {
+        return {
+          affirmation: lockedContent.affirmation,
+          videos: lockedContent.videos,
+        };
+      }
+    }
+    
+    // Fallback to dynamic selection
+    return {
+      affirmation: this.selectAffirmation(affirmations),
+      videos: this.selectVideos(videos, theme),
+    };
+  }
+
+  /**
+   * Get current content selection (for debugging)
+   * @returns Current selection state
+   */
+  getCurrentSelection(): { 
+    hasLockedContent: boolean; 
+    lockedContent: LockedContent | null;
+    lastUsed: Record<string, string[]>;
+  } {
+    return {
+      hasLockedContent: this.getLockedContent() !== null,
+      lockedContent: this.getLockedContent(),
+      lastUsed: this.getUsageStats(),
     };
   }
 }
