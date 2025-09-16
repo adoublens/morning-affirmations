@@ -29,7 +29,7 @@ export interface ThemeButtonProps extends BaseComponentProps {
   size?: 'sm' | 'md' | 'lg';
 }
 
-export interface ThemeSwitcherProps extends BaseComponentProps {
+export interface ThemeSwitcherProps extends BaseComponentProps { // This is an example of inheritance (LoadingProps IS-A BaseComponentProps)
   currentTheme: string;
   availableThemes: Theme[];
   onThemeChange: (themeId: string) => void;

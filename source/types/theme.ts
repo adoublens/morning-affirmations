@@ -3,8 +3,8 @@ export interface Theme {
   name: string;
   displayName: string;
   description: string;
-  colors: ThemeColors;
-  fonts: ThemeFonts;
+  colors: ThemeColors; // This is an example of composition (not inheritance) (Theme HAS-A ThemeColors)
+  fonts: ThemeFonts; // This is an example of composition (not inheritance) (Theme HAS-A ThemeFonts)
   mood: 'peaceful' | 'energetic' | 'restorative';
   isActive: boolean;
 }
@@ -15,7 +15,7 @@ export interface ThemeColors {
   accent: string;
   background: string;
   surface: string;
-  text: {
+  text: { // This is a nested object type
     primary: string;
     secondary: string;
     accent: string;

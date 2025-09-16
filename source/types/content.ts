@@ -1,12 +1,12 @@
 export interface Affirmation {
-  id: string;
-  text: string;
-  author: string;
+  id: string; // property
+  text: string; // property
+  author: string; // property
   category: AffirmationCategory;
-  mood: 'peaceful' | 'energetic' | 'restorative';
-  imageUrl: string;
-  lastUsed?: Date;
-  useCount: number;
+  mood: 'peaceful' | 'energetic' | 'restorative'; // union type - t means the mood property can be ONE of these three specific string values
+  imageUrl: string; // property
+  lastUsed?: Date; // property
+  useCount: number; // property
 }
 
 export type AffirmationCategory = 
