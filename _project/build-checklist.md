@@ -177,8 +177,8 @@
 - [X] Review affirmations text and add more images to them
 - [X] Update the ReadMe file to provide instructions on how to add a new Category in the future (e.g. if we have categories of Yoga, Bible, Artsy Creative - in the future I might want to add a new one)
 - [X] Add morning affirmations videos to .json file and incorporate into codebase
-- [ ] Add a 'lock screen' checkbox in the Header Menu which provides the the ability to 'lock' a particular message/screen, allowing the user to keep all of the same content static for as long as they want to; this includes the theme, affirmations and all videos. Only the welcome message would change based on the time of day. When the person refreshes the browser all of that content (theme, affirmations, all videos) will remain the same as when the selected the 'lock screen' option. They'd have to manually uncheck the 'lock screen' checkbox in order to enable the theme, affirmations content and videos to change again.
-- [ ] Replace SVG icons (coffee cup, sunset, moon) with improved versions
+- [X] Add a 'lock screen' checkbox in the Header Menu which provides the the ability to 'lock' a particular message/screen, allowing the user to keep all of the same content static for as long as they want to; this includes the theme, affirmations and all videos. Only the welcome message would change based on the time of day. When the person refreshes the browser all of that content (theme, affirmations, all videos) will remain the same as when the selected the 'lock screen' option. They'd have to manually uncheck the 'lock screen' checkbox in order to enable the theme, affirmations content and videos to change again.
+- [X] Replace SVG icons (coffee cup, sunset, moon) with improved versions
 
 ### **Image Assets**
 - [ ] Create thumbnail images for affirmations
