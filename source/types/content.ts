@@ -3,7 +3,7 @@ export interface Affirmation {
   text: string; // property
   author: string; // property
   category: AffirmationCategory;
-  mood: 'peaceful' | 'energetic' | 'restorative'; // union type - t means the mood property can be ONE of these three specific string values
+  mood: 'peaceful' | 'energetic' | 'restorative'; // union type - it means the mood property can be ONE of these three specific string values
   imageUrl: string; // property
   lastUsed?: Date; // property
   useCount: number; // property
@@ -30,7 +30,7 @@ export interface Video {
   creatorChannel: string;
   category: VideoCategory;
   themes: string[];
-  mood?: 'peaceful' | 'energetic' | 'restorative';
+  mood?: 'peaceful' | 'energetic' | 'restorative'; // union type - it means the mood property can be ONE of these three specific string values
   lastUsed?: Date;
   useCount: number;
   thumbnail: {

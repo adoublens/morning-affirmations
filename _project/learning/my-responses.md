@@ -1,32 +1,66 @@
+Questions:
+What properties does VideoCardProps have in total? (Hint: count the inherited + new ones)
+- These are all the properties of VideoCardProps:
+id: string;
+  title: string;
+  description?: string;
+  url: string;
+  creator: string;
+  creatorChannel: string;
+  category: VideoCategory;
+  themes: string[];
+  mood?: 'peaceful' | 'energetic' | 'restorative';
+  lastUsed?: Date;
+  useCount: number;
+  thumbnail: {
+    filename: string;
+    alt: string;
+  };
+  tags: string[];
+  active: boolean;
 
-1. Interface Composition Pattern
-In theme.ts, look at the Theme interface:
-Question: What do you notice about how Theme uses ThemeColors and ThemeFonts? What's this pattern called?
-- the Theme is loading in additional interfaces for ThemeColors and ThemeFonts
-- both ThemeColors and ThemeFonts have their own set of properties that can be elaborated on in ther own context (e.g. can have lots of properties that are specific to 'colors or 'themes')
-- QUESTION: is the pattern called inheritance?
+  id: string;
+  name: string;
+  displayName: string;
+  description: string;
+   primary: string;
+  secondary: string;
+  accent: string;
+  background: string;
+  surface: string;
+  text: { // This is a nested object type
+    primary: string;
+    secondary: string;
+    accent: string;
+  };
+  border: string;
+  shadow: string;
+  heading: string;
+  body: string;
+  accent: string;
+  display: string; 
+  mood: 'peaceful' | 'energetic' | 'restorative';
+  isActive: boolean;
 
-2. Optional Properties
-In ui.ts, look at BaseComponentProps:
-Question: What do those ? marks mean? Why might some properties be optional?
-- ? means it's optional to populate those properties
-- some properties might be optional because the data might not be available/provided for them, while they must be provided for others in order for the functionality to work
 
+Why is onSelect optional? What happens if it's not provided?
+- someone may not select anything
+- if nothing is selected the `void` will be the value assigned to `onSelect`?
 
-3. Interface Extension
-Look at how LoadingProps extends BaseComponentProps:
-Question: What does extends do here? What properties will LoadingProps have in total?
-- extends probably takes the entirety of BaseComponentProps and adds/loads it into LoadingProps
-- then you can add more properties to LoadingProps that are specific to it
-- maybe it's a quick way to scaffold/create an interface without repeating all of the same properties as an existing one (if there's overlap)
-- it probably reduces the amount of duplication of code as well
-- QUESTION: Is 'extends' a type of inheritance?
+What's the type of the video property? Where is Video defined?
+- the video property is type Video
+- Video is defined in content.ts
+- it means that `video` is a composite of Video and inherits all of it's properties (VideoCardProps HAS-A Video)
 
+Why do you think theme is required but onSelect is optional?
+- theme is needed for styling something
+- onSelect can be left unselected and it won't break anything in the application
 
-4. Nested Object Types
-In ThemeColors, look at the text property:
-Question: How is this different from creating a separate ThemeText interface? What are the trade-offs?
-- If the text properties are only ever going to be used once and/or in related to THemeColors, then maybe it makes sense to embed theme there
-- It's also easier to read/follow the code because you don't have to jump to another inheritance to see what properties are related to Text Color
-- mabye it's easier to write as well (e.g. text.primary, text.secondary) - would 'code hinting' appear as soon as you write 'text'? If so then that makes coding easier as well.
-- QUESTION: are there performance/speed considerations with this approach?
+QUESTION: why is `video: Video` declared and then used as part of `onSelect`?
+QUESTION: why is `onSelect` displayed in a different color (yellow) in the IDE? Is it a special type of property?
+QUESTION: what type of function is this: ` onSelect?: (video: Video) => void;`? I think it's a ternary operator - but if you were to expand it to an old fashioned function how would it look?
+    `` 
+    function onSelect(video: Video) {
+    void;
+    }
+    ``
